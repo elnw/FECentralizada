@@ -1,0 +1,18 @@
+ShortRoutesSWin INFO  2021-01-28 10:17:30,461 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:17:48,988 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+ShortRoutesSWin ERROR 2021-01-28 10:17:57,013 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: 'Provider' es un atributo de cadena de conexión no válido
+ShortRoutesSWin INFO  2021-01-28 10:20:24,834 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:20:29,450 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+ShortRoutesSWin ERROR 2021-01-28 10:20:36,234 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: 'Provider' es un atributo de cadena de conexión no válido
+ShortRoutesSWin INFO  2021-01-28 10:22:55,586 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:22:57,510 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+ShortRoutesSWin ERROR 2021-01-28 10:23:11,574 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: ORA-12154: TNS:no se ha podido resolver el identificador de conexión especificado
+ShortRoutesSWin INFO  2021-01-28 10:27:52,650 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:27:54,383 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+ShortRoutesSWin INFO  2021-01-28 10:30:28,944 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:30:31,820 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+ShortRoutesSWin ERROR 2021-01-28 10:30:41,201 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: ORA-00303: Biblioteca de Red: error de sintaxis de Nombre-Valor
+ShortRoutesSWin INFO  2021-01-28 10:33:15,093 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Fin Consulta BD- Cabecera
+ShortRoutesSWin INFO  2021-01-28 10:33:15,103 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando registro en BD - Cabecera
+ShortRoutesSWin INFO  2021-01-28 10:33:23,912 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura (BD)
+ShortRoutesSWin INFO  2021-01-28 10:33:39,463 Hilo: [1     ] Session: (null)               Usuario: (null) Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera

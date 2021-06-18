@@ -1,0 +1,49 @@
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Newtonsoft.Json.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.xml
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.xml
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.xml
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.xml
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csprojAssemblyReference.cache
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CoreCompileInputs.cache
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CopyComplete
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Newtonsoft.Json.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.xml
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.xml
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.xml
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.xml
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csprojAssemblyReference.cache
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CoreCompileInputs.cache
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CopyComplete
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config

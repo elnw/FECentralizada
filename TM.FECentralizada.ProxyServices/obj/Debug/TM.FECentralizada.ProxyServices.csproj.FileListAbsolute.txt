@@ -1,0 +1,12 @@
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csprojAssemblyReference.cache
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Poyectos\Facturacion Electrónica SSIS\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csprojAssemblyReference.cache
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
+D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
