@@ -9,6 +9,9 @@
         public const string PRM_SFTP_LETTER_OSIPTEL = "PRM_FILE_SERVER_LETTER_OSIPTEL";
         public const string PRM_SFTP_VOUCHER = "PRM_FILE_SERVER_VOUCHER";
         public const string PRM_OPTIONS_DETAIL = "PRM_OPTIONS_DETAIL";
+
+        public const char FIELD_SEPARATOR = '|';
+
         #endregion
 
         #region Reports 

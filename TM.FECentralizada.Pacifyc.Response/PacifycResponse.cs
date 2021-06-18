@@ -59,7 +59,7 @@ namespace TM.FECentralizada.Pacifyc.Response
 
                 Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
 
-                Invoice();
+                Invoice(ParametersInvoce);
                 //parallel invoke
 
 
@@ -73,33 +73,78 @@ namespace TM.FECentralizada.Pacifyc.Response
 
         private void Invoice(List<Parameters> oListParameters)
         {
+            ServiceConfig serviceConfig;
             Mail mailConfig;
             FileServer fileServerConfig;
 
             DateTime timestamp = DateTime.Now;
-            List<string> targetFiles;
+            List<string> messagesResponse;
+            List<ResponseFile> responseFiles;
+            int auditId;
 
             Tools.Logging.Info("Inicio: Obtener parámetros para lectura");
 
-            Parameters ftpParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG);
-
-            if (ftpParameter != null)
+            Parameters configParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.KEY_CONFIG);
+            serviceConfig = Business.Common.GetParameterDeserialized<ServiceConfig>(configParameter);
+            if (configParameter != null)
             {
-                fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
-
-                targetFiles = Tools.FileServer.ListDirectory(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory);
-
-                if(targetFiles.Count > 0)
+                Parameters ftpParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG);
+                
+                Tools.Logging.Info("Inicio: Descargar archivos de respuesta de gfiscal - Pacyfic Response");
+                if (ftpParameter != null)
                 {
+                    fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
+
+                    messagesResponse = new List<string>();
+                    responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse);
+
+                    
+
+                    if (responseFiles != null && responseFiles.Count > 0)
+                    {
+                        Tools.Logging.Info("Inicio: Insertar auditoria - Pacyfic Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, responseFiles.Count, 1, serviceConfig.Norm);
+
+                        Tools.Logging.Info("Inicio:  Obtener configuración de email - Pacyfic Response");
+                        Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
+                        mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
+                        
+                        if(mailConfig != null)
+                        {
+                            if (messagesResponse.Count > 0)
+                            {
+                                Business.Common.SendFileNotification(mailConfig, messagesResponse);
+                            }
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.LEIDO, 1);
+
+                            
+
+
+                        }
+                        else
+                        {
+                            Tools.Logging.Error("No se encontró el parámetro de configuracion MAILCONFIG - Pacyfic Response");
+                        }
+                        
+                        
+
+
+                    }
+                    else
+                    {
+                        Tools.Logging.Info("No se encontraron archivos por procesar - Pacyfic Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, 0, 1, 193);
+                    }
+
 
                 }
-                else
-                {
-                    Tools.Logging.Info("No se encontraron archivos por procesar - Pacyfic Response");
-                }
-
 
             }
+            else
+            {
+                Tools.Logging.Error("No se encontró el parámetro de configuracion KEYCONFIG - Pacyfic Response");
+            }
+
 
 
         }

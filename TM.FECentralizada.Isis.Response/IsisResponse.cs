@@ -92,8 +92,8 @@ namespace TM.FECentralizada.Isis.Response
         {
             //
             Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Facturas");
-            var ListInvoceHeader = Business.Isis.GetInvoiceHeader();
-            var ListInvoceDetail = Business.Isis.GetInvoiceDetail();
+           //// var ListInvoceHeader = Business.Isis.GetInvoiceHeader();
+            //var ListInvoceDetail = Business.Isis.GetInvoiceDetail();
 
             bool Is340 = false;
 

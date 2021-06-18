@@ -104,7 +104,7 @@ namespace TM.FECentralizada.Pacifyc.Read
             Mail mailConfig;
             FileServer fileServerConfig;
             bool isValid;
-            string validationMessage = "";
+            List<string> validationMessage = new List<string>();
             int auditId;
             int intentos = 0;
             DateTime timestamp = DateTime.Now;
@@ -141,8 +141,8 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                         Tools.Logging.Info("Inicio : Validar Documentos ");
 
-                        isValid = Business.Pacifyc.ValidateInvoices(ListInvoceHeader, ref validationMessage);
-                        isValid &= Business.Pacifyc.ValidateInvoiceDetail(ListInvoceDetail, ref validationMessage);
+                        isValid = Business.Pacifyc.ValidateInvoices(ListInvoceHeader, validationMessage);
+                        isValid &= Business.Pacifyc.ValidateInvoiceDetail(ListInvoceDetail, validationMessage);
 
 
                         /*for(int i = 0; i < ListInvoceDetail.Count; i++)
@@ -188,7 +188,7 @@ namespace TM.FECentralizada.Pacifyc.Read
                             Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
                             Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
-                            Business.Common.SendFileNotification(mailConfig, $"Se envió correctamenteel documento: {System.IO.Path.GetFileName(resultPath)} a gfiscal");
+                            Business.Common.SendFileNotification(mailConfig, $"Se envió correctamente el documento: {System.IO.Path.GetFileName(resultPath)} a gfiscal");
                             Tools.Logging.Info("Inicio : Actualizo Auditoria");
 
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);

@@ -1,0 +1,6 @@
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe.config
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.pdb
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.CoreCompileInputs.cache
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.exe
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.pdb

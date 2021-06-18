@@ -1,0 +1,6 @@
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.exe.config
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.exe
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.pdb
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.csproj.CoreCompileInputs.cache
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.exe
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.pdb

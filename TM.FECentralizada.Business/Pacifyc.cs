@@ -135,13 +135,13 @@ namespace TM.FECentralizada.Business
             return ListDetails;
         }
 
-        public static bool ValidateInvoices(List<InvoiceHeader> invoiceHeaders, ref string messageResult)
+        public static bool ValidateInvoices(List<InvoiceHeader> invoiceHeaders, List<string> messageResult)
         {
             bool checkInvoice = true;
 
             foreach (var invoice in invoiceHeaders.ToList())
             {
-                if(!ValidateInvoice(invoice, ref messageResult))
+                if(!ValidateInvoice(invoice, messageResult))
                 {
                     invoiceHeaders.Remove(invoice);
                     checkInvoice &= false;
@@ -152,96 +152,96 @@ namespace TM.FECentralizada.Business
             return checkInvoice;
         }
 
-        private static bool ValidateInvoice(InvoiceHeader invoiceHeader, ref string messageResult)
+        private static bool ValidateInvoice(InvoiceHeader invoiceHeader, List<string> messageResult)
         {
             bool isValid = true;
             if(String.IsNullOrEmpty(invoiceHeader.serieNumero) || invoiceHeader.serieNumero.Length < 13 || !invoiceHeader.serieNumero.StartsWith("F"))
             {
-                messageResult += "La serie y número de la factura: " + invoiceHeader.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto";
+                messageResult.Add("La serie y número de la factura: " + invoiceHeader.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto");
                 isValid &= false;
             }
 
             if (String.IsNullOrEmpty(invoiceHeader.fechaEmision))
             {
-                messageResult += "La fecha de emision de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.";
+                messageResult.Add("La fecha de emision de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.tipoDocumentoAdquiriente))
             {
-                messageResult += "El tipo de documento adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.";
+                messageResult.Add("El tipo de documento adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.numeroDocumentoAdquiriente))
             {
-                messageResult += "El número de documento adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.";
+                messageResult.Add("El número de documento adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.razonSocialAdquiriente))
             {
-                messageResult += "La razon social del adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.";
+                messageResult.Add("La razon social del adquiriente de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.tipoMoneda))
             {
-                messageResult += "El tipo de moneda de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.";
+                messageResult.Add("El tipo de moneda de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.tipooperacion))
             {
-                messageResult += "El tipo de operación de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.";
+                messageResult.Add("El tipo de operación de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(invoiceHeader.codigoestablecimientosunat))
             {
-                messageResult += "El codigo de establecimiento sunat de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.";
+                messageResult.Add("El codigo de establecimiento sunat de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrWhiteSpace(invoiceHeader.totalvalorventa))
             {
-                messageResult += "El total del valor de venta de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.";
+                messageResult.Add("El total del valor de venta de la factura con número de serie: " + invoiceHeader.serieNumero + " está vacío.");
                 isValid &= false;
             }
             return isValid;
         }
 
-        private static bool ShouldDeleteInvoice(InvoiceDetail detail, ref string messageResult)
+        private static bool ShouldDeleteInvoice(InvoiceDetail detail, List<string> messageResult)
         {
             bool isValid = true;
             if (String.IsNullOrEmpty(detail.serieNumero) || detail.serieNumero.Length < 13 || !detail.serieNumero.StartsWith("F"))
             {
-                messageResult += "La serie y número de la factura: " + detail.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto";
+                messageResult.Add("La serie y número de la factura: " + detail.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(detail.descripcion))
             {
-                messageResult += "La descripcion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacia.";
+                messageResult.Add("La descripcion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacia.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(detail.unidadMedida))
             {
-                messageResult += "La unidad de medida del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.";
+                messageResult.Add("La unidad de medida del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(detail.codigoImpUnitConImpuesto))
             {
-                messageResult += "El codigo de imp. unitario del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.";
+                messageResult.Add("El codigo de imp. unitario del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(detail.codigoRazonExoneracion))
             {
-                messageResult += "El codigo de razon de exgoneracion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.";
+                messageResult.Add("El codigo de razon de exgoneracion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
                 isValid &= false;
             }
             return !isValid;
         }
 
-        public static bool ValidateInvoiceDetail(List<InvoiceDetail> invoiceDetail, ref string messageResult)
+        public static bool ValidateInvoiceDetail(List<InvoiceDetail> invoiceDetail, List<string> messageResult)
         {
             bool isValid = true;
 
             foreach (var detail in invoiceDetail.ToList())
             {
-                if(ShouldDeleteInvoice(detail, ref messageResult))
+                if(ShouldDeleteInvoice(detail, messageResult))
                 {
                     invoiceDetail.Remove(detail);
                     isValid &= false;

@@ -49,6 +49,7 @@
     <Compile Include="Common\HeaderRequest.cs" />
     <Compile Include="Common\Mail.cs" />
     <Compile Include="Common\Parameters.cs" />
+    <Compile Include="Common\ResponseFile.cs" />
     <Compile Include="Common\ServiceConfig.cs" />
     <Compile Include="Common\SpecFile.cs" />
     <Compile Include="Isis\InvoceDetail.cs" />
