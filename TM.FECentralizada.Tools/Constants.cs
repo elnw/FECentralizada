@@ -130,10 +130,26 @@
         public const int FALLA_VALIDACION = 8;
         #endregion
 
+        #region AtisLectura
+        public const string AtisRead = "Atis_Lectura";
+        public const string AtisRead_Invoice = "Factura";
+        public const string AtisRead_CreditNote = "NotaCredito";
+        public const string AtisRead_DebitNote = "NotaDebito";
+        #endregion
+
+        #region AtisRespuesta
+        public const string AtisResponse = "Atis_Response";
+        public const string AtisResponse_Invoice = "Factura";
+        public const string AtisResponse_CreditNote = "NotaCredito";
+        public const string AtisResponse_DebitNote = "NotaDebito";
+        #endregion
+
         #region Parameters
         public const string KEY_CONFIG = "config";
         public const string MAIL_CONFIG = "mail";
         public const string FTP_CONFIG = "ftp";
+        public const string FTP_CONFIG_INPUT = "ftp_input";
+        public const string FTP_CONFIG_OUTPUT = "ftp_output";
 
         #endregion
 

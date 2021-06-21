@@ -10,3 +10,9 @@ D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Pro
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb

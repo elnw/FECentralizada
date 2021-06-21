@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atis\InvoceDetail.cs" />
+    <Compile Include="Atis\InvoiceHeader.cs" />
     <Compile Include="Cms\InvoiceDetail.cs" />
     <Compile Include="Cms\InvoiceHeader.cs" />
     <Compile Include="Common\Attachment.cs" />
@@ -63,7 +65,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Atis\" />
     <Folder Include="Sap\" />
     <Folder Include="Traceability\" />
   </ItemGroup>

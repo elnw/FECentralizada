@@ -373,8 +373,8 @@ namespace TM.FECentralizada.Business
         public static void UpdatePickUpDate(List<InvoiceHeader> invoiceHeaders)
         {
             
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
-            Data.Pacifyc.InvokeInvoiceUpdate();
+            //Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
+            //Data.Pacifyc.InvokeInvoiceUpdate();
 
         }
 
