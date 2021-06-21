@@ -55,17 +55,25 @@ namespace TM.FECentralizada.Business
             return ListDetails;
         }
 
-        public static List<CreditNoteHeader> GetCreditNoteHeaders()
+        public static List<CreditNoteHeader> GetCreditNoteHeaders(DateTime timestamp, ref int intentos, int maxIntentos)
         {
             List<CreditNoteHeader> ListHeaders = new List<CreditNoteHeader>();
-            CreditNoteHeader objBillHeader = new CreditNoteHeader();
+            bool debeRepetir = false;
 
             Tools.Logging.Info("Iniciando Consulta BD- Cabecera");
             try
             {
-                ListHeaders = Data.Pacifyc.ReadCreditNoteHeaders();
+                for (int i = 0; i < maxIntentos; i++)
+                {
+                    ListHeaders = Data.Pacifyc.ReadCreditNoteHeaders(timestamp, ref debeRepetir);
+                    intentos++;
+                    Tools.Logging.Info("Fin Consulta BD-Factura Cabecera");
+                    if (!debeRepetir) break;
+                }
+
+                    
                 Tools.Logging.Info("Fin Consulta BD- Cabecera");
-                Tools.Logging.Info("Iniciando registro en BD - Cabecera");
+              
             }
 
             catch (Exception ex)
@@ -372,7 +380,6 @@ namespace TM.FECentralizada.Business
 
         public static void UpdatePickUpDate(List<InvoiceHeader> invoiceHeaders)
         {
-            
             Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
             Data.Pacifyc.InvokeInvoiceUpdate();
 

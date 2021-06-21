@@ -16,16 +16,21 @@ namespace TM.FECentralizada.Pacifyc.Read
         static void Main()
         {
             Tools.Logging.Configure();
-            /*/ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new PacifycRead()
-            };
-            ServiceBase.Run(ServicesToRun);*/
 
-            PacifycRead ob = new PacifycRead();
+            #if DEBUG
+                        PacifycRead ob = new PacifycRead();
+                        ob.probar();
+            #else
+                        ServiceBase[] ServicesToRun;
+                        ServicesToRun = new ServiceBase[]
+                        {
+                            new PacifycRead()
+                        };
+                        ServiceBase.Run(ServicesToRun);
+            
+            #endif
 
-            ob.probar();
+
         }
     }
 }

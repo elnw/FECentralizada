@@ -115,9 +115,14 @@ namespace TM.FECentralizada.Pacifyc.Response
                             {
                                 Business.Common.SendFileNotification(mailConfig, messagesResponse);
                             }
-                            Business.Common.UpdateAudit(auditId, Tools.Constants.LEIDO, 1);
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.RETORNO_GFISCAL, 1);
 
-                            
+                            Tools.Logging.Info("Inicio: Actualizar documentos en FECentralizada - Pacyfic Response");
+
+                            Business.Common.UpdateInvoiceState(responseFiles);
+
+                            Tools.Logging.Info("Inicio: Actualizar auditoria - Pacyfic Response");
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_LEGADO, 1);
 
 
                         }

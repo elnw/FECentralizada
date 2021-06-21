@@ -71,6 +71,8 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                     Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
                     Invoice(ParametersInvoce);
+                    CreditNote(ParametersCreditNote);
+
                     /*Parallel.Invoke(
                                () => Invoice(ParametersInvoce),
                                () => CreditNote(ParametersCreditNote),
@@ -128,7 +130,7 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                 Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
 
-                if (configParameter != null)
+                if (mailParameter != null)
                 {
                     mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
 
@@ -231,40 +233,44 @@ namespace TM.FECentralizada.Pacifyc.Read
             
 
         }
-        private void Bill(List<Parameters> oListParameters)
-        {
-            Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Boletas");
-
-
-            Tools.Logging.Info("Inicio : Registrar Auditoria");
-
-
-            Tools.Logging.Info("Inicio : Validar Documentos ");
-
-            Tools.Logging.Info("Inicio : Notificación de Validación");
-
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
-
-            Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
-
-            Tools.Logging.Info("Inicio : Valido Documentos insertados ");
-
-            Tools.Logging.Info("Inicio : Lees  Documentos insertados ");
-
-            Tools.Logging.Info("Inicio : enviar GFiscal ");
-
-            Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
-
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
-
-        }
         private void CreditNote(List<Parameters> oListParameters)
         {
+            ServiceConfig serviceConfig;
+            Mail mailConfig;
+            FileServer fileServerConfig;
+            bool isValid;
+            List<string> validationMessage = new List<string>();
+            int auditId;
+            int intentos = 0;
+            DateTime timestamp = DateTime.Now;
 
-            Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Boletas");
+            Tools.Logging.Info("Inicio: Obtener norma para las facturas de Pacyfic");
+            Parameters configParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.KEY_CONFIG);
+
+            if (configParameter != null)
+            {
+                serviceConfig = Business.Common.GetParameterDeserialized<ServiceConfig>(configParameter);
+                Tools.Logging.Info("Inicio : Obtener documentos de BD Pacyfic - Notas de crédito");
+
+                List<CreditNoteHeader> ListInvoceHeader = Business.Pacifyc.GetCreditNoteHeaders(timestamp, ref intentos, serviceConfig.maxAttemps);
+                List<CreditNoteDetail> ListInvoceDetail = Business.Pacifyc.GetCreditNoteDetails(timestamp);
+
+                Tools.Logging.Info("Inicio: Obtener configuración de correos electronicos - Facturas Pacyfic");
+                Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
+
+                if (mailParameter != null)
+                {
+                    mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
+
+                    Tools.Logging.Info("Inicio : Registrar Auditoria");
+                    auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
 
 
-            Tools.Logging.Info("Inicio : Registrar Auditoria");
+                }
+
+
+
+            }
 
 
             Tools.Logging.Info("Inicio : Validar Documentos ");
