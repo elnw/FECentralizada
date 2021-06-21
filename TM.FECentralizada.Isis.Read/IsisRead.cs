@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using TM.FECentralizada.Entities.Common;
+using TM.FECentralizada.Entities.Isis;
+using Common = TM.FECentralizada.Entities.Common;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace TM.FECentralizada.Isis.Read
 {
@@ -36,6 +39,11 @@ namespace TM.FECentralizada.Isis.Read
             }
         }
 
+        public void probar()
+        {
+            Procedure();
+        }
+
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             Procedure();
@@ -49,7 +57,7 @@ namespace TM.FECentralizada.Isis.Read
 
                 Tools.Logging.Info("Inicio : Obtener Parámetros");
                 //Método que Obtendrá los Parámetros.
-                List<Parameters> ParamsResponse = TM.FECentralizada.Business.Common.GetParametersByKey(new Parameters() { Domain = Tools.Constants.IsisRead });
+                List<Parameters> ParamsResponse = TM.FECentralizada.Business.Common.GetParametersByKey(new Parameters() { Domain = Tools.Constants.IsisRead, KeyDomain = "", KeyParam = "" });
                 Tools.Logging.Info("Fin : Obtener Parámetros");
 
                 if (ParamsResponse != null && ParamsResponse.Any())
@@ -60,18 +68,19 @@ namespace TM.FECentralizada.Isis.Read
                     List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals( Tools.Constants.IsisRead_Bill.ToUpper())).ToList();
 
                     Tools.Logging.Info("Inicio : Procesar documentos de BD Isis");
-                    Parallel.Invoke(
+                    Invoice(ParametersInvoce);
+                    /*Parallel.Invoke(
                                () => Invoice(ParametersInvoce),
-                               () => Bill(ParametersBill),
                                () => CreditNote(ParametersCreditNote),
                                () => DebitNote(ParametersDebitNote)
-                        ); 
+                        );*/
                     Tools.Logging.Info("Fin : Procesar documentos de BD Isis");
 
                     //Obtengo la Configuración Intervalo de Tiempo
-                    var oConfiguration = ParamsResponse.Find(x => x.KeyParam.Equals("TimerInterval"));
-                    var Minutes = oConfiguration.Value;//oConfiguration.Key3.Equals("D") ? oConfiguration.Value3 : oConfiguration.Key3.Equals("T") ? oConfiguration.Value2 : oConfiguration.Value1;
-                    oTimer.Interval = Tools.Common.ConvertMinutesToMilliseconds(int.Parse(Minutes));
+                    var oConfiguration = Business.Common.GetParameterDeserialized<ServiceConfig>(ParamsResponse.Find(x => x.KeyParam == Tools.Constants.KEY_CONFIG));
+
+                    var Minutes = oConfiguration.ExecutionRate;//oConfiguration.Key3.Equals("D") ? oConfiguration.Value3 : oConfiguration.Key3.Equals("T") ? oConfiguration.Value2 : oConfiguration.Value1;
+                    oTimer.Interval = Tools.Common.ConvertMinutesToMilliseconds(Minutes);
                     oTimer.Start();
                     oTimer.AutoReset = true;
                 }
@@ -89,34 +98,139 @@ namespace TM.FECentralizada.Isis.Read
 
         private void Invoice(List<Parameters> oListParameters) {
             //
-            Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Facturas");
-            var ListInvoceHeader = Business.Isis.GetInvoceHeader();
-            var ListInvoceDetail = Business.Isis.GetInvoceDetail();
+            ServiceConfig serviceConfig;
+            Mail mailConfig;
+            FileServer fileServerConfig;
+            bool isValid;
+            string validationMessage = "";
+            int auditId;
+            int intentos = 0;
+            DateTime timestamp = DateTime.Now;
 
 
-            Tools.Logging.Info("Inicio : Registrar Auditoria");
+
+            Tools.Logging.Info("Inicio: Obtener norma para las facturas de Isis");
+
+            Parameters configParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.KEY_CONFIG);
+
+            if (configParameter != null)
+            {
+                serviceConfig = Business.Common.GetParameterDeserialized<ServiceConfig>(configParameter);
+
+                Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Facturas");
+                List<InvoiceHeader> ListInvoceHeader = Business.Isis.GetInvoceHeader(timestamp, ref intentos, serviceConfig.maxAttemps);
+                List<InvoiceDetail> ListInvoceDetail = Business.Isis.GetInvoceDetail(timestamp);
 
 
-            Tools.Logging.Info("Inicio : Validar Documentos ");
+                Tools.Logging.Info("Inicio: Obtener configuración de correos electronicos - Facturas Isis");
 
-            Tools.Logging.Info("Inicio : Notificación de Validación");
+                Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
 
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
+                if (configParameter != null)
+                {
+                    mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
 
-            Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
+                    Tools.Logging.Info("Inicio : Registrar Auditoria");
 
-            Tools.Logging.Info("Inicio : Valido Documentos insertados ");
+                    auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count * ListInvoceDetail.Count, 1, serviceConfig.Norm);
 
-            Tools.Logging.Info("Inicio : Lees  Documentos insertados ");
-            
-            Tools.Logging.Info("Inicio : enviar GFiscal ");
+                    if (auditId > 0)
+                    {
 
-            Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
+                        Tools.Logging.Info("Inicio : Validar Documentos ");
 
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
+                        isValid = Business.Isis.ValidateInvoices(ListInvoceHeader, ref validationMessage);
+                        isValid &= Business.Isis.ValidateInvoiceDetail(ListInvoceDetail, ref validationMessage);
+
+
+                        /*for(int i = 0; i < ListInvoceDetail.Count; i++)
+                        {
+                            if(!ListInvoceHeader.Exists(x => x.serieNumero == ListInvoceDetail[i].serieNumero))
+                            {
+                                ListInvoceDetail.RemoveAt(i);
+                            }
+                        }*/
+
+                        Tools.Logging.Info("Inicio : Notificación de Validación");
+
+                        if (!isValid)
+                        {
+                            Business.Common.SendFileNotification(mailConfig, validationMessage);
+                            //Business.Common.UpdateAudit(auditId, Tools.Constants.FALLA_VALIDACION, intentos);
+                        }
+
+                        Tools.Logging.Info("Inicio : Actualizo Auditoria");
+                        Business.Common.UpdateAudit(auditId, Tools.Constants.LEIDO, intentos);
+
+                        Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
+                        Business.Common.BulkInsertListToTable(ListInvoceDetail, "Factura_Detalle");
+                        Business.Common.BulkInsertListToTable(ListInvoceHeader, "Factura_Cabecera");
+
+                        Tools.Logging.Info("Inicio : enviar GFiscal ");
+
+                        Parameters fileParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG);
+                        fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(fileParameter);
+
+                        if (fileServerConfig != null)
+                        {
+                            string resultPath = "";
+                            if (serviceConfig.Norm == 340)
+                            {
+                                resultPath = Business.Isis.CreateInvoiceFile340(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+
+                            }
+                            else
+                            {
+                                resultPath = Business.Isis.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                            }
+                            Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
+
+                            Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
+                            Business.Common.SendFileNotification(mailConfig, $"Se envió correctamenteel documento: {System.IO.Path.GetFileName(resultPath)} a gfiscal");
+                            Tools.Logging.Info("Inicio : Actualizo Auditoria");
+
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
+                            Tools.Logging.Info("Inicio : Actualizar fecha de envio");
+                            //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
+                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            Business.Isis.UpdatePickUpDate(ListInvoceHeader);
+
+                        }
+
+
+
+
+
+                    }
+                    else
+                    {
+                        Tools.Logging.Error($"No se pudo recuperar el id de auditoria - Facturas pacyfic");
+                        Business.Common.UpdateAudit(auditId, Tools.Constants.ERROR_FECENTRALIZADA, intentos);
+                    }
+
+
+                }
+                else
+                {
+                    Tools.Logging.Error($"No se insertó en base de datos el parámetro con llave: {Tools.Constants.MAIL_CONFIG}");
+                    //Business.Common.UpdateAudit(auditId, Tools.Constants.ERROR_FECENTRALIZADA, intentos);
+                    return;
+                }
+
+
+            }
+            else
+            {
+                Tools.Logging.Error($"No se insertó en base de datos el parámetro con llave: {Tools.Constants.KEY_CONFIG}");
+                //Business.Common.UpdateAudit(auditId, Tools.Constants.ERROR_FECENTRALIZADA, intentos);
+                return;
+            }
+
+
 
         }
-        private void Bill(List<Parameters> oListParameters) {
+        private void Bill(List<Parameters> oListParameters)
+        {
             Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Boletas");
 
 
@@ -142,7 +256,8 @@ namespace TM.FECentralizada.Isis.Read
             Tools.Logging.Info("Inicio : Actualizo Auditoria");
 
         }
-        private void CreditNote(List<Parameters> oListParameters) {
+        private void CreditNote(List<Parameters> oListParameters)
+        {
 
             Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Boletas");
 
@@ -168,7 +283,8 @@ namespace TM.FECentralizada.Isis.Read
 
             Tools.Logging.Info("Inicio : Actualizo Auditoria");
         }
-        private void DebitNote(List<Parameters> oListParameters) {
+        private void DebitNote(List<Parameters> oListParameters)
+        {
 
             Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Boletas");
 
@@ -194,10 +310,10 @@ namespace TM.FECentralizada.Isis.Read
 
             Tools.Logging.Info("Inicio : Actualizo Auditoria");
         }
+
 
         protected override void OnStop()
         {
-            oTimer.Stop();
         }
     }
 }

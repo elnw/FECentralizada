@@ -48,3 +48,30 @@ D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Bus
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.dll
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.pdb
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Data.dll.config
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Business.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Business.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Data.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Entities.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Tools.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\IBM.Data.Informix.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\EPPlus.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\Renci.SshNet.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\ExcelDataReader.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\log4net.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Data.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Data.dll.config
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Entities.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\TM.FECentralizada.Tools.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\EPPlus.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\Renci.SshNet.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\ExcelDataReader.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\ExcelDataReader.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\bin\Debug\log4net.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csprojAssemblyReference.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csproj.CopyComplete
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.pdb
