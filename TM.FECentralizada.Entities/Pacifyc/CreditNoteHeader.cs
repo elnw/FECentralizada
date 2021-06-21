@@ -50,6 +50,13 @@ namespace TM.FECentralizada.Entities.Pacifyc
         public string numeroDocRefPrincipal { get; set; }
         public string lugarDestino { get; set; }
         public string TOTALVALORVENTANETOOPGRAVADAS { get; set; }
-        public List<CreditNoteDetail> creditNoteDetails { get; set; }
+        public string origen { get; set; }
+        public string estado { get; set; }
+        public string codSistema { get; set; }
+        public string codigoCarga { get; set; }
+        public string nombreArchivo { get; set; }
+        public string totalRetencion { get; set; }
+        public string porcentajeRetencion { get; set; }
+        public string fechaRegistro { get; set; }
     }
 }

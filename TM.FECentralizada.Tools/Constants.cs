@@ -9,6 +9,9 @@
         public const string PRM_SFTP_LETTER_OSIPTEL = "PRM_FILE_SERVER_LETTER_OSIPTEL";
         public const string PRM_SFTP_VOUCHER = "PRM_FILE_SERVER_VOUCHER";
         public const string PRM_OPTIONS_DETAIL = "PRM_OPTIONS_DETAIL";
+
+        public const char FIELD_SEPARATOR = '|';
+
         #endregion
 
         #region Reports 
@@ -208,10 +211,26 @@
         public const int FALLA_VALIDACION = 8;
         #endregion
 
+        #region AtisLectura
+        public const string AtisRead = "Atis_Lectura";
+        public const string AtisRead_Invoice = "Factura";
+        public const string AtisRead_CreditNote = "NotaCredito";
+        public const string AtisRead_DebitNote = "NotaDebito";
+        #endregion
+
+        #region AtisRespuesta
+        public const string AtisResponse = "Atis_Response";
+        public const string AtisResponse_Invoice = "Factura";
+        public const string AtisResponse_CreditNote = "NotaCredito";
+        public const string AtisResponse_DebitNote = "NotaDebito";
+        #endregion
+
         #region Parameters
         public const string KEY_CONFIG = "config";
         public const string MAIL_CONFIG = "mail";
         public const string FTP_CONFIG = "ftp";
+        public const string FTP_CONFIG_INPUT = "ftp_input";
+        public const string FTP_CONFIG_OUTPUT = "ftp_output";
 
         #endregion
 

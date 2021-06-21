@@ -1,0 +1,250 @@
+PacifycRead INFO  2021-06-21 09:46:22,727 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Atis.
+PacifycRead INFO  2021-06-21 09:46:22,746 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-21 09:46:23,010 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 09:46:23,010 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-21 09:46:23,011 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 09:46:23,014 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 09:46:23,028 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 09:46:23,591 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio ListDirectory:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/
+PacifycRead INFO  2021-06-21 09:46:23,591 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  FtpWebRequest [WebRequest]
+PacifycRead INFO  2021-06-21 09:46:23,592 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponse()
+PacifycRead INFO  2021-06-21 09:46:23,850 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponseStream()
+PacifycRead INFO  2021-06-21 09:46:23,851 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  StreamReader()
+PacifycRead INFO  2021-06-21 09:46:23,853 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  ReadToEnd()
+PacifycRead INFO  2021-06-21 09:46:23,921 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ListDirectory FTP.
+PacifycRead INFO  2021-06-21 09:46:23,922 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 09:46:23,923 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 09:46:23,928 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de FTP Atis - Facturas
+PacifycRead INFO  2021-06-21 09:46:25,873 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210603_09_20210603095235.txt
+PacifycRead INFO  2021-06-21 09:46:25,874 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 09:46:25,990 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 09:46:26,694 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210603_09_20210603095235.txt [ Nro Filas = 339 ]
+PacifycRead INFO  2021-06-21 09:46:26,695 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 09:46:27,436 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210604_10_20210604100815.txt
+PacifycRead INFO  2021-06-21 09:46:27,437 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 09:46:27,555 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 09:46:28,293 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210604_10_20210604100815.txt [ Nro Filas = 249 ]
+PacifycRead INFO  2021-06-21 09:46:28,293 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 09:46:36,374 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Atis
+PacifycRead INFO  2021-06-21 09:46:36,385 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-21 09:46:36,404 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 09:46:36,405 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-21 09:46:36,407 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-21 09:46:36,408 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 09:46:36,421 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 09:46:36,422 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Insertar Documentos Validados 
+PacifycRead INFO  2021-06-21 09:46:36,656 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-21 09:46:43,421 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio UploadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin
+PacifycRead INFO  2021-06-21 09:46:43,531 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-21 09:46:43,532 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-21 09:46:43,619 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin UploadFile FTP.
+PacifycRead INFO  2021-06-21 09:46:43,619 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio :  Notificación de envio  GFiscal 
+PacifycRead INFO  2021-06-21 09:46:43,622 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-21 09:46:43,623 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-21 09:46:43,624 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-21 09:46:43,625 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-21 09:46:43,625 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-21 09:46:43,626 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-21 09:46:43,626 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-21 09:46:43,626 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-21 09:46:43,627 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-21 09:46:43,627 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-21 09:46:43,627 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-21 09:46:43,628 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-21 09:46:47,068 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 09:46:47,081 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 09:46:47,082 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio :  Mover archivos procesados a ruta PROC 
+PacifycRead INFO  2021-06-21 09:46:47,082 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-21 09:46:47,083 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-21 09:46:47,083 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-21 09:46:47,083 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-21 09:46:47,084 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-21 09:46:47,084 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-21 09:46:47,085 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-21 09:46:47,085 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-21 09:46:47,086 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-21 09:46:47,086 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-21 09:46:47,086 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-21 09:46:47,087 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-21 09:47:04,590 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Mover archivos procesados a ruta PROC 
+PacifycRead INFO  2021-06-21 09:47:06,065 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 09:47:06,066 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin del Proceso: Lectura Pacyfic.
+PacifycRead INFO  2021-06-21 10:34:34,932 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Atis.
+PacifycRead INFO  2021-06-21 10:34:34,949 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-21 10:34:35,313 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 10:34:35,313 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-21 10:34:35,314 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 10:34:35,318 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 10:34:35,318 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 10:34:35,444 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio ListDirectory:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/
+PacifycRead INFO  2021-06-21 10:34:35,445 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  FtpWebRequest [WebRequest]
+PacifycRead INFO  2021-06-21 10:34:35,446 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponse()
+PacifycRead INFO  2021-06-21 10:34:36,314 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponseStream()
+PacifycRead INFO  2021-06-21 10:34:36,317 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  StreamReader()
+PacifycRead INFO  2021-06-21 10:34:36,318 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  ReadToEnd()
+PacifycRead INFO  2021-06-21 10:34:36,372 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ListDirectory FTP.
+PacifycRead INFO  2021-06-21 10:34:36,373 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 10:34:36,374 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 10:34:36,377 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de FTP Atis - Facturas
+PacifycRead INFO  2021-06-21 10:34:48,510 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210603_09_20210603095235.txt
+PacifycRead INFO  2021-06-21 10:34:48,510 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 10:34:49,074 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 10:34:50,268 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210603_09_20210603095235.txt [ Nro Filas = 339 ]
+PacifycRead INFO  2021-06-21 10:34:50,269 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 10:34:53,351 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210604_10_20210604100815.txt
+PacifycRead INFO  2021-06-21 10:34:53,351 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 10:34:53,567 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 10:34:55,314 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210604_10_20210604100815.txt [ Nro Filas = 249 ]
+PacifycRead INFO  2021-06-21 10:34:55,314 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 10:35:01,045 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Atis
+PacifycRead INFO  2021-06-21 10:35:01,056 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-21 10:35:01,083 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 10:35:01,083 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-21 10:35:01,085 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-21 10:35:01,085 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 10:35:01,135 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 10:35:01,136 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Insertar Documentos Validados 
+PacifycRead INFO  2021-06-21 10:35:01,608 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-21 10:37:43,686 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Atis.
+PacifycRead INFO  2021-06-21 10:37:43,702 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-21 10:37:43,924 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 10:37:43,925 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-21 10:37:43,926 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 10:37:43,928 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 10:37:43,929 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 10:37:44,028 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio ListDirectory:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/
+PacifycRead INFO  2021-06-21 10:37:44,029 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  FtpWebRequest [WebRequest]
+PacifycRead INFO  2021-06-21 10:37:44,030 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponse()
+PacifycRead INFO  2021-06-21 10:37:44,291 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponseStream()
+PacifycRead INFO  2021-06-21 10:37:44,293 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  StreamReader()
+PacifycRead INFO  2021-06-21 10:37:44,293 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  ReadToEnd()
+PacifycRead INFO  2021-06-21 10:37:44,379 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ListDirectory FTP.
+PacifycRead INFO  2021-06-21 10:37:44,379 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 10:37:44,380 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 10:37:44,384 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de FTP Atis - Facturas
+PacifycRead INFO  2021-06-21 10:37:49,995 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210603_09_20210603095235.txt
+PacifycRead INFO  2021-06-21 10:37:49,996 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 10:37:50,081 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 10:37:50,671 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210603_09_20210603095235.txt [ Nro Filas = 339 ]
+PacifycRead INFO  2021-06-21 10:37:50,672 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 10:37:51,825 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210604_10_20210604100815.txt
+PacifycRead INFO  2021-06-21 10:37:51,825 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 10:37:51,899 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 10:37:52,617 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210604_10_20210604100815.txt [ Nro Filas = 249 ]
+PacifycRead INFO  2021-06-21 10:37:52,617 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 10:38:01,450 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Atis
+PacifycRead INFO  2021-06-21 10:38:01,461 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-21 10:38:01,476 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 10:38:01,477 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-21 10:38:01,479 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-21 10:38:01,479 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 10:38:01,493 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 10:38:01,494 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Insertar Documentos Validados 
+PacifycRead INFO  2021-06-21 10:38:01,688 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-21 12:02:41,478 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Atis.
+PacifycRead INFO  2021-06-21 12:02:41,495 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-21 12:02:41,705 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 12:02:41,706 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-21 12:02:41,706 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 12:02:41,709 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 12:02:41,709 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 12:02:41,805 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio ListDirectory:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/
+PacifycRead INFO  2021-06-21 12:02:41,806 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  FtpWebRequest [WebRequest]
+PacifycRead INFO  2021-06-21 12:02:41,807 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponse()
+PacifycRead INFO  2021-06-21 12:02:42,043 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponseStream()
+PacifycRead INFO  2021-06-21 12:02:42,045 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  StreamReader()
+PacifycRead INFO  2021-06-21 12:02:42,046 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  ReadToEnd()
+PacifycRead INFO  2021-06-21 12:02:42,125 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ListDirectory FTP.
+PacifycRead INFO  2021-06-21 12:02:42,126 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 12:02:42,126 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 12:02:42,129 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de FTP Atis - Facturas
+PacifycRead INFO  2021-06-21 12:02:44,406 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210603_09_20210603095235.txt
+PacifycRead INFO  2021-06-21 12:02:44,406 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 12:02:44,509 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 12:02:45,054 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210603_09_20210603095235.txt [ Nro Filas = 339 ]
+PacifycRead INFO  2021-06-21 12:02:45,054 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 12:04:06,528 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210604_10_20210604100815.txt
+PacifycRead INFO  2021-06-21 12:04:06,529 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 12:04:06,635 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 12:04:07,212 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210604_10_20210604100815.txt [ Nro Filas = 249 ]
+PacifycRead INFO  2021-06-21 12:04:07,212 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 12:04:22,681 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Atis
+PacifycRead INFO  2021-06-21 12:04:22,693 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-21 12:04:22,745 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 12:04:22,746 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-21 12:04:22,748 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-21 12:04:22,748 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 12:04:22,821 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 12:04:22,822 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Insertar Documentos Validados 
+PacifycRead INFO  2021-06-21 12:04:23,246 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-21 12:17:45,509 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Atis.
+PacifycRead INFO  2021-06-21 12:17:45,527 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-21 12:17:45,707 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 12:17:45,708 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-21 12:17:45,708 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 12:17:45,711 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 12:17:45,711 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener parámetros para lectura
+PacifycRead INFO  2021-06-21 12:17:45,817 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio ListDirectory:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/
+PacifycRead INFO  2021-06-21 12:17:45,818 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  FtpWebRequest [WebRequest]
+PacifycRead INFO  2021-06-21 12:17:45,819 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponse()
+PacifycRead INFO  2021-06-21 12:17:46,090 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  GetResponseStream()
+PacifycRead INFO  2021-06-21 12:17:46,092 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  StreamReader()
+PacifycRead INFO  2021-06-21 12:17:46,093 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP >  ReadToEnd()
+PacifycRead INFO  2021-06-21 12:17:46,182 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ListDirectory FTP.
+PacifycRead INFO  2021-06-21 12:17:46,182 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 12:17:46,183 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin: Obtener norma para las facturas de Atis
+PacifycRead INFO  2021-06-21 12:17:46,186 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de FTP Atis - Facturas
+PacifycRead INFO  2021-06-21 12:17:51,097 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210603_09_20210603095235.txt
+PacifycRead INFO  2021-06-21 12:17:51,097 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 12:17:51,200 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 12:17:51,740 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210603_09_20210603095235.txt [ Nro Filas = 339 ]
+PacifycRead INFO  2021-06-21 12:17:51,741 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 12:17:53,186 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio DownloadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin, Directory:/FEC_pruebas/atis/atis_gfiscal/I/, FileName:FACT_20210604_10_20210604100815.txt
+PacifycRead INFO  2021-06-21 12:17:53,186 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP.  GetResponse()
+PacifycRead INFO  2021-06-21 12:17:53,271 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. GetResponseStream()
+PacifycRead INFO  2021-06-21 12:17:53,877 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: FTP. Archivo = FACT_20210604_10_20210604100815.txt [ Nro Filas = 249 ]
+PacifycRead INFO  2021-06-21 12:17:53,878 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin DownloadFile FTP.
+PacifycRead INFO  2021-06-21 12:18:02,181 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Atis
+PacifycRead INFO  2021-06-21 12:18:02,193 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-21 12:18:02,219 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-21 12:18:02,220 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-21 12:18:02,222 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-21 12:18:02,222 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 12:18:02,238 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 12:18:02,238 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Insertar Documentos Validados 
+PacifycRead INFO  2021-06-21 12:18:02,443 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-21 12:18:49,691 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio UploadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin
+PacifycRead INFO  2021-06-21 12:18:49,771 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-21 12:18:49,772 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-21 12:18:49,844 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin UploadFile FTP.
+PacifycRead INFO  2021-06-21 12:18:49,844 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio :  Notificación de envio  GFiscal 
+PacifycRead INFO  2021-06-21 12:18:49,846 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-21 12:18:49,847 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-21 12:18:49,848 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-21 12:18:49,849 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-21 12:18:49,849 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-21 12:18:49,850 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-21 12:18:49,850 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-21 12:18:49,851 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-21 12:18:49,851 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-21 12:18:49,851 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-21 12:18:49,852 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-21 12:18:49,852 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-21 12:18:52,990 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-21 12:18:53,004 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-21 12:18:53,004 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio :  Mover archivos procesados a ruta PROC 
+PacifycRead INFO  2021-06-21 12:18:53,005 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-21 12:18:53,005 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-21 12:18:53,005 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-21 12:18:53,006 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-21 12:18:53,006 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-21 12:18:53,007 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-21 12:18:53,008 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-21 12:18:53,008 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-21 12:18:53,009 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-21 12:18:53,009 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-21 12:18:53,009 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-21 12:18:53,010 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-21 12:18:58,723 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Mover archivos procesados a ruta PROC 
+PacifycRead INFO  2021-06-21 12:19:00,059 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin : Procesar documentos de FTP Atis
+PacifycRead INFO  2021-06-21 12:19:00,060 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin del Proceso: Lectura Pacyfic.
