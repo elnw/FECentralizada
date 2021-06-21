@@ -206,7 +206,7 @@ namespace TM.FECentralizada.Data
             return invoiceDetails;
         }
 
-        public static List<CreditNoteHeader> ReadCreditNoteHeaders()
+        public static List<CreditNoteHeader> ReadCreditNoteHeaders(DateTime timestamp, ref bool debeRepetir)
         {
             List<CreditNoteHeader> creditNoteHeaders = new List<CreditNoteHeader>();
             CreditNoteHeader creditNoteHeader;
@@ -277,7 +277,15 @@ namespace TM.FECentralizada.Data
                                     tipoDocRefPrincipal = dr["tipoDocRefPrincipal"].ToString(),
                                     numeroDocRefPrincipal = dr["numeroDocRefPrincipal"].ToString(),
                                     lugarDestino = dr["lugardestino"].ToString(),
-                                    TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString()
+                                    TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
+                                    codSistema = "02",
+                                    codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    origen = "MA",
+                                    estado = "PE",
+                                    fechaRegistro = timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT),
+                                    totalRetencion = dr["TOTALRETENCION"].ToString(),
+                                    porcentajeRetencion = dr["PORCENTAJERETENCION"].ToString()
                                 };
 
                                 creditNoteHeaders.Add(creditNoteHeader);
@@ -299,7 +307,7 @@ namespace TM.FECentralizada.Data
             return creditNoteHeaders;
         }
 
-        public static List<CreditNoteDetail> ReadCreditNoteDetails()
+        public static List<CreditNoteDetail> ReadCreditNoteDetails(DateTime timestamp)
         {
             List<CreditNoteDetail> creditNoteDetails = new List<CreditNoteDetail>();
             CreditNoteDetail creditNoteDetail;
@@ -353,7 +361,10 @@ namespace TM.FECentralizada.Data
                                     numeroExpediente = dr["numeroExpediente"].ToString(),
                                     codigoUnidadEjecutora = dr["codigoUnidadEjecutora"].ToString(),
                                     numeroContrato = dr["numeroContrato"].ToString(),
-                                    numeroProcesoSeleccion = dr["numeroProcesoSeleccion"].ToString()
+                                    numeroProcesoSeleccion = dr["numeroProcesoSeleccion"].ToString(),
+                                    codSistema = "02",
+                                    codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
                                 };
 
                                 creditNoteDetails.Add(creditNoteDetail);

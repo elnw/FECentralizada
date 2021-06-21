@@ -210,7 +210,19 @@ namespace TM.FECentralizada.Business
             }
 
         }
-        
+
+        public static void UpdateInvoiceState(List<ResponseFile> responseFiles)
+        {
+            try
+            {
+                Data.Common.BulkInsertListToTable(responseFiles, "Tmp_Factura_respuesta");
+                Data.Common.UpdateInvoiceState();
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
         
 
     }
