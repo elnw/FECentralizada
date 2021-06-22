@@ -223,7 +223,20 @@ namespace TM.FECentralizada.Business
                 Tools.Logging.Error(ex.Message);
             }
         }
-        
+
+        public static void UpdateCreditNoteState(List<ResponseFile> responseFiles)
+        {
+            try
+            {
+                Data.Common.BulkInsertListToTable(responseFiles, "Tmp_NotaCredito_respuesta");
+                Data.Common.UpdateCreditNoteState();
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
 
     }
 }

@@ -21,27 +21,27 @@ namespace TM.FECentralizada.Entities.Pacifyc
         public string numeroDocumentoReferencia_1 { get; set; }
         public string tipoReferencia_2 { get; set; }
         public string numeroDocumentoReferencia_2 { get; set; }
-        public double totalVVNetoOpNoGravada { get; set; }
-        public double conceptoVVNetoOpNoGravada { get; set; }
-        public double totalVVNetoOpExoneradas { get; set; }
-        public double conceptoVVNetoOpExoneradas { get; set; }
-        public double totalVVNetoOpGratuitas { get; set; }
-        public double conceptoVVNetoOpGratuitas { get; set; }
-        public double totalVVNetoExportacion { get; set; }
-        public double conceptoVVExportacion { get; set; }
-        public double totalDescuentos { get; set; }
-        public double totalIgv { get; set; }
-        public double totalVenta { get; set; }
+        public string totalVVNetoOpNoGravada { get; set; }
+        public string conceptoVVNetoOpNoGravada { get; set; }
+        public string totalVVNetoOpExoneradas { get; set; }
+        public string conceptoVVNetoOpExoneradas { get; set; }
+        public string totalVVNetoOpGratuitas { get; set; }
+        public string conceptoVVNetoOpGratuitas { get; set; }
+        public string totalVVNetoExportacion { get; set; }
+        public string conceptoVVExportacion { get; set; }
+        public string totalDescuentos { get; set; }
+        public string totalIgv { get; set; }
+        public string totalVenta { get; set; }
         public string leyendas { get; set; }
-        public double porcentajeDetraccion { get; set; }
-        public double totalDetraccion { get; set; }
+        public string porcentajeDetraccion { get; set; }
+        public string totalDetraccion { get; set; }
         public string descripcionDetraccion { get; set; }
-        public string CamposAdicionales { get; set; }
+        public string camposAdicionales { get; set; }
         public string codigoEstablecimientoSunat { get; set; }
-        public double montoTotalImpuestos { get; set; }
-        public double descuentosGlobales { get; set; }
-        public double sumImpuestosOpGratuitas { get; set; }
-        public double monRedImportTotal { get; set; }
+        public string montoTotalImpuestos { get; set; }
+        public string descuentosGlobales { get; set; }
+        public string sumImpuestosOpGratuitas { get; set; }
+        public string monRedImportTotal { get; set; }
         public string codigoSerieNumeroAfectado { get; set; }
         public string serieNumeroAfectado { get; set; }
         public string correoAdquiriente { get; set; }
@@ -49,7 +49,7 @@ namespace TM.FECentralizada.Entities.Pacifyc
         public string tipoDocRefPrincipal { get; set; }
         public string numeroDocRefPrincipal { get; set; }
         public string lugarDestino { get; set; }
-        public string TOTALVALORVENTANETOOPGRAVADAS { get; set; }
+        public string totalvalorventanetoopgravadas { get; set; }
         public string origen { get; set; }
         public string estado { get; set; }
         public string codSistema { get; set; }
@@ -58,5 +58,9 @@ namespace TM.FECentralizada.Entities.Pacifyc
         public string totalRetencion { get; set; }
         public string porcentajeRetencion { get; set; }
         public string fechaRegistro { get; set; }
+        public string fechaRespuestaLegado { get; set; }
+        public string estadoSunat { get; set; }
+        public string codigoSunat { get; set; }
+        public string mensajeSunat { get; set; }
     }
 }
