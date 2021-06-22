@@ -161,10 +161,13 @@ namespace TM.FECentralizada.Data
                         //assign Destination table name  
                         objbulk.DestinationTableName = tableName;
 
-
+                        //int i = 0;
                         foreach (var property in typeof(T).GetMembers().Where(x => x.MemberType == System.Reflection.MemberTypes.Property).ToList())
                         {
+                            ///if (i == 27) break;
                             objbulk.ColumnMappings.Add(property.Name, property.Name);
+                            //i++;
+                            
                         }
 
                         connection.Open();
@@ -172,7 +175,7 @@ namespace TM.FECentralizada.Data
                         objbulk.WriteToServer(Tools.Common.ConvertToDataTable(list));
                     }
                 }
-            }catch(Exception ex)
+            }catch(SqlException ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
@@ -185,7 +188,7 @@ namespace TM.FECentralizada.Data
             {
                 using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
                 {
-                    using(SqlCommand cmd = new SqlCommand("update documento_factura set nombreArchivoAlignet = @p1, fechaEnvio = @p2;", connection))
+                    using(SqlCommand cmd = new SqlCommand("update factura_cabecera set nombreArchivoAlignet = @p1, fechaEnvio = @p2;", connection))
                     {
                         connection.Open();
                         cmd.CommandType = CommandType.Text;
@@ -234,21 +237,57 @@ namespace TM.FECentralizada.Data
             }
         }
 
-        public static void UpdateBillState()
-        {
+        public static void UpdateCreditNoteState()
+ {
             string MessageResponse;
             try
             {
                 using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
                 {
                     connection.Open();
-                    using (SqlCommand cmd = new SqlCommand("Sp_Actualizar_Estado_Boletas", connection))
+                  
+                    using (SqlCommand cmd = new SqlCommand("Sp_Actualizar_Estado_NotasCredito", connection))
+
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.Add(new SqlParameter("@po_mensaje_respuesta", SqlDbType.VarChar) { Value = "", Direction = ParameterDirection.Output, Size = 3000 });
 
                         cmd.ExecuteNonQuery();
+
+                        MessageResponse = cmd.Parameters["@po_mensaje_respuesta"].Value.ToString();
+
+
+                        Tools.Logging.Info(string.Format("GetParametersByKey > Respuesta : [ Mensaje = {0} ] ", MessageResponse));
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
+             public static void UpdateBillState()
+ {
+            string MessageResponse;
+            try
+            {
+                using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("Sp_Actualizar_Estado_Boletas", connection))
+
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@po_mensaje_respuesta", SqlDbType.VarChar) { Value = "", Direction = ParameterDirection.Output, Size = 3000 });
+
+                        cmd.ExecuteNonQuery();
+
 
                         MessageResponse = cmd.Parameters["@po_mensaje_respuesta"].Value.ToString();
 

@@ -17,7 +17,7 @@ namespace TM.FECentralizada.Cms.Read
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new CmsRead()
             };
             ServiceBase.Run(ServicesToRun);
         }

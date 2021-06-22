@@ -1,6 +1,6 @@
 ﻿namespace TM.FECentralizada.Cms.Response
 {
-    partial class Service1
+    partial class CmsResponse
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

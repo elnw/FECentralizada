@@ -28,5 +28,8 @@ namespace TM.FECentralizada.Entities.Pacifyc
         public string numeroExpediente { get; set; }
         public string codigoUnidadEjecutora { get; set; }
         public string numeroContrato { get; set; }
+        public string codSistema { get; set; }
+        public string codigoCarga { get; set; }
+        public string nombreArchivo { get; set; }
     }
 }

@@ -154,5 +154,83 @@ namespace TM.FECentralizada.Pacifyc.Response
 
         }
 
+        private void CreditNote(List<Parameters> oListParameters)
+        {
+            ServiceConfig serviceConfig;
+            Mail mailConfig;
+            FileServer fileServerConfig;
+
+            DateTime timestamp = DateTime.Now;
+            List<string> messagesResponse;
+            List<ResponseFile> responseFiles;
+            int auditId;
+
+            Tools.Logging.Info("Inicio: Obtener parámetros para lectura");
+
+            Parameters configParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.KEY_CONFIG);
+            serviceConfig = Business.Common.GetParameterDeserialized<ServiceConfig>(configParameter);
+            if (configParameter != null)
+            {
+                Parameters ftpParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG);
+
+                Tools.Logging.Info("Inicio: Descargar archivos de respuesta de gfiscal - Pacyfic Response");
+                if (ftpParameter != null)
+                {
+                    fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
+
+                    messagesResponse = new List<string>();
+                    responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse);
+
+                    if (responseFiles != null && responseFiles.Count > 0)
+                    {
+                        Tools.Logging.Info("Inicio: Insertar auditoria - Pacyfic Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.RETORNO_GFISCAL, responseFiles.Count, 1, serviceConfig.Norm);
+
+                        Tools.Logging.Info("Inicio:  Obtener configuración de email - Pacyfic Response");
+                        Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
+                        mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
+
+                        if (mailConfig != null)
+                        {
+                            if (messagesResponse.Count > 0)
+                            {
+                                Business.Common.SendFileNotification(mailConfig, messagesResponse);
+                            }
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.RETORNO_GFISCAL, 1);
+
+                            Tools.Logging.Info("Inicio: Actualizar documentos en FECentralizada - Pacyfic Response");
+
+                            Business.Common.UpdateCreditNoteState(responseFiles);
+
+                            Tools.Logging.Info("Inicio: Actualizar auditoria - Pacyfic Response");
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_LEGADO, 1);
+
+
+                        }
+                        else
+                        {
+                            Tools.Logging.Error("No se encontró el parámetro de configuracion MAILCONFIG - Pacyfic Response");
+                        }
+
+
+
+
+                    }
+                    else
+                    {
+                        Tools.Logging.Info("No se encontraron archivos por procesar - Pacyfic Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, 0, 1, 193);
+                    }
+
+
+                }
+
+            }
+            else
+            {
+                Tools.Logging.Error("No se encontró el parámetro de configuracion KEYCONFIG - Pacyfic Response");
+            }
+        }
+
     }
 }
