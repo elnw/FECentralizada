@@ -127,6 +127,49 @@ namespace TM.FECentralizada.Atis.Response
 
                             Tools.Logging.Info("Inicio: Envio archivo respuesta a Legado - Atis Response");
 
+                            Tools.Logging.Info("Inicio : Obtener Parámetros de la Estructura del Archivo.");
+                            Parameters SpecFileOut = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_SPEC_OUT);
+                            Tools.Logging.Info("Fin : Obtener Parámetros  de la Estructura del Archivo.");
+
+                            if (SpecFileOut != null)
+                            {
+                                var SpecBody = SpecFileOut.ValueJson.Split('|');
+
+                                Tools.Logging.Info($"Inicio : Armado de archivo de respuesta a Legado - Atis Response");
+
+                                List<string> ListDataReport = new List<string>();
+                                /*foreach (var item in ListCharges)
+                                {
+                                    String a = "";
+                                    var row = @"" +
+                                    item.System.PadRight(int.Parse(SpecBody[0]), ' ') + "|" +
+                                    item.Entity.PadRight(int.Parse(SpecBody[1]), ' ') + "|" +
+                                    item.EntityDescription.PadRight(int.Parse(SpecBody[2]), ' ') + "|" +
+                                    item.OutPut.PadRight(int.Parse(SpecBody[3]), ' ') + "|" +
+                                    item.ServiceDescription.PadRight(int.Parse(SpecBody[4]), ' ') + "|" +
+                                    item.RegistrationDate.PadRight(int.Parse(SpecBody[5]), ' ') + "|" +
+                                    item.SubscriberNumber.PadRight(int.Parse(SpecBody[6]), ' ') + "|" +
+                                    item.FinancialAccount.PadRight(int.Parse(SpecBody[7]), ' ') + "|" +
+                                    item.AccountCode.PadRight(int.Parse(SpecBody[8]), ' ') + "|" +
+                                    item.CustomerCode.PadRight(int.Parse(SpecBody[9]), ' ') + "|" +
+                                    a.PadRight(int.Parse(SpecBody[9]), ' ') + "|" +
+                                    item.InvoiceNumber.PadRight(int.Parse(SpecBody[11]), ' ') + "|" +
+                                    item.BillingCycle.PadRight(int.Parse(SpecBody[12]), ' ') + "|" +
+                                    item.Coin.PadRight(int.Parse(SpecBody[13]), ' ') + "|" +
+                                    item.Amount.PadLeft(int.Parse(SpecBody[14]), ' ') + "|" +
+                                    item.ExpirationDate.PadRight(int.Parse(SpecBody[15]), ' ') + "|" +
+                                    item.DateIssue.PadRight(int.Parse(SpecBody[16]), ' ');
+
+                                    ListDataReport.Add(row);
+                                }*/
+
+                                Tools.Logging.Info($"Fin : Armado de archivo de respuesta a Legado - Atis Response");
+
+                            }
+                            else {
+                                Tools.Logging.Error("No se encontró el parámetro de configuracion SPEC_OUT - Atis Response");
+                            }
+
                             Tools.Logging.Info("Fin: Envio archivo respuesta a Legado - Atis Response");
 
                             Tools.Logging.Info("Inicio: Actualizar auditoria - Atis Response");

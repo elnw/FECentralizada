@@ -32,6 +32,7 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.exe
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.ProjectInstaller.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.SapResponse.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Response\obj\Debug\TM.FECentralizada.Sap.Response.csproj.GenerateResource.cache

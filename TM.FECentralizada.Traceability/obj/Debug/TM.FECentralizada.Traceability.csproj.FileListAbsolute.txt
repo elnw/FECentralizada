@@ -32,6 +32,7 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.exe
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.ProjectInstaller.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.TraceabilityService.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Traceability\obj\Debug\TM.FECentralizada.Traceability.csproj.GenerateResource.cache
