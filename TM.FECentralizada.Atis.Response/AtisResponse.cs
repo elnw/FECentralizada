@@ -20,6 +20,11 @@ namespace TM.FECentralizada.Atis.Response
             InitializeComponent();
         }
 
+        public void TestProject()
+        {
+            Procedure();
+        }
+
         protected override void OnStart(string[] args)
         {
             try
@@ -43,78 +48,117 @@ namespace TM.FECentralizada.Atis.Response
 
         private void Procedure()
         {
-            try
+            Tools.Logging.Info("Inicio del Proceso: Respuesta Atis.");
+
+            Tools.Logging.Info("Inicio : Obtener Parámetros");
+            List<Parameters> ParamsResponse = TM.FECentralizada.Business.Common.GetParametersByKey(new Parameters() { Domain = Tools.Constants.AtisResponse, KeyDomain = "", KeyParam = "" });
+            Tools.Logging.Info("Fin : Obtener Parámetros");
+
+            if (ParamsResponse != null && ParamsResponse.Any())
             {
-                Tools.Logging.Info("Inicio del Proceso: Lectura Atis.");
+                List<Parameters> ParametersInvoce = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisResponse_Invoice.ToUpper())).ToList();
+                List<Parameters> ParametersCreditNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisResponse_CreditNote.ToUpper())).ToList();
+                List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisResponse_DebitNote.ToUpper())).ToList();
 
-                Tools.Logging.Info("Inicio : Obtener Parámetros");
-                //Método que Obtendrá los Parámetros.
-                List<Parameters> ParamsResponse = TM.FECentralizada.Business.Common.GetParametersByKey(new Parameters() { Domain = Tools.Constants.IsisRead });
-                Tools.Logging.Info("Fin : Obtener Parámetros");
+                Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
 
-                if (ParamsResponse != null && ParamsResponse.Any())
-                {
-                    List<Parameters> ParametersInvoce = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.IsisRead_Bill.ToUpper())).ToList();
-                    List<Parameters> ParametersBill = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.IsisRead_Bill.ToUpper())).ToList();
-                    List<Parameters> ParametersCreditNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.IsisRead_Bill.ToUpper())).ToList();
-                    List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.IsisRead_Bill.ToUpper())).ToList();
+                Invoice(ParametersInvoce);
+                //parallel invoke
 
-                    Tools.Logging.Info("Inicio : Procesar documentos de BD Isis");
-                    Parallel.Invoke(
-                               () => Invoice(ParametersInvoce),
-                               () => Bill(ParametersBill),
-                               () => CreditNote(ParametersCreditNote),
-                               () => DebitNote(ParametersDebitNote)
-                        );
-                    Tools.Logging.Info("Fin : Procesar documentos de BD Isis");
 
-                    //Obtengo la Configuración Intervalo de Tiempo
-                    var oConfiguration = ParamsResponse.Find(x => x.KeyParam.Equals("TimerInterval"));
-                    var Minutes = oConfiguration.Value;
-                    oTimer.Interval = Tools.Common.ConvertMinutesToMilliseconds(int.Parse(Minutes));
-                    oTimer.Start();
-                    oTimer.AutoReset = true;
-                }
-                else
-                {
-                    Tools.Logging.Error("Ocurrió un error al obtener la configuración para Isis.");
-                }
-                Tools.Logging.Info("Fin del Proceso: Lectura Isis.");
             }
-            catch (Exception ex)
+            else
             {
-                Tools.Logging.Error(ex.Message);
+                Tools.Logging.Error("Ocurrió un error al obtener la configuración para pacyfic.");
             }
+            Tools.Logging.Info("Fin del Proceso: Lectura Pacyfic.");
         }
 
         private void Invoice(List<Parameters> oListParameters)
         {
-            //
-            Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Facturas");
-            var ListInvoceHeader = Business.Isis.GetInvoceHeader();
-            var ListInvoceDetail = Business.Isis.GetInvoceDetail();
+
+            ServiceConfig serviceConfig;
+            Mail mailConfig;
+            FileServer fileServerConfig;
+
+            DateTime timestamp = DateTime.Now;
+            List<string> messagesResponse;
+            List<ResponseFile> responseFiles;
+            int auditId;
+
+            Tools.Logging.Info("Inicio: Obtener parámetros para lectura");
+
+            Parameters configParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.KEY_CONFIG);
+            serviceConfig = Business.Common.GetParameterDeserialized<ServiceConfig>(configParameter);
+            if (configParameter != null)
+            {
+                Parameters ftpParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG_INPUT);
+
+                Tools.Logging.Info("Inicio: Descargar archivos de respuesta de gfiscal - Pacyfic Response");
+                if (ftpParameter != null)
+                {
+                    fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
+
+                    messagesResponse = new List<string>();
+                    responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse, "RPTA_FACT_03");
 
 
-            Tools.Logging.Info("Inicio : Registrar Auditoria");
+
+                    if (responseFiles != null && responseFiles.Count > 0)
+                    {
+                        Tools.Logging.Info("Inicio: Insertar auditoria - Atis Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, responseFiles.Count, 1, serviceConfig.Norm);
+
+                        Tools.Logging.Info("Inicio:  Obtener configuración de email - Atis Response");
+                        Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
+                        mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
+
+                        if (mailConfig != null)
+                        {
+                            if (messagesResponse.Count > 0)
+                            {
+                                Business.Common.SendFileNotification(mailConfig, messagesResponse);
+                            }
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.RETORNO_GFISCAL, 1);
+
+                            Tools.Logging.Info("Inicio: Actualizar documentos en FECentralizada - Atis Response");
+
+                            Business.Common.UpdateInvoiceState(responseFiles);
+
+                            Tools.Logging.Info("Inicio: Envio archivo respuesta a Legado - Atis Response");
+
+                            Tools.Logging.Info("Fin: Envio archivo respuesta a Legado - Atis Response");
+
+                            Tools.Logging.Info("Inicio: Actualizar auditoria - Atis Response");
+                            Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_LEGADO, 1);
 
 
-            Tools.Logging.Info("Inicio : Validar Documentos ");
+                        }
+                        else
+                        {
+                            Tools.Logging.Error("No se encontró el parámetro de configuracion MAILCONFIG - Atis Response");
+                        }
 
-            Tools.Logging.Info("Inicio : Notificación de Validación");
 
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
 
-            Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
 
-            Tools.Logging.Info("Inicio : Valido Documentos insertados ");
+                    }
+                    else
+                    {
+                        Tools.Logging.Info("No se encontraron archivos por procesar - Atis Response");
+                        auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 2, Tools.Constants.NO_LEIDO, 0, 1, 193);
+                    }
 
-            Tools.Logging.Info("Inicio : Lees  Documentos insertados ");
 
-            Tools.Logging.Info("Inicio : enviar GFiscal ");
+                }
 
-            Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
+            }
+            else
+            {
+                Tools.Logging.Error("No se encontró el parámetro de configuracion KEYCONFIG - Atis Response");
+            }
 
-            Tools.Logging.Info("Inicio : Actualizo Auditoria");
+
 
         }
         private void Bill(List<Parameters> oListParameters)
