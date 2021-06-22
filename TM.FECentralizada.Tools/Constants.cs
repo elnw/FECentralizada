@@ -184,6 +184,14 @@
 
         #endregion
 
+        #region IsisRespuesta
+        public const string IsisResponse = "Isis_Response";
+        public const string IsisResponse_Invoice = "Factura";
+        public const string IsisResponse_CreditNote = "NotaCredito";
+        public const string IsisResponse_DebitNote = "NotaDebito";
+
+        #endregion
+
         #region PacyficLectura
         public const string PacyficRead = "Pacyfic_Lectura";
         public const string PacyficRead_Invoice = "Factura";
