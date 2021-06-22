@@ -21,3 +21,4 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.AssemblyReference.cache

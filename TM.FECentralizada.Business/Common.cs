@@ -223,7 +223,19 @@ namespace TM.FECentralizada.Business
                 Tools.Logging.Error(ex.Message);
             }
         }
-        
+
+        public static void UpdateBillState(List<ResponseFile> responseFiles)
+        {
+            try
+            {
+                Data.Common.BulkInsertListToTable(responseFiles, "Tmp_Boleta_respuesta");
+                Data.Common.UpdateBillState();
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
 
     }
 }
