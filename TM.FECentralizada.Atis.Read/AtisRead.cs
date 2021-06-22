@@ -208,7 +208,7 @@ namespace TM.FECentralizada.Atis.Read
                                     Tools.Logging.Info("Inicio : enviar GFiscal ");
 
                                     Parameters fileParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG_OUTPUT);
-                                    fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(fileParameter);
+                                    FileServer fileServerConfigOut = Business.Common.GetParameterDeserialized<FileServer>(fileParameter);
 
                                     if (fileServerConfig != null)
                                     {
@@ -222,7 +222,7 @@ namespace TM.FECentralizada.Atis.Read
                                         {
                                             //resultPath = Business.Pacifyc.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
                                         }
-                                        Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
+                                        Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
                                         Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
                                         Business.Common.SendFileNotification(mailConfig, $"Se envió correctamenteel documento: {System.IO.Path.GetFileName(resultPath)} a gfiscal");
@@ -231,17 +231,11 @@ namespace TM.FECentralizada.Atis.Read
                                         Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
 
                                         Tools.Logging.Info("Inicio :  Mover archivos procesados a ruta PROC ");
-                                        /*bool moveDirectoryBad = Tools.FileServer.UploadFile(oFileServerInput.Host, oFileServerInput.Port, oFileServerInput.User, oFileServerInput.Password, FtpDirBad, oFileServerInput.FileName, "./Excel/" + oFileServerInput.FileName);
-
-                                        if (moveDirectoryBad)
-                                        {
-                                            Tools.FileServer.DeleteFile(oFileServerInput.Host, oFileServerInput.Port, oFileServerInput.User, oFileServerInput.Password, oFileServerInput.Directory, oFileServerInput.FileName);
-                                        }
-                                        List<string> strFiless = Directory.GetFiles("./Excel", "*", SearchOption.AllDirectories).ToList();
-                                        foreach (string fichero in strFiless)
-                                        {
-                                            File.Delete(fichero);
-                                        }*/
+                                        foreach (string file in inputFilesFTP) {
+                                            Tools.FileServer.DownloadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User,fileServerConfig.Password, fileServerConfig.Directory, file, true, System.IO.Path.GetTempPath());
+                                            Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory + "/PROC/", file, System.IO.File.ReadAllBytes(System.IO.Path.GetTempPath()+"/"+ file));
+                                            Tools.FileServer.DeleteFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, file);
+                                        };
                                         Tools.Logging.Info("Inicio : Mover archivos procesados a ruta PROC ");
 
 

@@ -227,7 +227,7 @@
         #endregion
 
         #region AtisRespuesta
-        public const string AtisResponse = "Atis_Response";
+        public const string AtisResponse = "Atis_Respuesta";
         public const string AtisResponse_Invoice = "Factura";
         public const string AtisResponse_CreditNote = "NotaCredito";
         public const string AtisResponse_DebitNote = "NotaDebito";

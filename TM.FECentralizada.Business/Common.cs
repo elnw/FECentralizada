@@ -117,7 +117,7 @@ namespace TM.FECentralizada.Business
             }
         }
 
-        public static List<ResponseFile> DownloadFileOutput(FileServer fileServer, List<string> messages)
+        public static List<ResponseFile> DownloadFileOutput(FileServer fileServer, List<string> messages, String sufix)
         {
             List<string> gfiscalFiles = null;
             List<ResponseFile> responseFiles = null;
@@ -127,7 +127,7 @@ namespace TM.FECentralizada.Business
 
                 if(gfiscalFiles != null)
                 {
-                    gfiscalFiles = gfiscalFiles.Where(x => x.StartsWith("RPTA_FACT_02")).ToList();
+                    gfiscalFiles = gfiscalFiles.Where(x => x.StartsWith(sufix)).ToList();
                 }
                 responseFiles = new List<ResponseFile>(gfiscalFiles.Count);
                 foreach (string file in gfiscalFiles)

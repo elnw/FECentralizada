@@ -96,7 +96,7 @@ namespace TM.FECentralizada.Pacifyc.Response
                     fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
 
                     messagesResponse = new List<string>();
-                    responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse);
+                    responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse, "RPTA_FACT_02");
 
                     
 

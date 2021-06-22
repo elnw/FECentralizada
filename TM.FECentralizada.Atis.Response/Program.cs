@@ -14,12 +14,21 @@ namespace TM.FECentralizada.Atis.Response
         /// </summary>
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new AtisResponse()
-            };
-            ServiceBase.Run(ServicesToRun);
+#if DEBUG
+            AtisResponse pacifycResponse = new AtisResponse();
+            pacifycResponse.TestProject();
+
+
+
+#else
+             Tools.Logging.Configure();
+             ServiceBase[] ServicesToRun;
+             ServicesToRun = new ServiceBase[]
+             {
+                 new PacifycResponse()
+             };
+             ServiceBase.Run(ServicesToRun);
+#endif
         }
     }
 }
