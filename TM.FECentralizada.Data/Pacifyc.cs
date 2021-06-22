@@ -215,9 +215,10 @@ namespace TM.FECentralizada.Data
             {
                 using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
                 {
+                    connection.Open();
                     using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_NCREDITO_CAB", connection))
                     {
-                        connection.Open();
+                        
                         cmd.CommandType = CommandType.StoredProcedure;
                         OracleParameter pmtRefCursor = new OracleParameter("PO_CURSOR", OracleDbType.RefCursor, ParameterDirection.Output);
                         OracleParameter pmtMsjError = new OracleParameter("PO_MENSAJE_RESPUESTA", OracleDbType.Varchar2, ParameterDirection.Output);
@@ -232,8 +233,8 @@ namespace TM.FECentralizada.Data
 
                         OracleDataReader dr = cmd.ExecuteReader();
 
-                        if (dr != null && dr.HasRows)
-                        {
+                       // if (dr != null && dr.HasRows)
+                       // {
                             while (dr.Read())
                             {
                                 creditNoteHeader = new CreditNoteHeader
@@ -250,26 +251,26 @@ namespace TM.FECentralizada.Data
                                     numeroDocumentoReferencia_1 = dr["numeroDocumentoReferencia_1"].ToString(),
                                     tipoReferencia_2 = dr["tipoReferencia_2"].ToString(),
                                     numeroDocumentoReferencia_2 = dr["numeroDocumentoReferencia_2"].ToString(),
-                                    totalVVNetoOpNoGravada = double.Parse(dr["totalVVNetoOpNoGravada"].ToString()),
-                                    conceptoVVNetoOpNoGravada = double.Parse(dr["conceptoVVNetoOpNoGravada"].ToString()),
-                                    totalVVNetoOpExoneradas = double.Parse(dr["totalVVNetoOpExoneradas"].ToString()),
-                                    conceptoVVNetoOpExoneradas = double.Parse(dr["conceptoVVNetoOpExoneradas"].ToString()),
-                                    totalVVNetoOpGratuitas = double.Parse(dr["totalVVNetoOpGratuitas"].ToString()),
-                                    conceptoVVNetoOpGratuitas = double.Parse(dr["conceptoVVNetoOpGratuitas"].ToString()),
-                                    totalVVNetoExportacion = double.Parse(dr["totalVVNetoExportacion"].ToString()),
-                                    conceptoVVExportacion = double.Parse(dr["conceptoVVExportacion"].ToString()),
-                                    totalDescuentos = double.Parse(dr["totalDescuentos"].ToString()),
-                                    totalIgv = double.Parse(dr["totalIgv"].ToString()),
-                                    totalVenta = double.Parse(dr["totalVenta"].ToString()),
+                                    totalVVNetoOpNoGravada = (dr["totalVVNetoOpNoGravada"].ToString()),
+                                    conceptoVVNetoOpNoGravada = (dr["conceptoVVNetoOpNoGravada"].ToString()),
+                                    totalVVNetoOpExoneradas = (dr["totalVVNetoOpExoneradas"].ToString()),
+                                    conceptoVVNetoOpExoneradas = (dr["conceptoVVNetoOpExoneradas"].ToString()),
+                                    totalVVNetoOpGratuitas = (dr["totalVVNetoOpGratuitas"].ToString()),
+                                    conceptoVVNetoOpGratuitas = (dr["conceptoVVNetoOpGratuitas"].ToString()),
+                                    totalVVNetoExportacion = (dr["totalVVNetoExportacion"].ToString()),
+                                    conceptoVVExportacion = (dr["conceptoVVExportacion"].ToString()),
+                                    totalDescuentos = (dr["totalDescuentos"].ToString()),
+                                    totalIgv = (dr["totalIgv"].ToString()),
+                                    totalVenta = (dr["totalVenta"].ToString()),
                                     leyendas = dr["leyendas"].ToString(),
-                                    porcentajeDetraccion = double.Parse(dr["porcentajeDetraccion"].ToString()),
-                                    totalDetraccion = double.Parse(dr["totalDetraccion"].ToString()),
+                                    porcentajeDetraccion = (dr["porcentajeDetraccion"].ToString()),
+                                    totalDetraccion = (dr["totalDetraccion"].ToString()),
                                     descripcionDetraccion = dr["descripcionDetraccion"].ToString(),
                                     codigoEstablecimientoSunat = dr["codigoEstablecimientoSunat"].ToString(),
-                                    montoTotalImpuestos = double.Parse(dr["montoTotalImpuestos"].ToString()),
-                                    descuentosGlobales = double.Parse(dr["descuentosGlobales"].ToString()),
-                                    sumImpuestosOpGratuitas = double.Parse(dr["sumImpuestosOpGratuitas"].ToString()),
-                                    monRedImportTotal = double.Parse(dr["monRedImportTotal"].ToString()),
+                                    montoTotalImpuestos = (dr["montoTotalImpuestos"].ToString()),
+                                    descuentosGlobales = (dr["descuentosGlobales"].ToString()),
+                                    sumImpuestosOpGratuitas = (dr["sumImpuestosOpGratuitas"].ToString()),
+                                    monRedImportTotal = (dr["monRedImportTotal"].ToString()),
                                     codigoSerieNumeroAfectado = dr["codigoSerieNumeroAfectado"].ToString(),
                                     serieNumeroAfectado = dr["serieNumeroAfectado"].ToString(),
                                     correoAdquiriente = dr["correoAdquiriente"].ToString(),
@@ -277,7 +278,7 @@ namespace TM.FECentralizada.Data
                                     tipoDocRefPrincipal = dr["tipoDocRefPrincipal"].ToString(),
                                     numeroDocRefPrincipal = dr["numeroDocRefPrincipal"].ToString(),
                                     lugarDestino = dr["lugardestino"].ToString(),
-                                    TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
+                                    totalvalorventanetoopgravadas = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
                                     codSistema = "02",
                                     codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
                                     nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
@@ -294,7 +295,7 @@ namespace TM.FECentralizada.Data
                                 Tools.Logging.Info(string.Format("Fin ReadConfiguration = codeResponse:{0}, messageResponse:{1}", ResponseCode, ResponseMessage));
 
                             }
-                        }
+                      //  }
 
 
                     }
@@ -316,7 +317,7 @@ namespace TM.FECentralizada.Data
             {
                 using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
                 {
-                    using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_NDEBITO_DET", connection))
+                    using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_NCREDITO_DET", connection))
                     {
                         connection.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -387,7 +388,7 @@ namespace TM.FECentralizada.Data
             return creditNoteDetails;
         }
 
-        public static List<DebitNoteHeader> ReadDebitNoteHeader()
+        public static List<DebitNoteHeader> ReadDebitNoteHeader(DateTime timestamp, ref bool debeRepetir)
         {
             List<DebitNoteHeader> debitNoteHeaders = new List<DebitNoteHeader>();
             DebitNoteHeader debitNoteHeader;
@@ -427,7 +428,7 @@ namespace TM.FECentralizada.Data
                                     tipoDocumentoAdquiriente = dr["tipoDocumentoAdquiriente"].ToString(),
                                     numeroDocumentoAdquiriente = dr["numeroDocumentoAdquiriente"].ToString(),
                                     razonSocialAdquiriente = dr["razonSocialAdquiriente"].ToString(),
-                                    tipoReferencia_1 = dr["tipoReferencia_1"].ToString(),
+                                    tipoReferencia_1 = dr["tipoReferencia_1"].ToString().Trim(),
                                     numeroDocumentoReferencia_1 = dr["numeroDocumentoReferencia_1"].ToString(),
                                     tipoReferencia_2 = dr["tipoReferencia_2"].ToString(),
                                     numeroDocumentoReferencia_2 = dr["numeroDocumentoReferencia_2"].ToString(),
@@ -456,7 +457,15 @@ namespace TM.FECentralizada.Data
                                     motivoDocumento = dr["motivoDocumento"].ToString(),
                                     tipoDocRefPrincipal = dr["tipoDocRefPrincipal"].ToString(),
                                     numeroDocRefPrincipal = dr["numeroDocRefPrincipal"].ToString(),
-                                    TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString()
+                                    totalvalorventanetoopgravadas = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
+                                    codSistema = "02",
+                                    codigoCarga = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    nombreArchivo = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    origen = "MA",
+                                    estado = "PE",
+                                    fechaRegistro = timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT),
+                                    totalRetencion = dr["TOTALRETENCION"].ToString(),
+                                    porcentajeRetencion = dr["PORCENTAJERETENCION"].ToString()
                                 };
 
                                 debitNoteHeaders.Add(debitNoteHeader);
@@ -474,11 +483,12 @@ namespace TM.FECentralizada.Data
             catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
+                debeRepetir = true;
             }
             return debitNoteHeaders;
         }
 
-        public static List<DebitNoteDetail> ReadDebitNoteDetails()
+        public static List<DebitNoteDetail> ReadDebitNoteDetails(DateTime timestamp)
         {
             List<DebitNoteDetail> debitNoteDetails = new List<DebitNoteDetail>();
             DebitNoteDetail debitNoteDetail;
@@ -529,9 +539,12 @@ namespace TM.FECentralizada.Data
                                     importeUnitarioConImpuesto = dr["importeUnitarioConImpuesto"].ToString(),
                                     numeroExpediente = dr["numeroExpediente"].ToString(),
                                     codigoUnidadEjecutora = dr["codigoUnidadEjecutora"].ToString(),
-                                    numeroContrato = dr["numeroContrato"].ToString()
-                                    
-                                    
+                                    numeroContrato = dr["numeroContrato"].ToString(),
+                                    codSistema = "02",
+                                    codigoCarga = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    nombreArchivo = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
+
+
                                 };
 
                                 debitNoteDetails.Add(debitNoteDetail);
@@ -622,7 +635,7 @@ namespace TM.FECentralizada.Data
             }
         }
 
-        public static void UpdatePickupDate(List<string> listSerialNumbers)
+        public static void UpdatePickupDate(List<string> listSerialNumbers, string tableName)
         {
             try
             {
@@ -633,7 +646,7 @@ namespace TM.FECentralizada.Data
                     {
                         connection.Open();
                         
-                        cmd.CommandText = Tools.Common.GetCommandTextBulkInsert("TEMP_SERIES", "serie");
+                        cmd.CommandText = Tools.Common.GetCommandTextBulkInsert(tableName, "serie");
                         cmd.ArrayBindCount = listSerialNumbers.Count;
 
                         cmd.Parameters.Add(new OracleParameter() { OracleDbType = OracleDbType.Varchar2, Value = listSerialNumbers.ToArray() });
@@ -650,13 +663,13 @@ namespace TM.FECentralizada.Data
             }
         }
 
-        public static void InvokeInvoiceUpdate()
+        public static void InvokeUpdate(string procedure)
         {
             try
             {
                 using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
                 {
-                    using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT", connection))
+                    using (OracleCommand cmd = new OracleCommand(procedure, connection))
                     {
                         connection.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
