@@ -1,35 +1,32 @@
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.exe.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Business.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Entities.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Tools.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Newtonsoft.Json.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\EPPlus.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Renci.SshNet.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\log4net.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Business.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Entities.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Tools.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.dll.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Newtonsoft.Json.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\EPPlus.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Renci.SshNet.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\log4net.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csprojAssemblyReference.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.ProjectInstaller.resources
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.GenerateResource.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CoreCompileInputs.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CopyComplete
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.pdb
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.AssemblyReference.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.ProjectInstaller.resources
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.GenerateResource.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.exe.config
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.exe
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Isis.Read.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Business.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Entities.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Tools.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\EPPlus.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Renci.SshNet.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\log4net.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\IBM.Data.Informix.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Business.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Entities.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Tools.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\TM.FECentralizada.Data.dll.config
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\EPPlus.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\Renci.SshNet.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\ExcelDataReader.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\bin\Debug\log4net.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csprojAssemblyReference.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.ProjectInstaller.resources
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.GenerateResource.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CopyComplete
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.exe
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.pdb

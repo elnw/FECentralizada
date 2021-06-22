@@ -10,14 +10,9 @@ D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Ent
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csprojAssemblyReference.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.dll
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.pdb
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csprojAssemblyReference.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb

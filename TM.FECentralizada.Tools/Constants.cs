@@ -101,6 +101,87 @@
         public const string IsisRead_Bill = "Factura";
         public const string IsisRead_FileServer_GFiscal = "FileServer_Gfiscal";
 
+        public const string IsisRead_Select_Header = @"Select
+                                                            serieNumero,
+                                                            fechaEmision,
+                                                            horadeEmision,
+                                                            tipoMoneda,
+                                                            numeroDocumentoEmisor,
+                                                            tipoDocumentoAdquiriente,
+                                                            numeroDocumentoAdquiriente,
+                                                            razonSocialAdquiriente,
+                                                            direccionAdquiriente,
+                                                            tipoReferencia_1,
+                                                            numeroDocumentoReferencia_1,
+                                                            tipoReferencia_2,
+                                                            numeroDocumentoReferencia_2,
+                                                            totalVVNetoOpGravadas,
+                                                            totalVVNetoOpNoGravada,
+                                                            conceptoVVNetoOpNoGravada,
+                                                            totalVVNetoOpExoneradas,
+                                                            conceptoVVNetoOpExoneradas,
+                                                            totalVVNetoOpGratuitas,
+                                                            conceptoVVNetoOpGratuitas,
+                                                            totalVVNetoExportacion,
+                                                            conceptoVVExportacion,
+                                                            totalDescuentos,
+                                                            totalIgv,
+                                                            totalVenta,
+                                                            tipoOperacion,
+                                                            leyendas,
+                                                            textoleyenda_3,
+                                                            textoleyenda_4, 
+                                                            porcentajeDetraccion,
+                                                            totalDetraccion,
+                                                            descripcionDetraccion,
+                                                            ordenCompra,
+                                                            datosAdicionales,
+                                                            codigoEstablecimientoSunat,
+                                                            montoTotalImpuestos,
+                                                            cdgCodigoMotivo,
+                                                            cdgPorcentaje,
+                                                            descuentosGlobales,
+                                                            cdgMontoBaseCargo,
+                                                            sumImpuestosOpGratuitas,
+                                                            totalValorVenta,
+                                                            totalPrecioVenta,
+                                                            monRedImportTotal,
+                                                            lugardestino
+                                                        FROM fact_fe01_cab
+                                                        WHERE (FECHARECOJO IS NULL) OR (TRIM(FECHARECOJO) IS NULL);";
+
+        public const string IsisRead_Select_Detail = @"Select
+	                                                        serieNumero,
+	                                                        numeroOrdenItem,
+	                                                        unidadMedida,
+	                                                        cantidad,
+	                                                        codigoProducto,
+	                                                        codigoProductoSunat,
+	                                                        descripcion,
+	                                                        montoBaseIGV,
+	                                                        importeIGV,
+	                                                        codigoRazonExoneracion,
+	                                                        tasaIGV,
+	                                                        importeDescuento,
+	                                                        codigoDescuento,
+	                                                        factorDescuento,
+	                                                        montoBaseDescuento,
+	                                                        codigoImporteReferencial,
+	                                                        importeReferencial,
+	                                                        importeUnitarioSinImpuesto,
+	                                                        importeTotalSinImpuesto,
+	                                                        montoTotalImpuestoItem,
+	                                                        codigoImpUnitConImpuesto,
+	                                                        importeUnitarioConImpuesto,
+	                                                        numeroExpediente,
+	                                                        codigoUnidadEjecutora,
+	                                                        numeroContrato,
+	                                                        numeroProcesoSeleccion
+                                                        From fact_fe01_det
+                                                        Where serieNumero In (
+	                                                        Select serieNumero From fact_fe01_cab Where(FECHARECOJO IS NULL) OR (TRIM(FECHARECOJO) IS NULL)
+                                                        );";
+
         #endregion
 
         #region PacyficLectura

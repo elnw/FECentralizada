@@ -5,6 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace TM.FECentralizada.Isis.Read
 {
     static class Program
@@ -15,12 +16,16 @@ namespace TM.FECentralizada.Isis.Read
         static void Main()
         {
             Tools.Logging.Configure();
-            ServiceBase[] ServicesToRun;
+            /*/ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new IsisRead()
+                new PacifycRead()
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(ServicesToRun);*/
+
+            IsisRead ob = new IsisRead();
+
+            ob.probar();
         }
     }
 }

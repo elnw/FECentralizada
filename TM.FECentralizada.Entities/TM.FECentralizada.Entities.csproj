@@ -54,6 +54,10 @@
     <Compile Include="Common\ResponseFile.cs" />
     <Compile Include="Common\ServiceConfig.cs" />
     <Compile Include="Common\SpecFile.cs" />
+    <Compile Include="Isis\CreditNoteDetail.cs" />
+    <Compile Include="Isis\CreditNoteHeader.cs" />
+    <Compile Include="Isis\DebitNoteDetail.cs" />
+    <Compile Include="Isis\DebitNoteHeader.cs" />
     <Compile Include="Isis\InvoceDetail.cs" />
     <Compile Include="Isis\InvoiceHeader.cs" />
     <Compile Include="Pacifyc\CreditNoteDetail.cs" />
