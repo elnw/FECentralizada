@@ -1,6 +1,9 @@
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csprojAssemblyReference.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.pdb
@@ -26,9 +29,6 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Res
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\ExcelDataReader.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\ExcelDataReader.xml
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\log4net.xml
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.AssemblyReference.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.pdb

@@ -76,3 +76,4 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\ob
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.AssemblyReference.cache

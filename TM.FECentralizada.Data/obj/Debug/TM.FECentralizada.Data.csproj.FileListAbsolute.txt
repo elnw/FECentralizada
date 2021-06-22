@@ -76,6 +76,7 @@ C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\o
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\IBM.Data.Informix.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll

@@ -93,11 +93,12 @@ namespace TM.FECentralizada.Atis.Response
             if (configParameter != null)
             {
                 Parameters ftpParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG_INPUT);
+                Parameters ftpParameterOut = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.FTP_CONFIG_OUTPUT);
 
                 Tools.Logging.Info("Inicio: Descargar archivos de respuesta de gfiscal - Pacyfic Response");
                 if (ftpParameter != null)
                 {
-                    fileServerConfig = Business.Common.GetParameterDeserialized<FileServer>(ftpParameter);
+                    fileServerConfig = Business.Common.GetParameterDeserialized<Entities.Common.FileServer>(ftpParameter);
 
                     messagesResponse = new List<string>();
                     responseFiles = Business.Common.DownloadFileOutput(fileServerConfig, messagesResponse, "RPTA_FACT_03");
@@ -111,7 +112,7 @@ namespace TM.FECentralizada.Atis.Response
 
                         Tools.Logging.Info("Inicio:  Obtener configuración de email - Atis Response");
                         Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
-                        mailConfig = Business.Common.GetParameterDeserialized<Mail>(mailParameter);
+                        mailConfig = Business.Common.GetParameterDeserialized<Entities.Common.Mail>(mailParameter);
 
                         if (mailConfig != null)
                         {
@@ -137,33 +138,62 @@ namespace TM.FECentralizada.Atis.Response
 
                                 Tools.Logging.Info($"Inicio : Armado de archivo de respuesta a Legado - Atis Response");
 
-                                List<string> ListDataReport = new List<string>();
-                                /*foreach (var item in ListCharges)
+                                List<string> ListDataFile = new List<string>();
+                                foreach (var item in responseFiles)
                                 {
-                                    String a = "";
                                     var row = @"" +
-                                    item.System.PadRight(int.Parse(SpecBody[0]), ' ') + "|" +
-                                    item.Entity.PadRight(int.Parse(SpecBody[1]), ' ') + "|" +
-                                    item.EntityDescription.PadRight(int.Parse(SpecBody[2]), ' ') + "|" +
-                                    item.OutPut.PadRight(int.Parse(SpecBody[3]), ' ') + "|" +
-                                    item.ServiceDescription.PadRight(int.Parse(SpecBody[4]), ' ') + "|" +
-                                    item.RegistrationDate.PadRight(int.Parse(SpecBody[5]), ' ') + "|" +
-                                    item.SubscriberNumber.PadRight(int.Parse(SpecBody[6]), ' ') + "|" +
-                                    item.FinancialAccount.PadRight(int.Parse(SpecBody[7]), ' ') + "|" +
-                                    item.AccountCode.PadRight(int.Parse(SpecBody[8]), ' ') + "|" +
-                                    item.CustomerCode.PadRight(int.Parse(SpecBody[9]), ' ') + "|" +
-                                    a.PadRight(int.Parse(SpecBody[9]), ' ') + "|" +
-                                    item.InvoiceNumber.PadRight(int.Parse(SpecBody[11]), ' ') + "|" +
-                                    item.BillingCycle.PadRight(int.Parse(SpecBody[12]), ' ') + "|" +
-                                    item.Coin.PadRight(int.Parse(SpecBody[13]), ' ') + "|" +
-                                    item.Amount.PadLeft(int.Parse(SpecBody[14]), ' ') + "|" +
-                                    item.ExpirationDate.PadRight(int.Parse(SpecBody[15]), ' ') + "|" +
-                                    item.DateIssue.PadRight(int.Parse(SpecBody[16]), ' ');
+                                    item.estado.PadRight(int.Parse(SpecBody[0]), ' ') + "" +
+                                    item.numDocEmisor.PadRight(int.Parse(SpecBody[1]), ' ') + "" +
+                                    item.tipoDocumento.PadRight(int.Parse(SpecBody[2]), ' ') + "" +
+                                    item.serieNumero.PadRight(int.Parse(SpecBody[3]), ' ') + "" +
+                                    item.codigoSunat.PadRight(int.Parse(SpecBody[4]), ' ') + "" +
+                                    item.mensajeSunat.PadRight(int.Parse(SpecBody[5]), ' ') + "" +
+                                    item.fechaDeclaracion.PadRight(int.Parse(SpecBody[6]), ' ') + "" +
+                                    item.fechaEmision.PadRight(int.Parse(SpecBody[7]), ' ') + "" +
+                                    item.firma.PadRight(int.Parse(SpecBody[8]), ' ') + "" +
+                                    item.resumen.PadRight(int.Parse(SpecBody[9]), ' ') + "" +
+                                    item.codSistema.PadRight(int.Parse(SpecBody[10]), ' ') + "" +
+                                    item.adicional1.PadRight(int.Parse(SpecBody[11]), ' ') + "" +
+                                    item.adicional2.PadRight(int.Parse(SpecBody[12]), ' ') + "" +
+                                    item.adicional3.PadRight(int.Parse(SpecBody[13]), ' ') + "" +
+                                    item.adicional4.PadRight(int.Parse(SpecBody[14]), ' ') + "" +
+                                    item.adicional5.PadLeft(int.Parse(SpecBody[15]), ' ');
+                                    
 
-                                    ListDataReport.Add(row);
-                                }*/
+                                    ListDataFile.Add(row);
+                                }
+                                byte[] ResultBytes = Tools.Common.CreateFileText(ListDataFile);                                
 
-                                Tools.Logging.Info($"Fin : Armado de archivo de respuesta a Legado - Atis Response");
+                                try
+                                {
+                                    Tools.Logging.Info($"Inicio : Envío de Archivo Respuesta - Atis Response.");
+                                    string FileName = $"RPTA_{timestamp.ToString("yyyyMMdd")}_240000.txt";
+                                    if (ftpParameterOut != null)
+                                    {
+                                        FileServer fileServerConfigOut = Business.Common.GetParameterDeserialized<Entities.Common.FileServer>(ftpParameterOut);
+                                        Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, FileName, ResultBytes);
+
+                                        Tools.Logging.Info("Inicio :  Mover archivos procesados a ruta PROC ");
+                                        List<String> inputFilesFTP = Tools.FileServer.ListDirectory(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory);
+                                        inputFilesFTP = inputFilesFTP.Where(x => x.StartsWith("RPTA_FACT_03")).ToList();
+                                        foreach (string file in inputFilesFTP)
+                                        {
+                                            Tools.FileServer.DownloadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, file, true, System.IO.Path.GetTempPath());
+                                            Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory + "/PROC/", file, System.IO.File.ReadAllBytes(System.IO.Path.GetTempPath() + "/" + file));
+                                            Tools.FileServer.DeleteFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, file);
+                                        };
+                                        Tools.Logging.Info("Inicio : Mover archivos procesados a ruta PROC ");
+
+                                    }
+                                    else {
+                                        Tools.Logging.Error("No se encontró el parámetro de configuracion FTP_OUTPUT - Atis Response");
+                                    }
+                                        Tools.Logging.Info($"Fin : Envío de Archivo Respuesta - Atis Response.");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Tools.Logging.Error($"Error : Envío de Archivo Respuesta - Atis Response = {ex.Message}");
+                                }
 
                             }
                             else {

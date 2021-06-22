@@ -113,7 +113,6 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\ExcelDataReader.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\ExcelDataReader.xml
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\log4net.xml
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.ProjectInstaller.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.GenerateResource.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.CoreCompileInputs.cache
