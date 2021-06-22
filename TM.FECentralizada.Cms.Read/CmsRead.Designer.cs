@@ -1,6 +1,6 @@
 ﻿namespace TM.FECentralizada.Cms.Read
 {
-    partial class Service1
+    partial class CmsRead
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

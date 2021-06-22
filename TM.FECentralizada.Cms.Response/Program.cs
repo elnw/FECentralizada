@@ -17,7 +17,7 @@ namespace TM.FECentralizada.Cms.Response
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new CmsResponse()
             };
             ServiceBase.Run(ServicesToRun);
         }

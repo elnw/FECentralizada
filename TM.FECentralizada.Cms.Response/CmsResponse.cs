@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace TM.FECentralizada.Cms.Response
 {
-    public partial class Service1 : ServiceBase
+    public partial class CmsResponse : ServiceBase
     {
-        public Service1()
+        public CmsResponse()
         {
             InitializeComponent();
         }
