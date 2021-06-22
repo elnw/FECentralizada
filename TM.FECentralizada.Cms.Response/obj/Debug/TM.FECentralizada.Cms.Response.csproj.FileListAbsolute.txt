@@ -7,7 +7,6 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\bin\Debug\TM.FECentralizada.Cms.Response.pdb
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Response\obj\Debug\TM.FECentralizada.Cms.Response.pdb

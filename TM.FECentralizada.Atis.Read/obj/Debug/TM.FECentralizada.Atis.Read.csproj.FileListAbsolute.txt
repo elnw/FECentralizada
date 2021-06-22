@@ -6,10 +6,6 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FE
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.exe
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.pdb
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.AssemblyReference.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.ProjectInstaller.resources
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.GenerateResource.cache
-E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.pdb
@@ -18,6 +14,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Rea
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Entities.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Tools.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\Newtonsoft.Json.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\IBM.Data.Informix.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\Oracle.ManagedDataAccess.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\EPPlus.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\Renci.SshNet.dll
@@ -34,6 +31,10 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Rea
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\ExcelDataReader.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\ExcelDataReader.xml
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\log4net.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.ProjectInstaller.resources
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.GenerateResource.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.AssemblyReference.cache

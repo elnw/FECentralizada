@@ -91,8 +91,8 @@ namespace TM.FECentralizada.Traceability
         {
             //
             Tools.Logging.Info("Inicio : Obtener documentos de BD Isis - Facturas");
-            var ListInvoceHeader = Business.Isis.GetInvoceHeader();
-            var ListInvoceDetail = Business.Isis.GetInvoceDetail();
+            //var ListInvoceHeader = Business.Isis.GetInvoceHeader();
+            //var ListInvoceDetail = Business.Isis.GetInvoceDetail();
 
 
             Tools.Logging.Info("Inicio : Registrar Auditoria");

@@ -264,7 +264,7 @@ namespace TM.FECentralizada.Pacifyc.Read
                 Tools.Logging.Info("Inicio : Obtener documentos de BD Pacyfic - Notas de crédito");
 
                 List<CreditNoteHeader> ListInvoceHeader = Business.Pacifyc.GetCreditNoteHeaders(timestamp, ref intentos, serviceConfig.maxAttemps);
-                List<CreditNoteDetail> ListInvoceDetail = Business.Pacifyc.GetCreditNoteDetails(timestamp);
+                List<CreditNoteDetail> ListInvoceDetail = new List<CreditNoteDetail>(); //Business.Pacifyc.GetCreditNoteDetails(timestamp);
 
                 Tools.Logging.Info("Inicio: Obtener configuración de correos electronicos - Facturas Pacyfic");
                 Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);

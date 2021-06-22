@@ -246,6 +246,7 @@
         public const string FTP_CONFIG = "ftp";
         public const string FTP_CONFIG_INPUT = "ftp_input";
         public const string FTP_CONFIG_OUTPUT = "ftp_output";
+        public const string FTP_SPEC_OUT = "spec_out";
 
         #endregion
 

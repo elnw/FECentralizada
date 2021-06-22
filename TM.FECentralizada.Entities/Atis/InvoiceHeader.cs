@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TM.FECentralizada.Entities.Pacifyc
+namespace TM.FECentralizada.Entities.Atis
 {
     public class InvoiceHeader
     {                                              

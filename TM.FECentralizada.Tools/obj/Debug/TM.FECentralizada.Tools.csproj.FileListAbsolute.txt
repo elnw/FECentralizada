@@ -57,3 +57,23 @@ C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Tools\
 C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CopyComplete
 C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.dll
 C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\TM.FECentralizada.Tools.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\EPPlus.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\ExcelDataReader.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\log4net.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\Newtonsoft.Json.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\OfficeOpenXml.Extends.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.Async.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\EPPlus.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\ExcelDataReader.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\ExcelDataReader.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\log4net.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.Async.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CopyComplete
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.AssemblyReference.cache

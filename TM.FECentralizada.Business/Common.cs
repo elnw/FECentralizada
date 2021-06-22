@@ -159,12 +159,12 @@ namespace TM.FECentralizada.Business
                                     fechaEmision = fields[7],
                                     firma = fields[8],
                                     resumen = fields[9],
-                                    adicional1 = fields[10],
-                                    adicional2 = fields[11],
-                                    adicional3 = fields[12],
-                                    adicional4 = fields[13],
-                                    adicional5 = fields[14],
-                                    codSistema = fields[15]
+                                    codSistema = fields[10],
+                                    adicional1 = fields[11],
+                                    adicional2 = fields[12],
+                                    adicional3 = fields[13],
+                                    adicional4 = fields[14],
+                                    adicional5 = fields[15]
                                 };
 
                                 responseFiles.Add(responseFile);
