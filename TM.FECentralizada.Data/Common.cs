@@ -238,20 +238,56 @@ namespace TM.FECentralizada.Data
         }
 
         public static void UpdateCreditNoteState()
-        {
+ {
             string MessageResponse;
             try
             {
                 using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
                 {
                     connection.Open();
+                  
                     using (SqlCommand cmd = new SqlCommand("Sp_Actualizar_Estado_NotasCredito", connection))
+
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.Add(new SqlParameter("@po_mensaje_respuesta", SqlDbType.VarChar) { Value = "", Direction = ParameterDirection.Output, Size = 3000 });
 
                         cmd.ExecuteNonQuery();
+
+                        MessageResponse = cmd.Parameters["@po_mensaje_respuesta"].Value.ToString();
+
+
+                        Tools.Logging.Info(string.Format("GetParametersByKey > Respuesta : [ Mensaje = {0} ] ", MessageResponse));
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
+             public static void UpdateBillState()
+ {
+            string MessageResponse;
+            try
+            {
+                using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("Sp_Actualizar_Estado_Boletas", connection))
+
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@po_mensaje_respuesta", SqlDbType.VarChar) { Value = "", Direction = ParameterDirection.Output, Size = 3000 });
+
+                        cmd.ExecuteNonQuery();
+
 
                         MessageResponse = cmd.Parameters["@po_mensaje_respuesta"].Value.ToString();
 

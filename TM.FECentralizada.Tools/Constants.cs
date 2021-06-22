@@ -226,9 +226,17 @@
         public const string CmsRead_DebitNote = "NotaDebito";
         #endregion
 
+        #region CmsRespuesta
+        public const string CmsResponse = "Cms_Respuesta";
+        public const string CmsResponse_Invoice = "Factura";
+        public const string CmsResponse_CreditNote = "NotaCredito";
+        public const string CmsResponse_DebitNote = "NotaDebito";
+        #endregion
+
         #region AtisLectura
         public const string AtisRead = "Atis_Lectura";
         public const string AtisRead_Invoice = "Factura";
+        public const string AtisRead_Bill = "Boleta";        
         public const string AtisRead_CreditNote = "NotaCredito";
         public const string AtisRead_DebitNote = "NotaDebito";
         #endregion
@@ -236,6 +244,7 @@
         #region AtisRespuesta
         public const string AtisResponse = "Atis_Respuesta";
         public const string AtisResponse_Invoice = "Factura";
+        public const string AtisResponse_Bill = "Boleta";
         public const string AtisResponse_CreditNote = "NotaCredito";
         public const string AtisResponse_DebitNote = "NotaDebito";
         #endregion

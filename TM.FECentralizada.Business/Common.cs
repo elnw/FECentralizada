@@ -224,7 +224,7 @@ namespace TM.FECentralizada.Business
             }
         }
 
-        public static void UpdateCreditNoteState(List<ResponseFile> responseFiles)
+ public static void UpdateCreditNoteState(List<ResponseFile> responseFiles)
         {
             try
             {
@@ -237,6 +237,15 @@ namespace TM.FECentralizada.Business
             }
         }
 
+        public static void UpdateBillState(List<ResponseFile> responseFiles)
+        {
+            try
+            {
+                Data.Common.BulkInsertListToTable(responseFiles, "Tmp_Boleta_respuesta");
+                Data.Common.UpdateBillState();
+   
 
     }
 }
+
+    }
