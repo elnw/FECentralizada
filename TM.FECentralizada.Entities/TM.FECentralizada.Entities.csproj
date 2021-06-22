@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cms\InvoiceDetail.cs" />
+    <Compile Include="Atis\InvoceDetail.cs" />
+    <Compile Include="Atis\InvoiceHeader.cs" />
+    <Compile Include="Cms\InvoceDetail.cs" />
     <Compile Include="Cms\InvoiceHeader.cs" />
     <Compile Include="Common\Attachment.cs" />
     <Compile Include="Common\BulkInsert.cs" />
@@ -52,6 +54,10 @@
     <Compile Include="Common\ResponseFile.cs" />
     <Compile Include="Common\ServiceConfig.cs" />
     <Compile Include="Common\SpecFile.cs" />
+    <Compile Include="Isis\CreditNoteDetail.cs" />
+    <Compile Include="Isis\CreditNoteHeader.cs" />
+    <Compile Include="Isis\DebitNoteDetail.cs" />
+    <Compile Include="Isis\DebitNoteHeader.cs" />
     <Compile Include="Isis\InvoceDetail.cs" />
     <Compile Include="Isis\InvoiceHeader.cs" />
     <Compile Include="Pacifyc\CreditNoteDetail.cs" />
@@ -63,7 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Atis\" />
     <Folder Include="Sap\" />
     <Folder Include="Traceability\" />
   </ItemGroup>

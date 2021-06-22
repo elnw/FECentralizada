@@ -91,7 +91,7 @@ namespace TM.FECentralizada.Business
             Tools.Logging.Info("Iniciando Consulta BD- Cabecera");
             try
             {
-                ListHeaders = Data.Pacifyc.ReadCreditNoteDetails();
+               // ListHeaders = Data.Pacifyc.ReadCreditNoteDetails();
                 Tools.Logging.Info("Fin Consulta BD- Cabecera");
                 Tools.Logging.Info("Iniciando registro en BD - Cabecera");
             }
@@ -382,7 +382,6 @@ namespace TM.FECentralizada.Business
         {
             Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
             Data.Pacifyc.InvokeInvoiceUpdate();
-
         }
 
 

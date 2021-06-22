@@ -10,3 +10,14 @@ D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Pro
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csprojAssemblyReference.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb

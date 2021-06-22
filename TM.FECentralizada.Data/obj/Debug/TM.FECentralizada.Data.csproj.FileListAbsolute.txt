@@ -47,28 +47,55 @@ D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Dat
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb
 D:\Proyectos\FEC\Facturacion_Electronica\TM.FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\Newtonsoft.Json.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csprojAssemblyReference.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CoreCompileInputs.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CopyComplete
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\IBM.Data.Informix.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.pdb
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.xml
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csprojAssemblyReference.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CoreCompileInputs.cache
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CopyComplete
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
+C:\Users\Indra\Desktop\Nueva carpeta (5)\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Data.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\IBM.Data.Informix.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\Newtonsoft.Json.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Entities.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\EPPlus.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\Renci.SshNet.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\ExcelDataReader.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\bin\Debug\log4net.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.csproj.CopyComplete
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Data\obj\Debug\TM.FECentralizada.Data.pdb

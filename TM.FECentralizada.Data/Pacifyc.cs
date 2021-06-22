@@ -362,9 +362,9 @@ namespace TM.FECentralizada.Data
                                     codigoUnidadEjecutora = dr["codigoUnidadEjecutora"].ToString(),
                                     numeroContrato = dr["numeroContrato"].ToString(),
                                     numeroProcesoSeleccion = dr["numeroProcesoSeleccion"].ToString(),
-                                    codSistema = "02",
-                                    codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
-                                    nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
+                                    codSistema = "02"
+                                    //codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                    //nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
                                 };
 
                                 creditNoteDetails.Add(creditNoteDetail);

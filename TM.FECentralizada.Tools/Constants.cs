@@ -101,6 +101,95 @@
         public const string IsisRead_Bill = "Factura";
         public const string IsisRead_FileServer_GFiscal = "FileServer_Gfiscal";
 
+        public const string IsisRead_Select_Header = @"Select
+                                                            serieNumero,
+                                                            fechaEmision,
+                                                            horadeEmision,
+                                                            tipoMoneda,
+                                                            numeroDocumentoEmisor,
+                                                            tipoDocumentoAdquiriente,
+                                                            numeroDocumentoAdquiriente,
+                                                            razonSocialAdquiriente,
+                                                            direccionAdquiriente,
+                                                            tipoReferencia_1,
+                                                            numeroDocumentoReferencia_1,
+                                                            tipoReferencia_2,
+                                                            numeroDocumentoReferencia_2,
+                                                            totalVVNetoOpGravadas,
+                                                            totalVVNetoOpNoGravada,
+                                                            conceptoVVNetoOpNoGravada,
+                                                            totalVVNetoOpExoneradas,
+                                                            conceptoVVNetoOpExoneradas,
+                                                            totalVVNetoOpGratuitas,
+                                                            conceptoVVNetoOpGratuitas,
+                                                            totalVVNetoExportacion,
+                                                            conceptoVVExportacion,
+                                                            totalDescuentos,
+                                                            totalIgv,
+                                                            totalVenta,
+                                                            tipoOperacion,
+                                                            leyendas,
+                                                            textoleyenda_3,
+                                                            textoleyenda_4, 
+                                                            porcentajeDetraccion,
+                                                            totalDetraccion,
+                                                            descripcionDetraccion,
+                                                            ordenCompra,
+                                                            datosAdicionales,
+                                                            codigoEstablecimientoSunat,
+                                                            montoTotalImpuestos,
+                                                            cdgCodigoMotivo,
+                                                            cdgPorcentaje,
+                                                            descuentosGlobales,
+                                                            cdgMontoBaseCargo,
+                                                            sumImpuestosOpGratuitas,
+                                                            totalValorVenta,
+                                                            totalPrecioVenta,
+                                                            monRedImportTotal,
+                                                            lugardestino
+                                                        FROM fact_fe01_cab
+                                                        WHERE (FECHARECOJO IS NULL) OR (TRIM(FECHARECOJO) IS NULL);";
+
+        public const string IsisRead_Select_Detail = @"Select
+	                                                        serieNumero,
+	                                                        numeroOrdenItem,
+	                                                        unidadMedida,
+	                                                        cantidad,
+	                                                        codigoProducto,
+	                                                        codigoProductoSunat,
+	                                                        descripcion,
+	                                                        montoBaseIGV,
+	                                                        importeIGV,
+	                                                        codigoRazonExoneracion,
+	                                                        tasaIGV,
+	                                                        importeDescuento,
+	                                                        codigoDescuento,
+	                                                        factorDescuento,
+	                                                        montoBaseDescuento,
+	                                                        codigoImporteReferencial,
+	                                                        importeReferencial,
+	                                                        importeUnitarioSinImpuesto,
+	                                                        importeTotalSinImpuesto,
+	                                                        montoTotalImpuestoItem,
+	                                                        codigoImpUnitConImpuesto,
+	                                                        importeUnitarioConImpuesto,
+	                                                        numeroExpediente,
+	                                                        codigoUnidadEjecutora,
+	                                                        numeroContrato,
+	                                                        numeroProcesoSeleccion
+                                                        From fact_fe01_det
+                                                        Where serieNumero In (
+	                                                        Select serieNumero From fact_fe01_cab Where(FECHARECOJO IS NULL) OR (TRIM(FECHARECOJO) IS NULL)
+                                                        );";
+
+        #endregion
+
+        #region IsisRespuesta
+        public const string IsisResponse = "Isis_Response";
+        public const string IsisResponse_Invoice = "Factura";
+        public const string IsisResponse_CreditNote = "NotaCredito";
+        public const string IsisResponse_DebitNote = "NotaDebito";
+
         #endregion
 
         #region PacyficLectura
@@ -130,10 +219,34 @@
         public const int FALLA_VALIDACION = 8;
         #endregion
 
+        #region CmsLectura
+        public const string CmsRead = "Cms_Lectura";
+        public const string CmsRead_Invoice = "Factura";
+        public const string CmsRead_CreditNote = "NotaCredito";
+        public const string CmsRead_DebitNote = "NotaDebito";
+        #endregion
+
+        #region AtisLectura
+        public const string AtisRead = "Atis_Lectura";
+        public const string AtisRead_Invoice = "Factura";
+        public const string AtisRead_CreditNote = "NotaCredito";
+        public const string AtisRead_DebitNote = "NotaDebito";
+        #endregion
+
+        #region AtisRespuesta
+        public const string AtisResponse = "Atis_Respuesta";
+        public const string AtisResponse_Invoice = "Factura";
+        public const string AtisResponse_CreditNote = "NotaCredito";
+        public const string AtisResponse_DebitNote = "NotaDebito";
+        #endregion
+
         #region Parameters
         public const string KEY_CONFIG = "config";
         public const string MAIL_CONFIG = "mail";
         public const string FTP_CONFIG = "ftp";
+        public const string FTP_CONFIG_INPUT = "ftp_input";
+        public const string FTP_CONFIG_OUTPUT = "ftp_output";
+        public const string FTP_SPEC_OUT = "spec_out";
 
         #endregion
 

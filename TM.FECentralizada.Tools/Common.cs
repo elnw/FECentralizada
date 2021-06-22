@@ -96,7 +96,7 @@ namespace TM.FECentralizada.Tools
             return ListLines;
         }
 
-        public static byte[] CreateFileText<T>(List<T> DataList, string columnsName)
+        public static byte[] CreateFileText<T>(List<T> DataList, string columnsName="")
         {
             byte[] bytesContent = null;
             try
@@ -105,7 +105,9 @@ namespace TM.FECentralizada.Tools
                 {
                     using (TextWriter tw = new StreamWriter(ms))
                     {
+                        if (columnsName != "") { 
                         tw.WriteLine(columnsName);
+                    }
                         foreach (var item in DataList)
                         {
                             tw.WriteLine(item);
