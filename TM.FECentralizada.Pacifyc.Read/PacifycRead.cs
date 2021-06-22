@@ -72,12 +72,12 @@ namespace TM.FECentralizada.Pacifyc.Read
                     Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
                     //Invoice(ParametersInvoce);
                     //CreditNote(ParametersCreditNote);
-                    //DebitNote(ParametersDebitNote);
-                    Parallel.Invoke(
+                    DebitNote(ParametersDebitNote);
+                    /*Parallel.Invoke(
                                () => Invoice(ParametersInvoce),
                                () => CreditNote(ParametersCreditNote),
                                () => DebitNote(ParametersDebitNote)
-                        );
+                        );*/
                     Tools.Logging.Info("Fin : Procesar documentos de BD Pacyfic");
 
                     //Obtengo la Configuración Intervalo de Tiempo
@@ -428,7 +428,7 @@ namespace TM.FECentralizada.Pacifyc.Read
                     }
                     else
                     {
-                        Tools.Logging.Error($"No se pudo recuperar el id de auditoria - Facturas pacyfic");
+                        Tools.Logging.Error($"No se pudo recuperar el id de auditoria - Notas de crédito pacyfic");
                         Business.Common.UpdateAudit(auditId, Tools.Constants.ERROR_FECENTRALIZADA, intentos);
                     }
 
