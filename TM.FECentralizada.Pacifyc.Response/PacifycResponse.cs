@@ -134,8 +134,6 @@ namespace TM.FECentralizada.Pacifyc.Response
                             Tools.Logging.Error("No se encontró el parámetro de configuracion MAILCONFIG - Pacyfic Response");
                         }
                         
-                        
-
 
                     }
                     else

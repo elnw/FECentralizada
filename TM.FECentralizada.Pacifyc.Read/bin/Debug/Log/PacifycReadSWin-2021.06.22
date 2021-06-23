@@ -2985,3 +2985,68 @@ PacifycRead INFO  2021-06-22 13:40:32,938 Hilo: [1     ] Clase: (null) Método: (
 PacifycRead INFO  2021-06-22 13:43:58,885 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Nombre de la Tabla : temp_series_nc = [ Columnas: serie ]
 PacifycRead INFO  2021-06-22 13:43:58,890 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: CommandText :[ INSERT INTO temp_series_nc (serie) VALUES(:1) ]
 PacifycRead INFO  2021-06-22 13:44:06,676 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Actualización masiva de la fecha de recojo Pacyfic - Facturas: PO_MENSAJE_RESPUESTA - filas afectadas:PO_FILAS_AFECTADAS
+PacifycRead INFO  2021-06-22 18:38:47,252 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio del Proceso: Lectura Pacyfic.
+PacifycRead INFO  2021-06-22 18:38:47,309 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener Parámetros
+PacifycRead INFO  2021-06-22 18:38:48,163 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-22 18:38:48,169 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin : Obtener Parámetros
+PacifycRead INFO  2021-06-22 18:38:48,179 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Procesar documentos de BD Pacyfic
+PacifycRead INFO  2021-06-22 18:38:48,194 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener norma para las facturas de Pacyfic
+PacifycRead INFO  2021-06-22 18:38:48,627 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Obtener documentos de BD Pacyfic - Notas de débito
+PacifycRead INFO  2021-06-22 18:38:48,630 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+PacifycRead INFO  2021-06-22 18:38:52,953 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:52,959 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:52,963 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:53,089 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin Consulta BD-Factura Cabecera
+PacifycRead INFO  2021-06-22 18:38:53,092 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin Consulta BD- Cabecera
+PacifycRead INFO  2021-06-22 18:38:53,094 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Iniciando Consulta BD- Cabecera
+PacifycRead INFO  2021-06-22 18:38:53,366 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:53,368 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:53,370 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin ReadConfiguration = codeResponse:200, messageResponse:OPERACIÓN EXITOSA.
+PacifycRead INFO  2021-06-22 18:38:53,395 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Fin Consulta BD- Cabecera
+PacifycRead INFO  2021-06-22 18:38:53,397 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Iniciando registro en BD - Cabecera
+PacifycRead INFO  2021-06-22 18:38:53,400 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio: Obtener configuración de correos electronicos - Facturas Pacyfic
+PacifycRead INFO  2021-06-22 18:38:53,436 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Registrar Auditoria
+PacifycRead INFO  2021-06-22 18:38:53,501 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: GetParametersByKey > Respuesta : [ Codigo =  , Mensaje =  ] 
+PacifycRead INFO  2021-06-22 18:38:53,502 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Validar Documentos 
+PacifycRead INFO  2021-06-22 18:38:53,506 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Notificación de Validación
+PacifycRead INFO  2021-06-22 18:38:53,527 Hilo: [1     ] Clase: (null) Método: (null) Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-22 18:38:53,581 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-22 18:38:53,584 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-22 18:38:53,588 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-22 18:38:53,591 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-22 18:38:53,593 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-22 18:38:53,596 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-22 18:38:53,599 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-22 18:38:53,601 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-22 18:38:53,603 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-22 18:38:53,606 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-22 18:38:53,608 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-22 18:39:00,579 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-22 18:39:00,630 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-22 18:39:00,634 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Insertar Documentos Validados
+PacifycRead INFO  2021-06-22 18:39:29,898 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : enviar GFiscal 
+PacifycRead INFO  2021-06-22 18:39:41,539 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio UploadFile:  Host:10.226.3.33, Port:21, UserName:stcinter, Password:ftpstcin
+PacifycRead INFO  2021-06-22 18:39:42,220 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-22 18:39:42,223 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin RequestStream: Lectura: False, Escritura: True 
+PacifycRead INFO  2021-06-22 18:39:42,252 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin UploadFile FTP.
+PacifycRead INFO  2021-06-22 18:39:43,215 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio :  Notificación de envio  GFiscal 
+PacifycRead INFO  2021-06-22 18:39:44,289 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Envío de Email > [ MailMessage ]
+PacifycRead INFO  2021-06-22 18:39:44,293 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: miguelqh1234@gmail.com
+PacifycRead INFO  2021-06-22 18:39:44,295 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo miguelqh1234@gmail.com valido
+PacifycRead INFO  2021-06-22 18:39:44,298 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Destinatarios ]
+PacifycRead INFO  2021-06-22 18:39:44,300 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: galeona@indracompany.com
+PacifycRead INFO  2021-06-22 18:39:44,302 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo galeona@indracompany.com valido
+PacifycRead INFO  2021-06-22 18:39:44,305 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ galeona@indracompany.com ]
+PacifycRead INFO  2021-06-22 18:39:44,307 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Validando correo: maquispe@indracompany.com
+PacifycRead INFO  2021-06-22 18:39:44,310 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Correo maquispe@indracompany.com valido
+PacifycRead INFO  2021-06-22 18:39:44,312 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Destinatario > [ maquispe@indracompany.com ]
+PacifycRead INFO  2021-06-22 18:39:44,313 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Contactos Copiados ]
+PacifycRead INFO  2021-06-22 18:39:44,315 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Lectura > [ Adjuntos ]
+PacifycRead INFO  2021-06-22 18:39:52,847 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Actualizo Auditoria
+PacifycRead INFO  2021-06-22 18:39:55,484 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: GetParametersByKey > Respuesta : [ Codigo = 200 , Mensaje = Se actualizo tabla auditoria ] 
+PacifycRead INFO  2021-06-22 18:39:56,421 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Inicio : Actualizar fecha de envio
+PacifycRead ERROR 2021-06-22 18:39:57,935 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Conversion failed when converting date and/or time from character string.
+PacifycRead INFO  2021-06-22 18:39:58,904 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Nombre de la Tabla : temp_series_dn = [ Columnas: serie ]
+PacifycRead INFO  2021-06-22 18:39:58,910 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: CommandText :[ INSERT INTO temp_series_dn (serie) VALUES(:1) ]
+PacifycRead INFO  2021-06-22 18:39:59,210 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Actualización masiva de la fecha de recojo Pacyfic - Facturas: PO_MENSAJE_RESPUESTA - filas afectadas:PO_FILAS_AFECTADAS
+PacifycRead INFO  2021-06-22 18:40:08,293 Hilo: [1     ] Clase: TM.FECentralizada.Tools.Mail Método: IsMailValid Mensaje: Fin : Procesar documentos de BD Pacyfic

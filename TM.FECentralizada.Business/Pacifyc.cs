@@ -91,11 +91,9 @@ namespace TM.FECentralizada.Business
             Tools.Logging.Info("Iniciando Consulta BD- Cabecera");
             try
             {
-<<<<<<< Updated upstream
-               // ListHeaders = Data.Pacifyc.ReadCreditNoteDetails();
-=======
+
                 ListHeaders = Data.Pacifyc.ReadCreditNoteDetails(timestamp);
->>>>>>> Stashed changes
+
                 Tools.Logging.Info("Fin Consulta BD- Cabecera");
                 Tools.Logging.Info("Iniciando registro en BD - Cabecera");
             }
@@ -575,14 +573,11 @@ namespace TM.FECentralizada.Business
 
         public static void UpdateInvoicePickUpDate(List<InvoiceHeader> invoiceHeaders)
         {
-<<<<<<< Updated upstream
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
-            Data.Pacifyc.InvokeInvoiceUpdate();
-=======
+
+
             Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
             Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
 
->>>>>>> Stashed changes
         }
         public static void UpdateCreditNotePickUpDate(List<CreditNoteHeader> invoiceHeaders)
         {

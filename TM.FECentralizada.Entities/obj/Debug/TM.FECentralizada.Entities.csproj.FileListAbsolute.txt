@@ -22,3 +22,9 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.AssemblyReference.cache
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.dll
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.pdb
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csprojAssemblyReference.cache
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
+D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb

@@ -1,6 +1,3 @@
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csprojAssemblyReference.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache

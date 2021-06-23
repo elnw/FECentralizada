@@ -1,11 +1,3 @@
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.ProjectInstaller.resources
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.GenerateResource.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.csproj.CoreCompileInputs.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Atis.Read\obj\Debug\TM.FECentralizada.Atis.Read.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Atis.Read\bin\Debug\TM.FECentralizada.Atis.Read.pdb

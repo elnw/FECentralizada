@@ -31,20 +31,22 @@ namespace TM.FECentralizada.Business
             try
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(parameter.ValueJson);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message + ex.InnerException);
                 throw ex;
             }
-           
+
         }
 
-        public static int InsertAudit(string idGrupo,  int legado, int estado, int cantidadRegistros, int intentos, int procesoSunat)
+        public static int InsertAudit(string idGrupo, int legado, int estado, int cantidadRegistros, int intentos, int procesoSunat)
         {
             try
             {
                 return TM.FECentralizada.Data.Common.InsertAudit(idGrupo, legado, estado, cantidadRegistros, intentos, procesoSunat);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
                 return 0;
@@ -55,7 +57,7 @@ namespace TM.FECentralizada.Business
         {
             string body = "<body><ul>";
 
-            foreach(string message in messageResult)
+            foreach (string message in messageResult)
             {
                 body += $"<li>{message}</li>";
             }
@@ -88,12 +90,13 @@ namespace TM.FECentralizada.Business
             try
             {
                 TM.FECentralizada.Data.Common.UpdateAudit(auditoriaId, estadoid, intentos);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
         }
-       
+
         public static void BulkInsertListToTable<T>(List<T> list, string tableName)
         {
             try
@@ -111,7 +114,8 @@ namespace TM.FECentralizada.Business
             try
             {
                 Data.Common.UpdateDocumentInvoice(alignet, sendDate);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
@@ -125,7 +129,7 @@ namespace TM.FECentralizada.Business
             {
                 gfiscalFiles = Tools.FileServer.ListDirectory(fileServer.Host, fileServer.Port, fileServer.User, fileServer.Password, fileServer.Directory);
 
-                if(gfiscalFiles != null)
+                if (gfiscalFiles != null)
                 {
                     gfiscalFiles = gfiscalFiles.Where(x => x.StartsWith(sufix)).ToList();
                 }
@@ -134,7 +138,7 @@ namespace TM.FECentralizada.Business
                 {
                     var fileLines = Tools.FileServer.DownloadFile(fileServer.Host, fileServer.Port, fileServer.User, fileServer.Password, fileServer.Directory, file);
 
-                    if(fileLines.Count <= 0)
+                    if (fileLines.Count <= 0)
                     {
                         messages.Add($"El archivo de nombre: {file} no puede ser procesado porque se encuentra vacío");
                     }
@@ -145,7 +149,7 @@ namespace TM.FECentralizada.Business
                         {
                             var fields = line.Split(Tools.Constants.FIELD_SEPARATOR);
 
-                            if(fields.Length >=16)
+                            if (fields.Length >= 16)
                             {
                                 ResponseFile responseFile = new ResponseFile
                                 {
@@ -175,18 +179,18 @@ namespace TM.FECentralizada.Business
                                 messages.Add($"La linea {contadorLineas} del archivo: {file} es inválida");
                             }
 
-                            
+
 
 
                         }
                     }
 
-                    
+
 
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
@@ -201,7 +205,7 @@ namespace TM.FECentralizada.Business
         public static void ValidateFilesStructure(List<string> files)
         {
 
-            foreach(string file in files.ToList())
+            foreach (string file in files.ToList())
             {
                 if (!ValidateFileStructure(file))
                 {
@@ -224,12 +228,25 @@ namespace TM.FECentralizada.Business
             }
         }
 
- public static void UpdateCreditNoteState(List<ResponseFile> responseFiles)
+        public static void UpdateCreditNoteState(List<ResponseFile> responseFiles)
         {
             try
             {
                 Data.Common.BulkInsertListToTable(responseFiles, "Tmp_NotaCredito_respuesta");
                 Data.Common.UpdateCreditNoteState();
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
+        public static void UpdateDebitNoteState(List<ResponseFile> responseFiles)
+        {
+            try
+            {
+                Data.Common.BulkInsertListToTable(responseFiles, "Tmp_NotaDebito_respuesta");
+                Data.Common.UpdateDebitNoteState();
             }
             catch (Exception ex)
             {
@@ -243,9 +260,29 @@ namespace TM.FECentralizada.Business
             {
                 Data.Common.BulkInsertListToTable(responseFiles, "Tmp_Boleta_respuesta");
                 Data.Common.UpdateBillState();
-   
+
+
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+
+            }
+        }
+
+        public static void MoveFilesToProcessedFolder(FileServer fileServerConfig, string targetDirectory, string prefix)
+        {
+            var inputFilesFTP = Tools.FileServer.ListDirectory(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory);
+            inputFilesFTP = inputFilesFTP.Where(x => x.StartsWith(prefix)).ToList();
+            foreach (string file in inputFilesFTP)
+            {
+                Tools.FileServer.DownloadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, file, true, System.IO.Path.GetTempPath());
+                Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, targetDirectory, file, System.IO.File.ReadAllBytes(System.IO.Path.GetTempPath() + "/" + file));
+                Tools.FileServer.DeleteFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, file);
+            }
+
+        }
+       
 
     }
 }
-
-    }

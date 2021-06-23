@@ -1,9 +1,3 @@
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.exe.config
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.pdb
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\obj\Debug\TM.FECentralizada.Cms.Read.csproj.CoreCompileInputs.cache
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\obj\Debug\TM.FECentralizada.Cms.Read.exe
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Cms.Read\obj\Debug\TM.FECentralizada.Cms.Read.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Cms.Read\bin\Debug\TM.FECentralizada.Cms.Read.pdb
