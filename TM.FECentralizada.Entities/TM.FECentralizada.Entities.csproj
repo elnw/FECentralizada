@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atis\BillDetail.cs" />
+    <Compile Include="Atis\BillHeader.cs" />
+    <Compile Include="Atis\CreditNoteDetail.cs" />
+    <Compile Include="Atis\CreditNoteHeader.cs" />
+    <Compile Include="Atis\DebitNoteDetail.cs" />
+    <Compile Include="Atis\DebitNoteHeader.cs" />
     <Compile Include="Atis\InvoceDetail.cs" />
     <Compile Include="Atis\InvoiceHeader.cs" />
     <Compile Include="Cms\InvoceDetail.cs" />
