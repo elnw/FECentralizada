@@ -8,6 +8,9 @@ namespace TM.FECentralizada.Entities.Isis
 {
     public class DebitNoteHeader
     {
+        public string codSistema { get; set; }
+        public string codigoCarga { get; set; }
+
         public string serieNumero { get; set; }
         public string fechaEmision { get; set; }
         public string horadeEmision { get; set; }
@@ -47,7 +50,18 @@ namespace TM.FECentralizada.Entities.Isis
         public string motivoDocumento { get; set; }
         public string tipoDocRefPrincipal { get; set; }
         public string numeroDocRefPrincipal { get; set; }
-        public string TOTALVALORVENTANETOOPGRAVADAS { get; set; }
-        public List<DebitNoteDetail> debitNoteDetails { get; set; }
+        public string totalvalorventanetoopgravadas { get; set; }
+        public string nombreArchivo { get; set; }
+        public string origen { get; set; }
+        public string estado { get; set; }
+        public string fechaRegistro { get; set; }
+        public string totalRetencion { get; set; }
+        public string porcentajeRetencion { get; set; }
+
+        public string fechaRespuestaLegado { get; set; }
+        public string estadoSunat { get; set; }
+        public string codigoSunat { get; set; }
+        public string mensajeSunat { get; set; }
+
     }
 }

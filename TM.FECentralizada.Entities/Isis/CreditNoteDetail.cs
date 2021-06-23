@@ -8,6 +8,9 @@ namespace TM.FECentralizada.Entities.Isis
 {
     public class CreditNoteDetail
     {
+        public string codSistema;
+        public string codigoCarga;
+        public string nombreArchivo;
         public string serieNumero { get; set; }
         public string numeroOrdenItem { get; set; }
         public string unidadMedida { get; set; }

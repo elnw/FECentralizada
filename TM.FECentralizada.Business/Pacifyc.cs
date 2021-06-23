@@ -91,11 +91,11 @@ namespace TM.FECentralizada.Business
             Tools.Logging.Info("Iniciando Consulta BD- Cabecera");
             try
             {
-<<<<<<< Updated upstream
+
                // ListHeaders = Data.Pacifyc.ReadCreditNoteDetails();
-=======
+
                 ListHeaders = Data.Pacifyc.ReadCreditNoteDetails(timestamp);
->>>>>>> Stashed changes
+               //      Stashed changes
                 Tools.Logging.Info("Fin Consulta BD- Cabecera");
                 Tools.Logging.Info("Iniciando registro en BD - Cabecera");
             }
