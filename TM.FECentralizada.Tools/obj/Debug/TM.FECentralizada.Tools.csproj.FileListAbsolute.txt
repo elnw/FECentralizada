@@ -112,6 +112,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\bin\Debug\ExcelDat
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\bin\Debug\log4net.xml
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.xml
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\bin\Debug\Renci.SshNet.Async.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Tools\obj\Debug\TM.FECentralizada.Tools.dll

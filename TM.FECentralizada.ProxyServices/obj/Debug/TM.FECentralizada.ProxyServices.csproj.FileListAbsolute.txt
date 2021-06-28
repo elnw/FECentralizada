@@ -29,6 +29,7 @@ D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\T
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\bin\Debug\TM.FECentralizada.ProxyServices.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.dll
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.ProxyServices\obj\Debug\TM.FECentralizada.ProxyServices.pdb

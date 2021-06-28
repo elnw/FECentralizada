@@ -7,6 +7,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.BackUp\o
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe.config
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.pdb

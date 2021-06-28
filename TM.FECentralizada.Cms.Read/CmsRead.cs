@@ -68,9 +68,9 @@ namespace TM.FECentralizada.Cms.Read
                     List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.CmsRead_DebitNote.ToUpper())).ToList();
 
                     Tools.Logging.Info("Inicio : Procesar documentos de FTP Cms");
-                    Invoice(ParametersInvoce);
-                    Bill(ParametersBill);
-                    CreditNote(ParametersCreditNote);
+                   // Invoice(ParametersInvoce);
+                   // Bill(ParametersBill);
+                    //CreditNote(ParametersCreditNote);
                     DebitNote(ParametersDebitNote);
                     /*Parallel.Invoke(
                                () => Invoice(ParametersInvoce),
@@ -592,8 +592,8 @@ namespace TM.FECentralizada.Cms.Read
                                     Business.Common.UpdateAudit(auditId, Tools.Constants.LEIDO, intentos);
 
                                     Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
-                                    Business.Common.BulkInsertListToTable(ListInvoceDetail, "Notacredito_Detalle");
-                                    Business.Common.BulkInsertListToTable(ListInvoceHeader, "Notacredito_Cabecera");
+                                    Business.Common.BulkInsertListToTable(ListInvoceDetail, "Nota_Credito_Detalle");
+                                    Business.Common.BulkInsertListToTable(ListInvoceHeader, "Nota_Credito_Cabecera");
 
                                     Tools.Logging.Info("Inicio : enviar GFiscal ");
 
@@ -784,8 +784,8 @@ namespace TM.FECentralizada.Cms.Read
                                     Business.Common.UpdateAudit(auditId, Tools.Constants.LEIDO, intentos);
 
                                     Tools.Logging.Info("Inicio : Insertar Documentos Validados ");
-                                    Business.Common.BulkInsertListToTable(ListInvoceDetail, "NotaDebito_Detalle");
-                                    Business.Common.BulkInsertListToTable(ListInvoceHeader, "NotaDebito_Cabecera");
+                                    Business.Common.BulkInsertListToTable(ListInvoceDetail, "Nota_Debito_Detalle");
+                                    Business.Common.BulkInsertListToTable(ListInvoceHeader, "Nota_Debito_Cabecera");
 
                                     Tools.Logging.Info("Inicio : enviar GFiscal ");
 
