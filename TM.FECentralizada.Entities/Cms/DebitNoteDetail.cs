@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TM.FECentralizada.Entities.Isis
+namespace TM.FECentralizada.Entities.Cms
 {
     public class DebitNoteDetail
     {

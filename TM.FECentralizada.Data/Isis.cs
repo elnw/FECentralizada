@@ -117,7 +117,7 @@ namespace TM.FECentralizada.Data
                 using (IfxConnection conn = (IfxConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Informix))
                 {
                     //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_FACTURA_CAB", connection))
-                    using (IfxCommand cmd = new IfxCommand(Tools.Constants.IsisRead_Select_Header, conn))
+                    using (IfxCommand cmd = new IfxCommand(Tools.Constants.IsisRead_Select_Detail, conn))
                     {
 
                         conn.Open();
@@ -186,7 +186,171 @@ namespace TM.FECentralizada.Data
             return invoiceDetails;
         }
 
-        public static List<CreditNoteHeader> ReadCreditNoteHeaders()
+        public static List<BillHeader> ReadBillHeader(DateTime timestamp, ref bool debeRepetir)
+        {
+            List<BillHeader> BillHeaders = new List<BillHeader>();
+            BillHeader objBillHeader = new BillHeader();
+            try
+            {
+                //using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
+                using (IfxConnection conn = (IfxConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Informix))
+                {
+                    //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_FACTURA_CAB", connection))
+                    using (IfxCommand cmd = new IfxCommand(Tools.Constants.IsisRead_Select_Header, conn))
+                    {
+
+                        conn.Open();
+                        cmd.CommandType = CommandType.Text;
+
+                        IfxDataReader dr = cmd.ExecuteReader();
+                        if (dr != null && dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                BillHeaders.Add
+                                (
+                                    objBillHeader = new BillHeader()
+                                    {
+                                        serieNumero = dr["serieNumero"].ToString(),
+                                        fechaEmision = dr["fechaEmision"].ToString(),
+                                        Horadeemision = dr["horadeEmision"].ToString(),
+                                        tipoMoneda = dr["tipoMoneda"].ToString(),
+                                        numeroDocumentoEmisor = (dr["numeroDocumentoEmisor"].ToString()),
+                                        tipoDocumentoAdquiriente = dr["tipoDocumentoAdquiriente"].ToString(),
+                                        numeroDocumentoAdquiriente = dr["numeroDocumentoAdquiriente"].ToString(),
+                                        razonSocialAdquiriente = dr["razonSocialAdquiriente"].ToString(),
+                                        direccionAdquiriente = dr["direccionAdquiriente"].ToString(),
+                                        tipoReferencia_1 = dr["tipoReferencia_1"].ToString(),
+                                        numeroDocumentoReferencia_1 = dr["numeroDocumentoReferencia_1"].ToString(),
+                                        tipoReferencia_2 = dr["tipoReferencia_2"].ToString(),
+                                        numeroDocumentoReferencia_2 = dr["numeroDocumentoReferencia_2"].ToString(),
+                                        totalVVNetoOpGravadas = (dr["totalVVNetoOpGravadas"].ToString()),
+                                        totalVVNetoOpNoGravada = (dr["totalVVNetoOpNoGravada"].ToString()),
+                                        conceptovvnetoopnogravada = (dr["conceptoVVNetoOpNoGravada"].ToString()),
+                                        totalVVNetoOpExoneradas = (dr["totalVVNetoOpExoneradas"].ToString()),
+                                        conceptovvnetoopexoneradas = (dr["conceptoVVNetoOpExoneradas"].ToString()),
+                                        totalVVNetoOpGratuitas = (dr["totalVVNetoOpGratuitas"].ToString()),
+                                        conceptovvnetoopgratuitas = (dr["conceptoVVNetoOpGratuitas"].ToString()),
+                                        totalVVNetoExportacion = (dr["totalVVNetoExportacion"].ToString()),
+                                        conceptovvexportacion = (dr["conceptoVVExportacion"].ToString()),
+                                        totalDescuentos = (dr["totalDescuentos"].ToString()),
+                                        totalIgv = (dr["totalIgv"].ToString()),
+                                        totalVenta = (dr["totalVenta"].ToString()),
+                                        tipooperacion = dr["tipoOperacion"].ToString(),
+                                        leyendas = dr["leyendas"].ToString(),
+                                        datosAdicionales = dr["datosAdicionales"].ToString(),
+                                        codigoestablecimientosunat = dr["codigoEstablecimientoSunat"].ToString(),
+                                        montototalimpuestos = (dr["montoTotalImpuestos"].ToString()),
+                                        cdgcodigomotivo = dr["cdgCodigoMotivo"].ToString(),
+                                        cdgporcentaje = (dr["cdgPorcentaje"].ToString()),
+                                        descuentosGlobales = (dr["descuentosGlobales"].ToString()),
+                                        cdgmontobasecargo = (dr["cdgMontoBaseCargo"].ToString()),
+                                        sumimpuestosopgratuitas = (dr["sumImpuestosOpGratuitas"].ToString()),
+                                        totalvalorventa = (dr["totalValorVenta"].ToString()),
+                                        totalprecioventa = (dr["totalPrecioVenta"].ToString()),
+                                        monredimporttotal = String.IsNullOrWhiteSpace(dr["monRedImportTotal"].ToString()) ? "0" : dr["monRedImportTotal"].ToString(),
+                                        codSistema = "02",
+                                        codigoCarga = $"FACT_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        nombreArchivo = $"FACT_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        origen = "MA",
+                                        estado = "PE",
+                                        fechaRegistro = timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)
+                                    }
+                                    );
+                                BillHeaders.Add(objBillHeader);
+                                string ResponseCode = cmd.Parameters["PO_CODIGO_RESPUESTA"].Value.ToString();
+                                string ResponseMessage = cmd.Parameters["PO_MENSAJE_RESPUESTA"].Value.ToString();
+                                Tools.Logging.Info(string.Format("Fin ReadConfiguration = codeResponse:{0}, messageResponse:{1}", ResponseCode, ResponseMessage));
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+            return BillHeaders;
+        }
+
+        public static List<BillDetail> ReadBillDetail(DateTime timestamp)
+        {
+            List<BillDetail> BillDetails = new List<BillDetail>();
+            BillDetail billDetail = new BillDetail();
+            try
+            {
+                //using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
+                using (IfxConnection conn = (IfxConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Informix))
+                {
+                    //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_CONSULTAS.SP_LEER_FACTURA_CAB", connection))
+                    using (IfxCommand cmd = new IfxCommand(Tools.Constants.IsisRead_Select_Header, conn))
+                    {
+
+                        conn.Open();
+                        cmd.CommandType = CommandType.Text;
+
+                        IfxDataReader dr = cmd.ExecuteReader();
+                        if (dr != null && dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                BillDetails.Add
+                                (
+                                    billDetail = new BillDetail()
+                                    {
+                                        serieNumero = dr["serieNumero"].ToString(),
+                                        numeroOrdenItem = dr["numeroOrdenItem"].ToString(),
+                                        unidadMedida = dr["unidadMedida"].ToString(),
+                                        cantidad = (dr["cantidad"].ToString()),
+                                        codigoProducto = dr["codigoProducto"].ToString(),
+                                        codigoproductosunat = dr["codigoProductoSunat"].ToString(),
+                                        descripcion = dr["descripcion"].ToString(),
+                                        montobaseigv = dr["montoBaseIGV"].ToString(),
+                                        importeIgv = (dr["importeIGV"].ToString()),
+                                        codigoRazonExoneracion = dr["codigoRazonExoneracion"].ToString(),
+                                        tasaigv = (dr["tasaIGV"].ToString()),
+                                        importeDescuento = (dr["importeDescuento"].ToString()),
+                                        codigodescuento = dr["codigoDescuento"].ToString(),
+                                        factordescuento = (dr["factorDescuento"].ToString()),
+                                        montobasedescuento = (dr["montoBaseDescuento"].ToString()),
+                                        codigoImporteReferencial = dr["codigoImporteReferencial"].ToString(),
+                                        importeReferencial = (String.IsNullOrWhiteSpace(dr["importeReferencial"].ToString()) ? "0" : dr["importeReferencial"].ToString()),
+                                        importeUnitarioSinImpuesto = (dr["importeUnitarioSinImpuesto"].ToString()),
+                                        importeTotalSinImpuesto = (dr["importeTotalSinImpuesto"].ToString()),
+                                        montototalimpuestoitem = (dr["montoTotalImpuestoItem"].ToString()),
+                                        codigoImpUnitConImpuesto = dr["codigoImpUnitConImpuesto"].ToString(),
+                                        importeUnitarioConImpuesto = (dr["importeUnitarioConImpuesto"].ToString()),
+                                        codSistema = "02",
+                                        codigoCarga = $"FACT_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        nombreArchivo = $"FACT_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
+                                    }
+                                    );
+                                BillDetails.Add(billDetail);
+                            }
+                            string ResponseCode = cmd.Parameters["PO_CODIGO_RESPUESTA"].Value.ToString();
+                            string ResponseMessage = cmd.Parameters["PO_MENSAJE_RESPUESTA"].Value.ToString();
+                            Tools.Logging.Info(string.Format("Fin ReadConfiguration = codeResponse:{0}, messageResponse:{1}", ResponseCode, ResponseMessage));
+
+
+                        }
+                    }
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+
+            return BillDetails;
+        }
+
+
+        public static List<CreditNoteHeader> ReadCreditNoteHeaders(DateTime timestamp, ref bool debeRepetir)
         {
             List<CreditNoteHeader> creditNoteHeaders = new List<CreditNoteHeader>();
             CreditNoteHeader objcreditNoteHeaders = new CreditNoteHeader();
@@ -223,26 +387,26 @@ namespace TM.FECentralizada.Data
                                         numeroDocumentoReferencia_1 = dr["numeroDocumentoReferencia_1"].ToString(),
                                         tipoReferencia_2 = dr["tipoReferencia_2"].ToString(),
                                         numeroDocumentoReferencia_2 = dr["numeroDocumentoReferencia_2"].ToString(),
-                                        totalVVNetoOpNoGravada = double.Parse(dr["totalVVNetoOpNoGravada"].ToString()),
-                                        conceptoVVNetoOpNoGravada = double.Parse(dr["conceptoVVNetoOpNoGravada"].ToString()),
-                                        totalVVNetoOpExoneradas = double.Parse(dr["totalVVNetoOpExoneradas"].ToString()),
-                                        conceptoVVNetoOpExoneradas = double.Parse(dr["conceptoVVNetoOpExoneradas"].ToString()),
-                                        totalVVNetoOpGratuitas = double.Parse(dr["totalVVNetoOpGratuitas"].ToString()),
-                                        conceptoVVNetoOpGratuitas = double.Parse(dr["conceptoVVNetoOpGratuitas"].ToString()),
-                                        totalVVNetoExportacion = double.Parse(dr["totalVVNetoExportacion"].ToString()),
-                                        conceptoVVExportacion = double.Parse(dr["conceptoVVExportacion"].ToString()),
-                                        totalDescuentos = double.Parse(dr["totalDescuentos"].ToString()),
-                                        totalIgv = double.Parse(dr["totalIgv"].ToString()),
-                                        totalVenta = double.Parse(dr["totalVenta"].ToString()),
+                                        totalVVNetoOpNoGravada = (dr["totalVVNetoOpNoGravada"].ToString()),
+                                        conceptoVVNetoOpNoGravada = (dr["conceptoVVNetoOpNoGravada"].ToString()),
+                                        totalVVNetoOpExoneradas = (dr["totalVVNetoOpExoneradas"].ToString()),
+                                        conceptoVVNetoOpExoneradas = (dr["conceptoVVNetoOpExoneradas"].ToString()),
+                                        totalVVNetoOpGratuitas = (dr["totalVVNetoOpGratuitas"].ToString()),
+                                        conceptoVVNetoOpGratuitas = (dr["conceptoVVNetoOpGratuitas"].ToString()),
+                                        totalVVNetoExportacion = (dr["totalVVNetoExportacion"].ToString()),
+                                        conceptoVVExportacion = (dr["conceptoVVExportacion"].ToString()),
+                                        totalDescuentos = (dr["totalDescuentos"].ToString()),
+                                        totalIgv = (dr["totalIgv"].ToString()),
+                                        totalVenta = (dr["totalVenta"].ToString()),
                                         leyendas = dr["leyendas"].ToString(),
-                                        porcentajeDetraccion = double.Parse(dr["porcentajeDetraccion"].ToString()),
-                                        totalDetraccion = double.Parse(dr["totalDetraccion"].ToString()),
+                                        porcentajeDetraccion = (dr["porcentajeDetraccion"].ToString()),
+                                        totalDetraccion = (dr["totalDetraccion"].ToString()),
                                         descripcionDetraccion = dr["descripcionDetraccion"].ToString(),
                                         codigoEstablecimientoSunat = dr["codigoEstablecimientoSunat"].ToString(),
-                                        montoTotalImpuestos = double.Parse(dr["montoTotalImpuestos"].ToString()),
-                                        descuentosGlobales = double.Parse(dr["descuentosGlobales"].ToString()),
-                                        sumImpuestosOpGratuitas = double.Parse(dr["sumImpuestosOpGratuitas"].ToString()),
-                                        monRedImportTotal = double.Parse(dr["monRedImportTotal"].ToString()),
+                                        montoTotalImpuestos = (dr["montoTotalImpuestos"].ToString()),
+                                        descuentosGlobales = (dr["descuentosGlobales"].ToString()),
+                                        sumImpuestosOpGratuitas = (dr["sumImpuestosOpGratuitas"].ToString()),
+                                        monRedImportTotal = (dr["monRedImportTotal"].ToString()),
                                         codigoSerieNumeroAfectado = dr["codigoSerieNumeroAfectado"].ToString(),
                                         serieNumeroAfectado = dr["serieNumeroAfectado"].ToString(),
                                         correoAdquiriente = dr["correoAdquiriente"].ToString(),
@@ -250,7 +414,15 @@ namespace TM.FECentralizada.Data
                                         tipoDocRefPrincipal = dr["tipoDocRefPrincipal"].ToString(),
                                         numeroDocRefPrincipal = dr["numeroDocRefPrincipal"].ToString(),
                                         lugarDestino = dr["lugardestino"].ToString(),
-                                        TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString()
+                                        totalvalorventanetoopgravadas = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
+                                        codSistema = "02",
+                                        codigoCarga = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        nombreArchivo = $"NCRE_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        origen = "MA",
+                                        estado = "PE",
+                                        fechaRegistro = timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT),
+                                        totalRetencion = dr["TOTALRETENCION"].ToString(),
+                                        porcentajeRetencion = dr["PORCENTAJERETENCION"].ToString()
                                     }
                                     );
                                 creditNoteHeaders.Add(objcreditNoteHeaders);
@@ -272,7 +444,7 @@ namespace TM.FECentralizada.Data
             return creditNoteHeaders;
         }
 
-        public static List<CreditNoteDetail> ReadCreditNoteDetails()
+        public static List<CreditNoteDetail> ReadCreditNoteDetails(DateTime timestamp)
         {
             List<CreditNoteDetail> creditNoteDetails = new List<CreditNoteDetail>();
             CreditNoteDetail objcreditNoteDetails = new CreditNoteDetail();
@@ -319,7 +491,8 @@ namespace TM.FECentralizada.Data
                                         numeroExpediente = dr["numeroExpediente"].ToString(),
                                         codigoUnidadEjecutora = dr["codigoUnidadEjecutora"].ToString(),
                                         numeroContrato = dr["numeroContrato"].ToString(),
-                                        numeroProcesoSeleccion = dr["numeroProcesoSeleccion"].ToString()
+                                        numeroProcesoSeleccion = dr["numeroProcesoSeleccion"].ToString(),
+                                        codSistema = "02"
                                     }
                                     );
                                 creditNoteDetails.Add(objcreditNoteDetails);
@@ -342,7 +515,7 @@ namespace TM.FECentralizada.Data
             return creditNoteDetails;
         }
 
-        public static List<DebitNoteHeader> ReadDebitNoteHeader()
+        public static List<DebitNoteHeader> ReadDebitNoteHeader(DateTime timestamp, ref bool debeRepetir)
         {
             List<DebitNoteHeader> debitNoteHeader = new List<DebitNoteHeader>();
             DebitNoteHeader objdebitNoteHeader = new DebitNoteHeader();
@@ -375,7 +548,7 @@ namespace TM.FECentralizada.Data
                                         tipoDocumentoAdquiriente = dr["tipoDocumentoAdquiriente"].ToString(),
                                         numeroDocumentoAdquiriente = dr["numeroDocumentoAdquiriente"].ToString(),
                                         razonSocialAdquiriente = dr["razonSocialAdquiriente"].ToString(),
-                                        tipoReferencia_1 = dr["tipoReferencia_1"].ToString(),
+                                        tipoReferencia_1 = dr["tipoReferencia_1"].ToString().Trim(),
                                         numeroDocumentoReferencia_1 = dr["numeroDocumentoReferencia_1"].ToString(),
                                         tipoReferencia_2 = dr["tipoReferencia_2"].ToString(),
                                         numeroDocumentoReferencia_2 = dr["numeroDocumentoReferencia_2"].ToString(),
@@ -404,7 +577,15 @@ namespace TM.FECentralizada.Data
                                         motivoDocumento = dr["motivoDocumento"].ToString(),
                                         tipoDocRefPrincipal = dr["tipoDocRefPrincipal"].ToString(),
                                         numeroDocRefPrincipal = dr["numeroDocRefPrincipal"].ToString(),
-                                        TOTALVALORVENTANETOOPGRAVADAS = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString()
+                                        totalvalorventanetoopgravadas = dr["TOTALVALORVENTANETOOPGRAVADAS"].ToString(),
+                                        codSistema = "02",
+                                        codigoCarga = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        nombreArchivo = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        origen = "MA",
+                                        estado = "PE",
+                                        fechaRegistro = timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT),
+                                        totalRetencion = dr["TOTALRETENCION"].ToString(),
+                                        porcentajeRetencion = dr["PORCENTAJERETENCION"].ToString()
                                     }
                                     );
                                 debitNoteHeader.Add(objdebitNoteHeader);
@@ -426,7 +607,7 @@ namespace TM.FECentralizada.Data
             return debitNoteHeader;
         }
 
-        public static List<DebitNoteDetail> ReadDebitNoteDetails()
+        public static List<DebitNoteDetail> ReadDebitNoteDetails(DateTime timestamp)
         {
             List<DebitNoteDetail> debitNoteDetails = new List<DebitNoteDetail>();
             DebitNoteDetail objdebitNoteDetails = new DebitNoteDetail();
@@ -470,7 +651,10 @@ namespace TM.FECentralizada.Data
                                         importeUnitarioConImpuesto = dr["importeUnitarioConImpuesto"].ToString(),
                                         numeroExpediente = dr["numeroExpediente"].ToString(),
                                         codigoUnidadEjecutora = dr["codigoUnidadEjecutora"].ToString(),
-                                        numeroContrato = dr["numeroContrato"].ToString()
+                                        numeroContrato = dr["numeroContrato"].ToString(),
+                                        codSistema = "02",
+                                        codigoCarga = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}",
+                                        nombreArchivo = $"NDEB_{timestamp.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT)}"
 
 
                                     }
@@ -563,7 +747,7 @@ namespace TM.FECentralizada.Data
             }
         }
 
-        public static void UpdatePickupDate(List<string> listSerialNumbers)
+        public static void UpdatePickupDate(List<string> listSerialNumbers, String tableName)
         {
             try
             {
@@ -596,26 +780,26 @@ namespace TM.FECentralizada.Data
             }
             
         }
-
-        public static void InvokeInvoiceUpdate()
+        
+        public static void InvokeUpdate(Int32 ar)
         {
             try
             {
                 //using (OracleConnection connection = (OracleConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Oracle))
                 using (IfxConnection conn = (IfxConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.Informix))
                 {
-                    
+                    if (ar ==1) { 
                     //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT", connection))
                     using (IfxCommand cmd = new IfxCommand("update fact_fe01_cab set fecharecojo= systdate() where serienumero in (ser)", conn))
                     {
                         conn.Open();
                         //cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandType = CommandType.Text;
-                        IfxParameter pmtDate=new IfxParameter("PI_FECHA", IfxType.VarChar,50);
+                        IfxParameter pmtDate = new IfxParameter("PI_FECHA", IfxType.VarChar, 50);
                         IfxParameter pmtAffectedRows = new IfxParameter("PO_FILAS_AFECTADAS", IfxType.Integer);
                         IfxParameter pmtMsgResponse = new IfxParameter("PO_MENSAJE_RESPUESTA", IfxType.VarChar, 3000);
                         IfxParameter pmtResponseCode = new IfxParameter("PO_CODIGO_RESPUESTA", IfxType.VarChar, 50);
-                        
+
 
                         pmtDate.Value = DateTime.Now.ToString("yyyy-MM-dd");
                         cmd.Parameters.Add(pmtDate);
@@ -630,15 +814,72 @@ namespace TM.FECentralizada.Data
                         Tools.Logging.Info($"Actualización masiva de la fecha de recojo Isis - Facturas: {messageResponse} - filas afectadas:{updatesInvoices}");
 
                     }
+                    }
+                    if (ar == 2)
+                    {
+                        //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT", connection))
+                        using (IfxCommand cmd = new IfxCommand("update fact_fe07_cab set fecharecojo= systdate() where serienumero in (ser)", conn))
+                        {
+                            conn.Open();
+                            //cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.CommandType = CommandType.Text;
+                            IfxParameter pmtDate = new IfxParameter("PI_FECHA", IfxType.VarChar, 50);
+                            IfxParameter pmtAffectedRows = new IfxParameter("PO_FILAS_AFECTADAS", IfxType.Integer);
+                            IfxParameter pmtMsgResponse = new IfxParameter("PO_MENSAJE_RESPUESTA", IfxType.VarChar, 3000);
+                            IfxParameter pmtResponseCode = new IfxParameter("PO_CODIGO_RESPUESTA", IfxType.VarChar, 50);
+
+
+                            pmtDate.Value = DateTime.Now.ToString("yyyy-MM-dd");
+                            cmd.Parameters.Add(pmtDate);
+                            cmd.Parameters.Add(pmtAffectedRows);
+                            cmd.Parameters.Add(pmtMsgResponse);
+                            cmd.Parameters.Add(pmtResponseCode);
+                            cmd.ExecuteNonQuery();
+
+                            string messageResponse = cmd.Parameters["PO_MENSAJE_RESPUESTA"].ToString();
+                            string updatesInvoices = cmd.Parameters["PO_FILAS_AFECTADAS"].ToString();
+
+                            Tools.Logging.Info($"Actualización masiva de la fecha de recojo Isis - Nota de Credito: {messageResponse} - filas afectadas:{updatesInvoices}");
+
+                        }
+                    }
+                    if (ar == 3)
+                    {
+                        //using (OracleCommand cmd = new OracleCommand("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT", connection))
+                        using (IfxCommand cmd = new IfxCommand("update fact_fe08_cab set fecharecojo= systdate() where serienumero in (ser)", conn))
+                        {
+                            conn.Open();
+                            //cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.CommandType = CommandType.Text;
+                            IfxParameter pmtDate = new IfxParameter("PI_FECHA", IfxType.VarChar, 50);
+                            IfxParameter pmtAffectedRows = new IfxParameter("PO_FILAS_AFECTADAS", IfxType.Integer);
+                            IfxParameter pmtMsgResponse = new IfxParameter("PO_MENSAJE_RESPUESTA", IfxType.VarChar, 3000);
+                            IfxParameter pmtResponseCode = new IfxParameter("PO_CODIGO_RESPUESTA", IfxType.VarChar, 50);
+
+
+                            pmtDate.Value = DateTime.Now.ToString("yyyy-MM-dd");
+                            cmd.Parameters.Add(pmtDate);
+                            cmd.Parameters.Add(pmtAffectedRows);
+                            cmd.Parameters.Add(pmtMsgResponse);
+                            cmd.Parameters.Add(pmtResponseCode);
+                            cmd.ExecuteNonQuery();
+
+                            string messageResponse = cmd.Parameters["PO_MENSAJE_RESPUESTA"].ToString();
+                            string updatesInvoices = cmd.Parameters["PO_FILAS_AFECTADAS"].ToString();
+
+                            Tools.Logging.Info($"Actualización masiva de la fecha de recojo Isis - Nota de Debito: {messageResponse} - filas afectadas:{updatesInvoices}");
+
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
-           
-        }
 
+        }
+        
 
 
 

@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TM.FECentralizada.Entities.Isis
+namespace TM.FECentralizada.Entities.Cms
 {
-    public class DebitNoteDetail
+    public class CreditNoteDetail
     {
+        public string codSistema;
+        public string codigoCarga;
+        public string nombreArchivo;
         public string serieNumero { get; set; }
         public string numeroOrdenItem { get; set; }
         public string unidadMedida { get; set; }
@@ -20,6 +23,8 @@ namespace TM.FECentralizada.Entities.Isis
         public string codigoRazonExoneracion { get; set; }
         public string tasaIGV { get; set; }
         public string importeDescuento { get; set; }
+        public string codigoImporteReferencial { get; set; }
+        public string importeReferencial { get; set; }
         public string importeUnitarioSinImpuesto { get; set; }
         public string importeTotalSinImpuesto { get; set; }
         public string montoTotalImpuestoItem { get; set; }
@@ -28,8 +33,6 @@ namespace TM.FECentralizada.Entities.Isis
         public string numeroExpediente { get; set; }
         public string codigoUnidadEjecutora { get; set; }
         public string numeroContrato { get; set; }
-        public string codSistema { get; set; }
-        public string codigoCarga { get; set; }
-        public string nombreArchivo { get; set; }
+        public string numeroProcesoSeleccion { get; set; }
     }
 }
