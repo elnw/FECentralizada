@@ -28,3 +28,8 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FEC
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Entities\bin\Debug\TM.FECentralizada.Entities.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Entities\obj\Debug\TM.FECentralizada.Entities.pdb

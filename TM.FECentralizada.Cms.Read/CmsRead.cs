@@ -63,7 +63,7 @@ namespace TM.FECentralizada.Cms.Read
                 if (ParamsResponse != null && ParamsResponse.Any())
                 {
                     List<Parameters> ParametersInvoce = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.CmsRead_Invoice.ToUpper())).ToList();
-                    List<Parameters> ParametersBill = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisRead_Bill.ToUpper())).ToList();
+                    List<Parameters> ParametersBill = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.CmsRead_Bill.ToUpper())).ToList();
                     List<Parameters> ParametersCreditNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.CmsRead_CreditNote.ToUpper())).ToList();
                     List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.CmsRead_DebitNote.ToUpper())).ToList();
 
@@ -176,7 +176,7 @@ namespace TM.FECentralizada.Cms.Read
 
                                 Tools.Logging.Info("Inicio : Registrar Auditoria");
 
-                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 3, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
+                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 5, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
 
                                 if (auditId > 0)
                                 {
@@ -225,7 +225,7 @@ namespace TM.FECentralizada.Cms.Read
                                         }
                                         else
                                         {
-                                            //resultPath = Business.Pacifyc.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Cms.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
                                         }
                                         Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
@@ -358,7 +358,7 @@ namespace TM.FECentralizada.Cms.Read
                             }
 
 
-                            Tools.Logging.Info("Inicio: Obtener configuración de correos electronicos - Facturas Atis");
+                            Tools.Logging.Info("Inicio: Obtener configuración de correos electronicos - Facturas Cms");
 
                             Parameters mailParameter = oListParameters.FirstOrDefault(x => x.KeyParam == Tools.Constants.MAIL_CONFIG);
 
@@ -368,7 +368,7 @@ namespace TM.FECentralizada.Cms.Read
 
                                 Tools.Logging.Info("Inicio : Registrar Auditoria");
 
-                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 3, Tools.Constants.NO_LEIDO, ListBillHeader.Count + ListBillDetail.Count, 1, serviceConfig.Norm);
+                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 5, Tools.Constants.NO_LEIDO, ListBillHeader.Count + ListBillDetail.Count, 1, serviceConfig.Norm);
 
                                 if (auditId > 0)
                                 {
@@ -561,15 +561,15 @@ namespace TM.FECentralizada.Cms.Read
 
                                 Tools.Logging.Info("Inicio : Registrar Auditoria");
 
-                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 3, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
+                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 5, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
 
                                 if (auditId > 0)
                                 {
 
                                     Tools.Logging.Info("Inicio : Validar Documentos ");
 
-                                    isValid = true;// Business.Atis.ValidateBills(ListInvoceHeader, ref validationMessage);
-                                                   // isValid &= Business.Atis.ValidateBillDetails(ListInvoceDetail, ref validationMessage);
+                                    isValid = true;// Business.Cms.ValidateBills(ListInvoceHeader, ref validationMessage);
+                                                   // isValid &= Business.Cms.ValidateBillDetails(ListInvoceDetail, ref validationMessage);
 
 
                                     /*for(int i = 0; i < ListInvoceDetail.Count; i++)
@@ -605,12 +605,12 @@ namespace TM.FECentralizada.Cms.Read
                                         string resultPath = "";
                                         if (serviceConfig.Norm == 340)
                                         {
-                                            // resultPath = Business.Atis.CreateBillFile340(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Cms.CreateCreditNoteFile340(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
 
                                         }
                                         else
                                         {
-                                            //resultPath = Business.Pacifyc.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Cms.CreateCreditNoteFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
                                         }
                                         Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
@@ -753,15 +753,15 @@ namespace TM.FECentralizada.Cms.Read
 
                                 Tools.Logging.Info("Inicio : Registrar Auditoria");
 
-                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 3, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
+                                auditId = TM.FECentralizada.Business.Common.InsertAudit(DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), 5, Tools.Constants.NO_LEIDO, ListInvoceHeader.Count + ListInvoceDetail.Count, 1, serviceConfig.Norm);
 
                                 if (auditId > 0)
                                 {
 
                                     Tools.Logging.Info("Inicio : Validar Documentos ");
 
-                                    isValid = true;// Business.Atis.ValidateBills(ListInvoceHeader, ref validationMessage);
-                                                   // isValid &= Business.Atis.ValidateBillDetails(ListInvoceDetail, ref validationMessage);
+                                    isValid = true;// Business.Cms.ValidateBills(ListInvoceHeader, ref validationMessage);
+                                                   // isValid &= Business.Cms.ValidateBillDetails(ListInvoceDetail, ref validationMessage);
 
 
                                     /*for(int i = 0; i < ListInvoceDetail.Count; i++)
@@ -797,7 +797,7 @@ namespace TM.FECentralizada.Cms.Read
                                         string resultPath = "";
                                         if (serviceConfig.Norm == 340)
                                         {
-                                            // resultPath = Business.Atis.CreateBillFile340(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Cms.CreateDebitNoteFile340(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
 
                                         }
                                         else
@@ -831,7 +831,7 @@ namespace TM.FECentralizada.Cms.Read
                                 }
                                 else
                                 {
-                                    Tools.Logging.Error($"No se pudo recuperar el id de auditoria - Facturas Atis");
+                                    Tools.Logging.Error($"No se pudo recuperar el id de auditoria - Facturas Cms");
                                     Business.Common.UpdateAudit(auditId, Tools.Constants.ERROR_FECENTRALIZADA, intentos);
                                 }
                             }

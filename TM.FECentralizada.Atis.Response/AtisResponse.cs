@@ -61,7 +61,7 @@ namespace TM.FECentralizada.Atis.Response
                 List<Parameters> ParametersCreditNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisResponse_CreditNote.ToUpper())).ToList();
                 List<Parameters> ParametersDebitNote = ParamsResponse.FindAll(x => x.KeyDomain.ToUpper().Equals(Tools.Constants.AtisResponse_DebitNote.ToUpper())).ToList();
 
-                Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
+                Tools.Logging.Info("Inicio : Procesar documentos de BD Atis");
 
                 //Invoice(ParametersInvoce);
                 Bill(ParametersBill);

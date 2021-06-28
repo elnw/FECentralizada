@@ -62,3 +62,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Rea
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.ProjectInstaller.resources
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.GenerateResource.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CoreCompileInputs.cache
