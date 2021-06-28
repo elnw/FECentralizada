@@ -72,12 +72,12 @@ namespace TM.FECentralizada.Pacifyc.Read
                     Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
                     //Invoice(ParametersInvoce);
                     //CreditNote(ParametersCreditNote);
-                    DebitNote(ParametersDebitNote);
-                    /*Parallel.Invoke(
+                    //DebitNote(ParametersDebitNote);
+                    Parallel.Invoke(
                                () => Invoice(ParametersInvoce),
                                () => CreditNote(ParametersCreditNote),
                                () => DebitNote(ParametersDebitNote)
-                        );*/
+                        );
                     Tools.Logging.Info("Fin : Procesar documentos de BD Pacyfic");
 
                     //Obtengo la Configuración Intervalo de Tiempo
@@ -200,8 +200,9 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
                             Tools.Logging.Info("Inicio : Actualizar fecha de envio");
-                            //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
-                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+
+                            string series = "'" + String.Join("','", ListInvoceHeader.Select(x => x.serieNumero).ToList()) + "'";
+                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_SQL), series);
                             Business.Pacifyc.UpdateInvoicePickUpDate(ListInvoceHeader);
 
                         }
@@ -244,7 +245,6 @@ namespace TM.FECentralizada.Pacifyc.Read
             Mail mailConfig;
             FileServer fileServerConfig;
             bool isValid;
-            List<string> validationMessage = new List<string>();
             int auditId;
             int intentos = 0;
             DateTime timestamp = DateTime.Now;
@@ -283,7 +283,7 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                         if (!isValid)
                         {
-                            Business.Common.SendFileNotification(mailConfig, validationMessage);
+                            Business.Common.SendFileNotification(mailConfig, messages);
                             //Business.Common.UpdateAudit(auditId, Tools.Constants.FALLA_VALIDACION, intentos);
                         }
 
@@ -315,11 +315,15 @@ namespace TM.FECentralizada.Pacifyc.Read
                             Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
                             Tools.FileServer.UploadFile(fileServerConfig.Host, fileServerConfig.Port, fileServerConfig.User, fileServerConfig.Password, fileServerConfig.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
+                            Tools.Logging.Info("Inicio :  Notificación de envio  GFiscal ");
+                            Business.Common.SendFileNotification(mailConfig, $"Se envió correctamente el documento: {System.IO.Path.GetFileName(resultPath)} a gfiscal");
+
                             Tools.Logging.Info("Inicio : Actualizo Auditoria");
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
                             Tools.Logging.Info("Inicio : Actualizar fecha de envio");
                             //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
-                            //Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            string series = $"'{String.Join("','", ListCreditNoteHeader.Select(x => x.serieNumero).ToList())}'";
+                            Data.Common.UpdateDocumentCreditNote(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_SQL), series);
                             Business.Pacifyc.UpdateCreditNotePickUpDate(ListCreditNoteHeader);
 
                         }
@@ -378,7 +382,7 @@ namespace TM.FECentralizada.Pacifyc.Read
 
                         isValid = Business.Pacifyc.CheckDebitNotes(debitNoteHeaders, validationMessage);
 
-                        debitNoteHeaders.RemoveAll(x => !debitNoteHeaders.Select(y => y.serieNumero).Contains(x.serieNumero));
+                        debitNoteDetails.RemoveAll(x => !debitNoteHeaders.Select(y => y.serieNumero).Contains(x.serieNumero));
 
 
                         Tools.Logging.Info("Inicio : Notificación de Validación");
@@ -416,7 +420,8 @@ namespace TM.FECentralizada.Pacifyc.Read
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
                             Tools.Logging.Info("Inicio : Actualizar fecha de envio");
                             //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
-                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            string series = $"'{String.Join("','", debitNoteHeaders.Select(x=>x.serieNumero).ToList())}'";
+                            Data.Common.UpdateDocumentDebitNote(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_SQL), series);
                             Business.Pacifyc.UpdateDebitNotePickUpDate(debitNoteHeaders);
 
                         }

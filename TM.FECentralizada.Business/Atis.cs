@@ -239,7 +239,7 @@ namespace TM.FECentralizada.Business
         public static string CreateInvoiceFile193(List<InvoiceHeader> invoices, List<InvoiceDetail> invoiceDetails, string path)
         {
             DateTime current = DateTime.Now;
-            string fileName = "FACT_" + current.ToString("yyyyMMdd_HH_yyyyMMddHHmmss") + ".txt";
+            string fileName = "FACT_03_" + current.ToString("yyyyMMddHHmmss") + ".txt";
 
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
@@ -323,6 +323,45 @@ namespace TM.FECentralizada.Business
             try
             {
                 ListDetails = Data.Atis.ReadBillDetail(filename, data, timestamp);
+            }
+
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+
+            return ListDetails;
+        }
+
+        public static List<CreditNoteHeader> GetCreditNoteHeader(String filename, List<String> data, DateTime timestamp, ref int intentos, int maxIntentos)
+        {
+            List<CreditNoteHeader> ListHeaders = new List<CreditNoteHeader>();
+            bool debeRepetir = false;
+            try
+            {
+                for (int i = 0; i < maxIntentos; i++)
+                {
+                    ListHeaders = Data.Atis.ReadCreditNoteHeader(filename, data, timestamp, ref debeRepetir);
+                    intentos++;
+                    if (!debeRepetir) break;
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+            return ListHeaders;
+        }
+
+        public static List<CreditNoteDetail> GetCreditNoteDetail(String filename, List<String> data, DateTime timestamp)
+        {
+            List<CreditNoteDetail> ListDetails = new List<CreditNoteDetail>();
+            try
+            {
+                ListDetails = Data.Atis.ReadCreditNoteDetails(filename, data, timestamp);
             }
 
             catch (Exception ex)
@@ -417,10 +456,80 @@ namespace TM.FECentralizada.Business
             }
             return isValid;
         }
+
+        private static bool ShouldDeleteCreditNote(CreditNoteHeader creditNoteHeader, List<string> messages)
+        {
+            bool checkCN = true;
+
+            if (String.IsNullOrEmpty(creditNoteHeader.fechaEmision))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene la fecha de emisión vacía");
+            }
+
+            if (String.IsNullOrEmpty(creditNoteHeader.codigoSerieNumeroAfectado))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el codigo serie numero afectado vacío");
+            }
+
+            if (String.IsNullOrEmpty(creditNoteHeader.serieNumeroAfectado))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene la serie de numero afectado vacío");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.razonSocialAdquiriente))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene la razón social adquiriente vacía");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.correoAdquiriente))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el correo adquiriente vacío");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.motivoDocumento))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el motivo del documento vacío");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.tipoMoneda))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el tipo de moneda vacío");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.tipoDocRefPrincipal))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el tipo de doc ref principal vacío");
+            }
+            if (String.IsNullOrEmpty(creditNoteHeader.numeroDocRefPrincipal))
+            {
+                checkCN &= false;
+                messages.Add($"La cabecera de la nota de crédito con serie: {creditNoteHeader.serieNumero} tiene el numero de doc ref principal vacío");
+            }
+            return checkCN;
+        }
+
+        public static bool CheckCreditNoteHeaders(List<CreditNoteHeader> creditNoteHeaders, List<string> messageResult)
+        {
+            bool isValid = true;
+
+            foreach(var header in creditNoteHeaders.ToList())
+            {
+                if(ShouldDeleteCreditNote(header, messageResult))
+                {
+                    creditNoteHeaders.Remove(header);
+                    isValid &= false;
+                }
+            }
+            return isValid;
+        }
+
         private static bool ShouldDeleteBill(BillDetail detail, ref string messageResult)
         {
             bool isValid = true;
-            /*if (String.IsNullOrEmpty(detail.serieNumero) || detail.serieNumero.Length < 13 || !detail.serieNumero.StartsWith("F"))
+            if (String.IsNullOrEmpty(detail.serieNumero) || detail.serieNumero.Length < 13 || !detail.serieNumero.StartsWith("F"))
             {
                 messageResult += "La serie y número de la factura: " + detail.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto";
                 isValid &= false;
@@ -444,8 +553,84 @@ namespace TM.FECentralizada.Business
             {
                 messageResult += "El codigo de razon de exgoneracion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.";
                 isValid &= false;
-            }*/
+            }
             return !isValid;
+        }
+
+        private static bool ShouldDeleteDebitNote(DebitNoteHeader debitNoteHeader, List<string> messages)
+        {
+            bool checkDN = false;
+            if (String.IsNullOrEmpty(debitNoteHeader.fechaEmision))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene la fecha de emisión vacía");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.codigoSerieNumeroAfectado))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el codigo de serie número afectado vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.serieNumeroAfectado))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el serie número afectado vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.tipoDocumentoAdquiriente))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el tipo de documento adquiriente vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.numeroDocumentoAdquiriente))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el número de documento adquiriente vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.razonSocialAdquiriente))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene la razón social del adquiriente vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.correoAdquiriente))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el correo del adquiriente vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.motivoDocumento))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el motivo del documento vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.tipoMoneda))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el tipo de moneda vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.tipoDocRefPrincipal))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el tipo de doc ref principal vacío");
+            }
+            if (String.IsNullOrEmpty(debitNoteHeader.numeroDocRefPrincipal))
+            {
+                checkDN &= true;
+                messages.Add($"La nota de débito con número de serie: {debitNoteHeader.serieNumero} tiene el número de doc ref principal vacío");
+            }
+            return checkDN;
+        }
+
+        public static bool CheckDebitNotes(List<DebitNoteHeader> debitNoteHeaders, List<string> messages)
+        {
+            bool isValid = true;
+
+            foreach(DebitNoteHeader debitNoteHeader in debitNoteHeaders.ToList())
+            {
+                if(ShouldDeleteDebitNote(debitNoteHeader, messages))
+                {
+                    debitNoteHeaders.Remove(debitNoteHeader);
+                    isValid &= false;
+                }
+            }
+            return isValid;
         }
 
         public static string CreateBillFile340(List<BillHeader> bills, List<BillDetail> currentBills, string path)
@@ -492,6 +677,111 @@ namespace TM.FECentralizada.Business
             return Path.Combine(path, fileName);
         }
 
+        public static string CreateCreditNoteFile340(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
+        {
+            DateTime current = DateTime.Now;
+            string fileName = "NCRE_03" + current.ToString("_yyyyMMddHHmmss") + ".txt";
+            using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
+            {
+                foreach (CreditNoteHeader creditNoteHeader in creditNoteHeaders)
+                {
+                    writer.WriteLine($"C|{creditNoteHeader.serieNumero}|{creditNoteHeader.fechaEmision}|{creditNoteHeader.horadeEmision}|{creditNoteHeader.codigoSerieNumeroAfectado}|" +
+                        $"{creditNoteHeader.tipoMoneda}|{creditNoteHeader.numeroDocumentoEmisor}|{creditNoteHeader.tipoDocumentoAdquiriente}|{creditNoteHeader.numeroDocumentoAdquiriente}|" +
+                        $"{creditNoteHeader.razonSocialAdquiriente}|{creditNoteHeader.lugarDestino}|{creditNoteHeader.tipoDocRefPrincipal}|{creditNoteHeader.tipoReferencia_1}|{creditNoteHeader.numeroDocumentoReferencia_1}|" +
+                        $"{creditNoteHeader.tipoReferencia_2}|{creditNoteHeader.numeroDocumentoReferencia_2}|{creditNoteHeader.motivoDocumento}|{creditNoteHeader.totalvalorventanetoopgravadas}|{creditNoteHeader.totalVVNetoOpNoGravada}|" +
+                        $"{creditNoteHeader.conceptoVVNetoOpNoGravada}|{creditNoteHeader.totalVVNetoOpExoneradas}|{creditNoteHeader.conceptoVVNetoOpExoneradas}|{creditNoteHeader.totalVVNetoOpGratuitas}|" +
+                        $"{creditNoteHeader.conceptoVVNetoOpGratuitas}|{creditNoteHeader.totalVVNetoExportacion}|{creditNoteHeader.conceptoVVExportacion}|{creditNoteHeader.totalIgv}|{creditNoteHeader.totalVenta}|" +
+                        $"{creditNoteHeader.leyendas}||{creditNoteHeader.codigoEstablecimientoSunat}|{creditNoteHeader.montoTotalImpuestos}|{creditNoteHeader.sumImpuestosOpGratuitas}|{creditNoteHeader.monRedImportTotal}|" +
+                        $"||||");
+
+                    var currentDetails = creditNoteDetails.Where(x => x.serieNumero == creditNoteHeader.serieNumero).ToList();
+
+                    foreach (CreditNoteDetail cnDetail in currentDetails)
+                    {
+
+                        writer.WriteLine($"{cnDetail.numeroOrdenItem}|{cnDetail.unidadMedida}|{cnDetail.cantidad}|" +
+                            $"{cnDetail.codigoProducto}|{cnDetail.codigoProductoSunat}|{cnDetail.descripcion}|" +
+                            $"{cnDetail.montoBaseIGV}|{cnDetail.importeIGV}|{cnDetail.codigoRazonExoneracion}|{cnDetail.tasaIGV}|" +
+                            $"{cnDetail.codigoImporteReferencial}|{cnDetail.importeReferencial}|{cnDetail.importeUnitarioSinImpuesto}|" +
+                            $"{cnDetail.importeTotalSinImpuesto}|{cnDetail.montoTotalImpuestoItem}|{cnDetail.codigoImpUnitConImpuesto}|" +
+                            $"{cnDetail.importeUnitarioConImpuesto}");
+                    }
+                }
+            }
+            return Path.Combine(path, fileName);
+        }
+
+        public static string CreateCreditNoteFile193(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
+        {
+            DateTime current = DateTime.Now;
+            string fileName = "NCRE_03" + current.ToString("_yyyyMMddHHmmss") + ".txt"; ;
+
+            using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
+            {
+                foreach (CreditNoteHeader creditNoteHeader in creditNoteHeaders)
+                {
+                    writer.WriteLine($"C|{creditNoteHeader.serieNumero}|{creditNoteHeader.fechaEmision}|{creditNoteHeader.horadeEmision}|{creditNoteHeader.codigoSerieNumeroAfectado}|" +
+                        $"{creditNoteHeader.tipoMoneda}|{creditNoteHeader.numeroDocumentoEmisor}|{creditNoteHeader.tipoDocumentoAdquiriente}|{creditNoteHeader.numeroDocumentoAdquiriente}|" +
+                        $"{creditNoteHeader.razonSocialAdquiriente}|{creditNoteHeader.lugarDestino}|{creditNoteHeader.tipoDocRefPrincipal}|{creditNoteHeader.tipoReferencia_1}|{creditNoteHeader.numeroDocumentoReferencia_1}|" +
+                        $"{creditNoteHeader.tipoReferencia_2}|{creditNoteHeader.numeroDocumentoReferencia_2}|{creditNoteHeader.motivoDocumento}|{creditNoteHeader.totalvalorventanetoopgravadas}|{creditNoteHeader.totalVVNetoOpNoGravada}|" +
+                        $"{creditNoteHeader.conceptoVVNetoOpNoGravada}|{creditNoteHeader.totalVVNetoOpExoneradas}|{creditNoteHeader.conceptoVVNetoOpExoneradas}|{creditNoteHeader.totalVVNetoOpGratuitas}|" +
+                        $"{creditNoteHeader.conceptoVVNetoOpGratuitas}|{creditNoteHeader.totalVVNetoExportacion}|{creditNoteHeader.conceptoVVExportacion}|{creditNoteHeader.totalIgv}|{creditNoteHeader.totalVenta}|" +
+                        $"{creditNoteHeader.leyendas}||{creditNoteHeader.codigoEstablecimientoSunat}|{creditNoteHeader.montoTotalImpuestos}|{creditNoteHeader.sumImpuestosOpGratuitas}|{creditNoteHeader.monRedImportTotal}|" +
+                        $"|||||");
+
+                    var currentDetails = creditNoteDetails.Where(x => x.serieNumero == creditNoteHeader.serieNumero).ToList();
+
+                    foreach (CreditNoteDetail cnDetail in currentDetails)
+                    {
+
+                        writer.WriteLine($"{cnDetail.numeroOrdenItem}|{cnDetail.unidadMedida}|{cnDetail.cantidad}|" +
+                            $"{cnDetail.codigoProducto}|{cnDetail.codigoProductoSunat}|{cnDetail.descripcion}|" +
+                            $"{cnDetail.montoBaseIGV}|{cnDetail.importeIGV}|{cnDetail.codigoRazonExoneracion}|{cnDetail.tasaIGV}|" +
+                            $"{cnDetail.codigoImporteReferencial}|{cnDetail.importeReferencial}|{cnDetail.importeUnitarioSinImpuesto}|" +
+                            $"{cnDetail.importeTotalSinImpuesto}|{cnDetail.montoTotalImpuestoItem}|{cnDetail.codigoImpUnitConImpuesto}|" +
+                            $"{cnDetail.importeUnitarioConImpuesto}");
+                    }
+
+                }
+            }
+            return Path.Combine(path, fileName);
+        }
+
+
+        public static string CreateDebitNoteFile340(List<DebitNoteHeader> debitNoteHeaders, List<DebitNoteDetail> debitNoteDetails, string path)
+        {
+            DateTime current = DateTime.Now;
+            string fileName = "NDEB_03" + current.ToString("_yyyyMMddHHmmss") + ".txt";
+
+            using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
+            {
+                foreach (DebitNoteHeader dnHeader in debitNoteHeaders)
+                {
+                    writer.WriteLine($"C|{dnHeader.serieNumero}|{dnHeader.fechaEmision}|{dnHeader.horadeEmision}|" +
+                        $"{dnHeader.codigoSerieNumeroAfectado}|{dnHeader.tipoMoneda}|{dnHeader.numeroDocumentoEmisor}|{dnHeader.tipoDocumentoAdquiriente}|" +
+                        $"{dnHeader.numeroDocumentoAdquiriente}|{dnHeader.razonSocialAdquiriente}||{dnHeader.tipoDocRefPrincipal}|" +
+                        $"{dnHeader.numeroDocRefPrincipal}|{dnHeader.tipoReferencia_1}|{dnHeader.numeroDocumentoReferencia_1}|{dnHeader.tipoReferencia_2}|" +
+                        $"{dnHeader.numeroDocumentoReferencia_2}|{dnHeader.motivoDocumento}|{dnHeader.totalvalorventanetoopgravadas}|{dnHeader.totalVVNetoOpNoGravada}|" +
+                        $"{dnHeader.conceptoVVNetoOpNoGravada}|{dnHeader.totalVVNetoOpExoneradas}|{dnHeader.conceptoVVNetoOpExoneradas}|{dnHeader.totalVVNetoOpGratuitas}|{dnHeader.conceptoVVNetoOpGratuitas}|" +
+                        $"{dnHeader.totalVVNetoExportacion}|{dnHeader.conceptoVVExportacion}|{dnHeader.totalIgv}|{dnHeader.totalVenta}|{dnHeader.leyendas}|{dnHeader.datosAdicionales}|{dnHeader.codigoEstablecimientoSunat}|" +
+                        $"{dnHeader.montoTotalImpuestos}|{dnHeader.sumImpuestosOpGratuitas}|{dnHeader.monRedImportTotal}||||");
+
+                    var currentDetails = debitNoteDetails.Where(x => x.serieNumero == dnHeader.serieNumero).ToList();
+
+
+                    foreach (DebitNoteDetail dnDetail in currentDetails)
+                    {
+
+                        writer.WriteLine($"D|{dnDetail.numeroOrdenItem}|{dnDetail.unidadMedida}|{dnDetail.cantidad}|" +
+                            $"{dnDetail.codigoProducto}|{dnDetail.codigoProductoSunat}|{dnDetail.descripcion}|" +
+                            $"{dnDetail.montoBaseIGV}|{dnDetail.importeIGV}|{dnDetail.codigoRazonExoneracion}|{dnDetail.tasaIGV}|" +
+                            $"{dnDetail.importeUnitarioSinImpuesto}|{dnDetail.importeTotalSinImpuesto}|{dnDetail.montoTotalImpuestoItem}|" +
+                            $"{dnDetail.codigoImpUnitConImpuesto}|{dnDetail.importeUnitarioConImpuesto}");
+                    }
+                }
+            }
+            return Path.Combine(path, fileName);
+        }
 
         public static List<DebitNoteHeader> GetDebitNoteHeader(String filename, List<String> data, DateTime timestamp, ref int intentos, int maxIntentos)
         {

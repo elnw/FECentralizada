@@ -59,7 +59,13 @@ namespace TM.FECentralizada.Pacifyc.Response
 
                 Tools.Logging.Info("Inicio : Procesar documentos de BD Pacyfic");
 
-                Invoice(ParametersInvoce);
+                Parallel.Invoke(
+                    ()=> Invoice(ParametersInvoce),
+                    ()=> DebitNote(ParametersDebitNote),
+                    ()=>CreditNote(ParametersCreditNote)
+                    );
+
+                
                 //parallel invoke
 
 

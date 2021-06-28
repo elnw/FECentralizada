@@ -441,11 +441,29 @@ namespace TM.FECentralizada.Business
             }
         }
 
+        public static void UpdateInvoicePickUpDate(List<InvoiceHeader> invoiceHeaders)
+        {
+
+
+            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
+            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
+
+        }
+        public static void UpdateCreditNotePickUpDate(List<CreditNoteHeader> invoiceHeaders)
+        {
+            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "temp_series_nc");
+            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NCRE");
+        }
+        public static void UpdateDebitNotePickUpDate(List<DebitNoteHeader> debitNoteHeaders)
+        {
+            Data.Pacifyc.UpdatePickupDate(debitNoteHeaders.Select(x => x.serieNumero).ToList(), "temp_series_dn");
+            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NDEB");
+        }
+
         public static string CreateInvoiceFile340(List<InvoiceHeader> invoices, List<InvoiceDetail> invoiceDetails, string path)
         {
             DateTime current = DateTime.Now;
-            //string fileName = $"FACT_{current.Year}{current.Month}{current.Day}_{current.Hour}_{current.Year}{current.Month}{current.Day}{current.Hour}{current.Minute}{current.Second}.txt";
-            string fileName = "FACT_" + current.ToString("yyyyMMdd_HH_yyyyMMddHHmmss") + ".txt";
+            string fileName = "FACT_02" + current.ToString("_yyyyMMddHHmmss") + ".txt";
 
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
@@ -460,7 +478,7 @@ namespace TM.FECentralizada.Business
                         $"{invoice.totalVenta}|{invoice.tipooperacion}|{invoice.leyendas}||||{invoice.porcentajeDetraccion}|{invoice.totalDetraccion}|{invoice.descripcionDetraccion}|" +
                         $"{invoice.ordenCompra}|{invoice.datosAdicionales}|{invoice.codigoestablecimientosunat}|{invoice.montototalimpuestos}|{invoice.cdgcodigomotivo}|{invoice.cdgporcentaje}|" +
                         $"{invoice.descuentosGlobales}|{invoice.cdgmontobasecargo}|{invoice.sumimpuestosopgratuitas}|{invoice.totalvalorventa}|{invoice.totalprecioventa}|" +
-                        $"{invoice.monredimporttotal}||||||{invoice.estado}||{invoice.origen}|");
+                        $"{invoice.monredimporttotal}|||||||||");
 
                     var currentDetails = invoiceDetails.Where(x => x.serieNumero == invoice.serieNumero).ToList();
 
@@ -480,7 +498,7 @@ namespace TM.FECentralizada.Business
 
                 }
 
-                
+
 
             }
             return Path.Combine(path, fileName);
@@ -489,7 +507,7 @@ namespace TM.FECentralizada.Business
         public static string CreateInvoiceFile193(List<InvoiceHeader> invoices, List<InvoiceDetail> invoiceDetails, string path)
         {
             DateTime current = DateTime.Now;
-            string fileName = "FACT_" + current.ToString("yyyyMMdd_HH_yyyyMMddHHmmss") + ".txt";
+            string fileName = "FACT_02" + current.ToString("_yyyyMMddHHmmss") + ".txt";
 
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
@@ -498,7 +516,7 @@ namespace TM.FECentralizada.Business
                     string codigoMotivo = String.IsNullOrWhiteSpace(invoice.totalRetencion) || invoice.totalRetencion == "0" ? "" : "62";
                     double montoBaseRetencion = 0;
 
-                    if(!String.IsNullOrWhiteSpace(invoice.porcentajeRetencion) && !String.IsNullOrWhiteSpace(invoice.totalRetencion))
+                    if (!String.IsNullOrWhiteSpace(invoice.porcentajeRetencion) && !String.IsNullOrWhiteSpace(invoice.totalRetencion))
                     {
                         montoBaseRetencion = Convert.ToDouble(invoice.totalRetencion) / (1 + Convert.ToDouble(invoice.porcentajeRetencion));
                     }
@@ -512,7 +530,7 @@ namespace TM.FECentralizada.Business
                          $"{invoice.totalVenta}|{invoice.tipooperacion}|{invoice.leyendas}||||{invoice.porcentajeDetraccion}|{invoice.totalDetraccion}|{invoice.descripcionDetraccion}|" +
                          $"{invoice.ordenCompra}|{invoice.datosAdicionales}|{invoice.codigoestablecimientosunat}|{invoice.montototalimpuestos}|{invoice.cdgcodigomotivo}|{invoice.cdgporcentaje}|" +
                          $"{invoice.descuentosGlobales}|{invoice.cdgmontobasecargo}|{invoice.sumimpuestosopgratuitas}|{invoice.totalvalorventa}|{invoice.totalprecioventa}|" +
-                         $"{invoice.monredimporttotal}|Contado::-::-::-::-|{codigoMotivo}|{invoice.porcentajeDetraccion}|{invoice.totalRetencion}|{montoBaseRetencion}|{invoice.estado}||{invoice.origen}|");
+                         $"{invoice.monredimporttotal}|Contado::-::-::-::-|{codigoMotivo}|{invoice.porcentajeDetraccion}|{invoice.totalRetencion}|{montoBaseRetencion}||||");
 
                     var currentDetails = invoiceDetails.Where(x => x.serieNumero == invoice.serieNumero).ToList();
 
@@ -539,7 +557,7 @@ namespace TM.FECentralizada.Business
         public static string CreateDebitNoteFile340(List<DebitNoteHeader> debitNoteHeaders, List<DebitNoteDetail> debitNoteDetails, string path)
         {
             DateTime current = DateTime.Now;
-            string fileName = $"NDEB_{current.Year}{current.Month}{current.Day}_{current.Hour}_{current.Year}{current.Month}{current.Day}{current.Hour}{current.Minute}{current.Second}.txt";
+            string fileName = "NDEB_02" + current.ToString("_yyyyMMddHHmmss") + ".txt";
 
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
@@ -552,14 +570,14 @@ namespace TM.FECentralizada.Business
                         $"{dnHeader.numeroDocumentoReferencia_2}|{dnHeader.motivoDocumento}|{dnHeader.totalvalorventanetoopgravadas}|{dnHeader.totalVVNetoOpNoGravada}|" +
                         $"{dnHeader.conceptoVVNetoOpNoGravada}|{dnHeader.totalVVNetoOpExoneradas}|{dnHeader.conceptoVVNetoOpExoneradas}|{dnHeader.totalVVNetoOpGratuitas}|{dnHeader.conceptoVVNetoOpGratuitas}|" +
                         $"{dnHeader.totalVVNetoExportacion}|{dnHeader.conceptoVVExportacion}|{dnHeader.totalIgv}|{dnHeader.totalVenta}|{dnHeader.leyendas}|{dnHeader.datosAdicionales}|{dnHeader.codigoEstablecimientoSunat}|" +
-                        $"{dnHeader.montoTotalImpuestos}|{dnHeader.sumImpuestosOpGratuitas}|{dnHeader.monRedImportTotal}|PE||MA|");
+                        $"{dnHeader.montoTotalImpuestos}|{dnHeader.sumImpuestosOpGratuitas}|{dnHeader.monRedImportTotal}||||");
 
                     var currentDetails = debitNoteDetails.Where(x => x.serieNumero == dnHeader.serieNumero).ToList();
 
 
                     foreach (DebitNoteDetail dnDetail in currentDetails)
                     {
-                        
+
                         writer.WriteLine($"D|{dnDetail.numeroOrdenItem}|{dnDetail.unidadMedida}|{dnDetail.cantidad}|" +
                             $"{dnDetail.codigoProducto}|{dnDetail.codigoProductoSunat}|{dnDetail.descripcion}|" +
                             $"{dnDetail.montoBaseIGV}|{dnDetail.importeIGV}|{dnDetail.codigoRazonExoneracion}|{dnDetail.tasaIGV}|" +
@@ -570,30 +588,10 @@ namespace TM.FECentralizada.Business
             }
             return Path.Combine(path, fileName);
         }
-
-        public static void UpdateInvoicePickUpDate(List<InvoiceHeader> invoiceHeaders)
-        {
-
-
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
-
-        }
-        public static void UpdateCreditNotePickUpDate(List<CreditNoteHeader> invoiceHeaders)
-        {
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "temp_series_nc");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NCRE");
-        }
-        public static void UpdateDebitNotePickUpDate(List<DebitNoteHeader> debitNoteHeaders)
-        {
-            Data.Pacifyc.UpdatePickupDate(debitNoteHeaders.Select(x => x.serieNumero).ToList(), "temp_series_dn");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NDEB");
-        }
-
         public static string CreateCreditNoteFile340(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
         {
             DateTime current = DateTime.Now;
-            string fileName = $"NCRE_{current.Year}{current.Month}{current.Day}_{current.Hour}_{current.Year}{current.Month}{current.Day}{current.Hour}{current.Minute}{current.Second}.txt";
+            string fileName = "NCRE_02"  +current.ToString("_yyyyMMddHHmmss") + ".txt";
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
                 foreach (CreditNoteHeader creditNoteHeader in creditNoteHeaders)
@@ -605,7 +603,7 @@ namespace TM.FECentralizada.Business
                         $"{creditNoteHeader.conceptoVVNetoOpNoGravada}|{creditNoteHeader.totalVVNetoOpExoneradas}|{creditNoteHeader.conceptoVVNetoOpExoneradas}|{creditNoteHeader.totalVVNetoOpGratuitas}|" +
                         $"{creditNoteHeader.conceptoVVNetoOpGratuitas}|{creditNoteHeader.totalVVNetoExportacion}|{creditNoteHeader.conceptoVVExportacion}|{creditNoteHeader.totalIgv}|{creditNoteHeader.totalVenta}|" +
                         $"{creditNoteHeader.leyendas}||{creditNoteHeader.codigoEstablecimientoSunat}|{creditNoteHeader.montoTotalImpuestos}|{creditNoteHeader.sumImpuestosOpGratuitas}|{creditNoteHeader.monRedImportTotal}|" +
-                        $"PE||MA|{creditNoteHeader.fechaRegistro}|");
+                        $"||||");
 
                     var currentDetails = creditNoteDetails.Where(x => x.serieNumero == creditNoteHeader.serieNumero).ToList();
 
@@ -627,7 +625,7 @@ namespace TM.FECentralizada.Business
         public static string CreateCreditNoteFile193(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
         {
             DateTime current = DateTime.Now;
-            string fileName = $"NCRE_{current.Year}{current.Month}{current.Day}_{current.Hour}_{current.Year}{current.Month}{current.Day}{current.Hour}{current.Minute}{current.Second}.txt";
+            string fileName = "NCRE_02" + current.ToString("_yyyyMMddHHmmss") + ".txt"; ;
 
             using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
             {
@@ -640,7 +638,7 @@ namespace TM.FECentralizada.Business
                         $"{creditNoteHeader.conceptoVVNetoOpNoGravada}|{creditNoteHeader.totalVVNetoOpExoneradas}|{creditNoteHeader.conceptoVVNetoOpExoneradas}|{creditNoteHeader.totalVVNetoOpGratuitas}|" +
                         $"{creditNoteHeader.conceptoVVNetoOpGratuitas}|{creditNoteHeader.totalVVNetoExportacion}|{creditNoteHeader.conceptoVVExportacion}|{creditNoteHeader.totalIgv}|{creditNoteHeader.totalVenta}|" +
                         $"{creditNoteHeader.leyendas}||{creditNoteHeader.codigoEstablecimientoSunat}|{creditNoteHeader.montoTotalImpuestos}|{creditNoteHeader.sumImpuestosOpGratuitas}|{creditNoteHeader.monRedImportTotal}|" +
-                        $"|PE||MA|{creditNoteHeader.fechaRegistro}|");
+                        $"|||||");
 
                     var currentDetails = creditNoteDetails.Where(x => x.serieNumero == creditNoteHeader.serieNumero).ToList();
 

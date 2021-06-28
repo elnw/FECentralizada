@@ -164,9 +164,9 @@ namespace TM.FECentralizada.Data
                         //int i = 0;
                         foreach (var property in typeof(T).GetMembers().Where(x => x.MemberType == System.Reflection.MemberTypes.Property).ToList())
                         {
-                            ///if (i == 27) break;
+                            //if (i == 27) break;
                             objbulk.ColumnMappings.Add(property.Name, property.Name);
-                            //i++;
+                           // i++;
                             
                         }
 
@@ -175,32 +175,85 @@ namespace TM.FECentralizada.Data
                         objbulk.WriteToServer(Tools.Common.ConvertToDataTable(list));
                     }
                 }
-            }catch(SqlException ex)
+            }catch(Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }
             
         }
 
-        public static void UpdateDocumentInvoice(string alignet, string sendDate)
+        public static void UpdateDocumentInvoice(string alignet, string sendDate, string series)
         {
             try
             {
                 using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
                 {
-                    using(SqlCommand cmd = new SqlCommand("update factura_cabecera set nombreArchivoAlignet = @p1, fechaEnvio = @p2;", connection))
+                    using(SqlCommand cmd = new SqlCommand("update factura_cabecera set nombreArchivoAlignet = @p1, fechaEnvio = @p2 where serieNumero in (@p3);", connection))
                     {
                         connection.Open();
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@p1", alignet);
                         cmd.Parameters.AddWithValue("@p2", sendDate);
+                        cmd.Parameters.AddWithValue("@p3", series);
 
                         cmd.ExecuteNonQuery();
 
                     }
                 }
             }catch(Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
+        public static void UpdateDocumentCreditNote(string alignet, string sendDate, string series)
+        {
+            try
+            {
+                using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
+                {
+                    using (SqlCommand cmd = new SqlCommand("update Nota_Credito_Cabecera set nombreArchivoAlignet = @p1, fechaEnvio = @p2 where serieNumero in (@p3);", connection))
+                    {
+                        connection.Open();
+                        cmd.CommandType = CommandType.Text;
+
+                        cmd.Parameters.AddWithValue("@p1", alignet);
+                        cmd.Parameters.AddWithValue("@p2", sendDate);
+                        cmd.Parameters.AddWithValue("@p3", series);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+        }
+
+        public static void UpdateDocumentDebitNote(string alignet, string sendDate, string series)
+        {
+            try
+            {
+                using (SqlConnection connection = (SqlConnection)Configuration.FactoriaConexion.GetConnection(Configuration.DbConnectionId.SQL))
+                {
+                    using (SqlCommand cmd = new SqlCommand("update Nota_Debito_Cabecera set nombreArchivoAlignet = @p1, fechaEnvio = @p2 where serieNumero in (@p3);", connection))
+                    {
+                        connection.Open();
+                        cmd.CommandType = CommandType.Text;
+
+                        cmd.Parameters.AddWithValue("@p1", alignet);
+                        cmd.Parameters.AddWithValue("@p2", sendDate);
+                        cmd.Parameters.AddWithValue("@p3", series);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (Exception ex)
             {
                 Tools.Logging.Error(ex.Message);
             }

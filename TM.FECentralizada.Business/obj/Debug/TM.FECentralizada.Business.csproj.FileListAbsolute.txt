@@ -124,8 +124,8 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\bin\Debug\Renci.
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\bin\Debug\ExcelDataReader.pdb
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\bin\Debug\ExcelDataReader.xml
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\bin\Debug\log4net.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csprojAssemblyReference.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csproj.CopyComplete
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.dll
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Business\obj\Debug\TM.FECentralizada.Business.csproj.AssemblyReference.cache

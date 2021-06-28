@@ -50,7 +50,7 @@ namespace TM.FECentralizada.Entities.Atis
         public string motivoDocumento { get; set; }
         public string tipoDocRefPrincipal { get; set; }
         public string numeroDocRefPrincipal { get; set; }
-        public string TOTALVALORVENTANETOOPGRAVADAS { get; set; }
+        public string totalvalorventanetoopgravadas { get; set; }
 
         public string codSistema { get; set; }
 
@@ -61,7 +61,6 @@ namespace TM.FECentralizada.Entities.Atis
         public string estado { get; set; }
 
         public string fechaRegistro { get; set; }
-        public List<DebitNoteDetail> debitNoteDetails { get; set; }
         public string totalVVNetoOpGravadas { get; set; }
     }
 }

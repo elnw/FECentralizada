@@ -86,6 +86,7 @@
 
         #region File Audit
         public const string DATETIME_FORMAT_AUDIT = "yyyyMMddHHmmss";
+        public const string DATETIME_FORMAT_SQL = "yyyy-MM-ddTHH:mm:ss";
         public const string STATE_PROCESSING = "PROCESANDO";
         public const string STATE_SUCCESS = "COMPLETADO";
         public const string STATE_ERROR = "ERROR";

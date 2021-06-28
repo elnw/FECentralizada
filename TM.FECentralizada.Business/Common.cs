@@ -109,11 +109,11 @@ namespace TM.FECentralizada.Business
             }
         }
 
-        public static void UpdateDocumentInvoice(string alignet, string sendDate)
+        public static void UpdateDocumentInvoice(string alignet, string sendDate, string series)
         {
             try
             {
-                Data.Common.UpdateDocumentInvoice(alignet, sendDate);
+                Data.Common.UpdateDocumentInvoice(alignet, sendDate, series);
             }
             catch (Exception ex)
             {
