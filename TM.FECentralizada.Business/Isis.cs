@@ -55,6 +55,50 @@ namespace TM.FECentralizada.Business
             return ListDetails;
         }
 
+        public static List<BillHeader> GetBillHeader(DateTime timestamp, ref int intentos, int maxIntentos)
+        {
+            List<BillHeader> ListHeaders = new List<BillHeader>();
+            bool debeRepetir = false;
+            Tools.Logging.Info("Iniciando Consulta BD- Boleta Cabecera");
+            try
+            {
+                for (int i = 0; i < maxIntentos; i++)
+                {
+                    ListHeaders = Data.Isis.ReadBillHeader(timestamp, ref debeRepetir);
+                    intentos++;
+                    Tools.Logging.Info("Fin Consulta BD-Boleta Cabecera");
+                    if (!debeRepetir) break;
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+            return ListHeaders;
+        }
+
+        public static List<BillDetail> GetBillDetail(DateTime timestamp)
+        {
+            List<BillDetail> ListDetails = new List<BillDetail>();
+            BillDetail objBillHeader = new BillDetail();
+
+            Tools.Logging.Info("Iniciando Consulta BD- Cabecera");
+            try
+            {
+                ListDetails = Data.Isis.ReadBillDetail(timestamp);
+                Tools.Logging.Info("Fin Consulta BD- Cabecera");
+            }
+
+            catch (Exception ex)
+            {
+                Tools.Logging.Error(ex.Message);
+            }
+            return ListDetails;
+        }
+
         public static List<CreditNoteHeader> GetCreditNoteHeaders(DateTime timestamp, ref int intentos, int maxIntentos)
         {
             List<CreditNoteHeader> ListHeaders = new List<CreditNoteHeader>();
@@ -171,6 +215,23 @@ namespace TM.FECentralizada.Business
             return checkInvoice;
         }
 
+        public static bool ValidateBills(List<BillHeader> BillHeaders, List<string> messageResult)
+        {
+            bool checkInvoice = true;
+
+            foreach (var bill in BillHeaders.ToList())
+            {
+                if (!ValidateBill(bill, messageResult))
+                {
+                    BillHeaders.Remove(bill);
+                    checkInvoice &= false;
+                }
+
+            }
+
+            return checkInvoice;
+        }
+
         private static bool ValidateInvoice(InvoiceHeader invoiceHeader, List<string> messageResult)
         {
             bool isValid = true;
@@ -223,12 +284,96 @@ namespace TM.FECentralizada.Business
             return isValid;
         }
 
+        private static bool ValidateBill(BillHeader BillHeader, List<string> messageResult)
+        {
+            bool isValid = true;
+            if (String.IsNullOrEmpty(BillHeader.serieNumero) || BillHeader.serieNumero.Length < 13 || !BillHeader.serieNumero.StartsWith("F"))
+            {
+                messageResult.Add("La serie y número de la Boleta: " + BillHeader.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto");
+                isValid &= false;
+            }
+
+            if (String.IsNullOrEmpty(BillHeader.fechaEmision))
+            {
+                messageResult.Add("La fecha de emision de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.tipoDocumentoAdquiriente))
+            {
+                messageResult.Add("El tipo de documento adquiriente de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacío.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.numeroDocumentoAdquiriente))
+            {
+                messageResult.Add("El número de documento adquiriente de la Boletacon número de serie: " + BillHeader.serieNumero + " está vacío.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.razonSocialAdquiriente))
+            {
+                messageResult.Add("La razon social del adquiriente de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.tipoMoneda))
+            {
+                messageResult.Add("El tipo de moneda de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.tipooperacion))
+            {
+                messageResult.Add("El tipo de operación de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(BillHeader.codigoestablecimientosunat))
+            {
+                messageResult.Add("El codigo de establecimiento sunat de la factura con número de serie: " + BillHeader.serieNumero + " está vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrWhiteSpace(BillHeader.totalvalorventa))
+            {
+                messageResult.Add("El total del valor de venta de la Boleta con número de serie: " + BillHeader.serieNumero + " está vacío.");
+                isValid &= false;
+            }
+            return isValid;
+        }
+
+
         private static bool ShouldDeleteInvoice(InvoiceDetail detail, List<string> messageResult)
         {
             bool isValid = true;
             if (String.IsNullOrEmpty(detail.serieNumero) || detail.serieNumero.Length < 13 || !detail.serieNumero.StartsWith("F"))
             {
                 messageResult.Add("La serie y número de la factura: " + detail.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(detail.descripcion))
+            {
+                messageResult.Add("La descripcion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacia.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(detail.unidadMedida))
+            {
+                messageResult.Add("La unidad de medida del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(detail.codigoImpUnitConImpuesto))
+            {
+                messageResult.Add("El codigo de imp. unitario del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
+                isValid &= false;
+            }
+            if (String.IsNullOrEmpty(detail.codigoRazonExoneracion))
+            {
+                messageResult.Add("El codigo de razon de exgoneracion del detalle con número de orden: " + detail.numeroOrdenItem + " esta vacía.");
+                isValid &= false;
+            }
+            return !isValid;
+        }
+
+        private static bool ShouldDeleteBill(BillDetail detail, List<string> messageResult)
+        {
+            bool isValid = true;
+            if (String.IsNullOrEmpty(detail.serieNumero) || detail.serieNumero.Length < 13 || !detail.serieNumero.StartsWith("F"))
+            {
+                messageResult.Add("La serie y número de la boleta: " + detail.serieNumero + " tiene una longitud invalida o no cumple con el formato correcto");
                 isValid &= false;
             }
             if (String.IsNullOrEmpty(detail.descripcion))
@@ -263,6 +408,23 @@ namespace TM.FECentralizada.Business
                 if (ShouldDeleteInvoice(detail, messageResult))
                 {
                     invoiceDetail.Remove(detail);
+                    isValid &= false;
+                }
+
+            }
+            return isValid;
+
+        }
+
+        public static bool ValidateBillDetail(List<BillDetail> BillDetail, List<string> messageResult)
+        {
+            bool isValid = true;
+
+            foreach (var detail in BillDetail.ToList())
+            {
+                if (ShouldDeleteBill(detail, messageResult))
+                {
+                    BillDetail.Remove(detail);
                     isValid &= false;
                 }
 
@@ -540,6 +702,96 @@ namespace TM.FECentralizada.Business
             return Path.Combine(path, fileName);
         }
 
+
+        public static string CreateBillFile340(List<BillHeader> Bills, List<BillDetail> BillDetails, string path)
+        {
+            DateTime current = DateTime.Now;
+            //string fileName = $"FACT_{current.Year}{current.Month}{current.Day}_{current.Hour}_{current.Year}{current.Month}{current.Day}{current.Hour}{current.Minute}{current.Second}.txt";
+            string fileName = "FACT_" + current.ToString("yyyyMMdd_HH_yyyyMMddHHmmss") + ".txt";
+
+            using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
+            {
+                foreach (BillHeader Bill in Bills)
+                {
+                    writer.WriteLine($"C|{Bill.serieNumero}|{Bill.fechaEmision}|{Bill.Horadeemision}|" +
+                        $"{Bill.tipoMoneda}|{Bill.numeroDocumentoEmisor}|{Bill.tipoDocumentoAdquiriente}|{Bill.numeroDocumentoAdquiriente}|" +
+                        $"{Bill.razonSocialAdquiriente}|{Bill.direccionAdquiriente}|{Bill.tipoReferencia_1}|{Bill.numeroDocumentoReferencia_1}|" +
+                        $"{Bill.tipoReferencia_2}|{Bill.numeroDocumentoReferencia_2}|{Bill.totalVVNetoOpGravadas}|{Bill.conceptovvnetoopnogravada}|" +
+                        $"{Bill.totalVVNetoOpExoneradas}|{Bill.conceptovvnetoopexoneradas}|{Bill.totalVVNetoOpGratuitas}|" +
+                        $"{Bill.conceptovvnetoopgratuitas}|{Bill.totalVVNetoExportacion}|{Bill.conceptovvexportacion}|{Bill.totalDescuentos}|{Bill.totalIgv}|" +
+                       // $"{Bill.totalVenta}|{Bill.tipooperacion}|{Bill.leyendas}||||{Bill.porcentajeDetraccion}|{Bill.totalDetraccion}|{Bill.descripcionDetraccion}|" +
+                        $"{Bill.datosAdicionales}|{Bill.codigoestablecimientosunat}|{Bill.montototalimpuestos}|{Bill.cdgcodigomotivo}|{Bill.cdgporcentaje}|" +
+                        $"{Bill.descuentosGlobales}|{Bill.cdgmontobasecargo}|{Bill.sumimpuestosopgratuitas}|{Bill.totalvalorventa}|{Bill.totalprecioventa}|" +
+                        $"{Bill.monredimporttotal}||||||{Bill.estado}||{Bill.origen}|");
+
+                    var currentDetails = BillDetails.Where(x => x.serieNumero == Bill.serieNumero).ToList();
+
+                    foreach (BillDetail BillDetail in currentDetails)
+                    {
+
+                        writer.WriteLine($"D|{BillDetail.numeroOrdenItem}|{BillDetail.unidadMedida}|{BillDetail.cantidad}|" +
+                            $"{BillDetail.codigoProducto}|{BillDetail.codigoproductosunat}|{BillDetail.descripcion}|" +
+                            $"{BillDetail.montobaseigv}|{BillDetail.importeIgv}|{BillDetail.codigoRazonExoneracion}|{BillDetail.tasaigv}|" +
+                            $"{BillDetail.importeDescuento}|{BillDetail.codigodescuento}|{BillDetail.factordescuento}|" +
+                            $"{BillDetail.montobasedescuento}|{BillDetail.codigoImporteReferencial}|{BillDetail.importeReferencial}|" +
+                            $"{BillDetail.importeUnitarioSinImpuesto}|{BillDetail.importeTotalSinImpuesto}|{BillDetail.montototalimpuestoitem}|" +
+                            $"||{BillDetail.codigoImpUnitConImpuesto}|{BillDetail.importeUnitarioConImpuesto}|");
+                        
+                    }
+
+
+                }
+
+
+
+            }
+            return Path.Combine(path, fileName);
+        }
+
+        public static string CreateBillFile193(List<BillHeader> Bills, List<BillDetail> BillDetails, string path)
+        {
+            DateTime current = DateTime.Now;
+            string fileName = "FACT_" + current.ToString("yyyyMMdd_HH_yyyyMMddHHmmss") + ".txt";
+
+            using (StreamWriter writer = new StreamWriter(Path.Combine(path, fileName)))
+            {
+                foreach (BillHeader Bill in Bills)
+                {
+                    double montoBaseRetencion = 0;
+
+                    writer.WriteLine($"C|{Bill.serieNumero}|{Bill.fechaEmision}|{Bill.Horadeemision}|" +
+                         $"{Bill.tipoMoneda}|{Bill.numeroDocumentoEmisor}|{Bill.tipoDocumentoAdquiriente}|{Bill.numeroDocumentoAdquiriente}|" +
+                         $"{Bill.razonSocialAdquiriente}|{Bill.direccionAdquiriente}|{Bill.tipoReferencia_1}|{Bill.numeroDocumentoReferencia_1}|" +
+                         $"{Bill.tipoReferencia_2}|{Bill.numeroDocumentoReferencia_2}|{Bill.totalVVNetoOpGravadas}|{Bill.conceptovvnetoopnogravada}|" +
+                         $"{Bill.totalVVNetoOpExoneradas}|{Bill.conceptovvnetoopexoneradas}|{Bill.totalVVNetoOpGratuitas}|" +
+                         $"{Bill.conceptovvnetoopgratuitas}|{Bill.totalVVNetoExportacion}|{Bill.conceptovvexportacion}|{Bill.totalDescuentos}|{Bill.totalIgv}|" +
+                         $"{Bill.totalVenta}|{Bill.tipooperacion}|{Bill.leyendas}||||" +
+                         $"{Bill.datosAdicionales}|{Bill.codigoestablecimientosunat}|{Bill.montototalimpuestos}|{Bill.cdgcodigomotivo}|{Bill.cdgporcentaje}|" +
+                         $"{Bill.descuentosGlobales}|{Bill.cdgmontobasecargo}|{Bill.sumimpuestosopgratuitas}|{Bill.totalvalorventa}|{Bill.totalprecioventa}|" +
+                         $"{Bill.monredimporttotal}|Contado::-::-::-::-|{Bill.estado}||{Bill.origen}|");
+
+                    var currentDetails = BillDetails.Where(x => x.serieNumero == Bill.serieNumero).ToList();
+
+                    foreach (BillDetail BillDetail in currentDetails)
+                    {
+
+                        writer.WriteLine($"D|{BillDetail.numeroOrdenItem}|{BillDetail.unidadMedida}|{BillDetail.cantidad}|" +
+                            $"{BillDetail.codigoProducto}|{BillDetail.codigoproductosunat}|{BillDetail.descripcion}|" +
+                            $"{BillDetail.montobaseigv}|{BillDetail.importeIgv}|{BillDetail.codigoRazonExoneracion}|{BillDetail.tasaigv}|" +
+                            $"{BillDetail.importeDescuento}|{BillDetail.codigodescuento}|{BillDetail.factordescuento}|" +
+                            $"{BillDetail.montobasedescuento}|{BillDetail.codigoImporteReferencial}|{BillDetail.importeReferencial}|" +
+                            $"{BillDetail.importeUnitarioSinImpuesto}|{BillDetail.importeTotalSinImpuesto}|{BillDetail.montototalimpuestoitem}|" +
+                            $"||{BillDetail.codigoImpUnitConImpuesto}|{BillDetail.importeUnitarioConImpuesto}");
+                    }
+
+
+                }
+            }
+
+            return Path.Combine(path, fileName);
+        }
+
+
         public static string CreateDebitNoteFile340(List<DebitNoteHeader> debitNoteHeaders, List<DebitNoteDetail> debitNoteDetails, string path)
         {
             DateTime current = DateTime.Now;
@@ -578,23 +830,50 @@ namespace TM.FECentralizada.Business
         public static void UpdateInvoicePickUpDate(List<InvoiceHeader> invoiceHeaders)
         {
 
-            Data.Isis.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
-            Data.Isis.InvokeInvoiceUpdate();
+            //Data.Isis.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
+            //Data.Isis.InvokeInvoiceUpdate();
 
             Data.Isis.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
-            Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
+            //Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
+            Int32 ar = 1;
+            
+            Data.Isis.InvokeUpdate(ar);
+
+
+            
+
+        }
+
+
+        public static void UpdateBillPickUpDate(List<BillHeader> BillHeaders)
+        {
+
+            //Data.Isis.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList());
+            //Data.Isis.InvokeInvoiceUpdate();
+
+            Data.Isis.UpdatePickupDate(BillHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
+            //Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
+            Int32 ar = 1;
+
+            Data.Isis.InvokeUpdate(ar);
+
+
 
 
         }
         public static void UpdateCreditNotePickUpDate(List<CreditNoteHeader> invoiceHeaders)
         {
             Data.Isis.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "temp_series_nc");
-            Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NCRE");
+            //Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NCRE");
+            Int32 ar = 2;
+            Data.Isis.InvokeUpdate(ar);
         }
         public static void UpdateDebitNotePickUpDate(List<DebitNoteHeader> debitNoteHeaders)
         {
             Data.Isis.UpdatePickupDate(debitNoteHeaders.Select(x => x.serieNumero).ToList(), "temp_series_dn");
-            Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NDEB");
+            //Data.Isis.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NDEB");
+            Int32 ar = 3;
+            Data.Isis.InvokeUpdate(ar);
         }
 
         public static string CreateCreditNoteFile340(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
