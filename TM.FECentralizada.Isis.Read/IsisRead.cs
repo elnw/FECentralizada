@@ -205,7 +205,7 @@ namespace TM.FECentralizada.Isis.Read
                             /*Business.Common.UpdateDocumentDebitNote(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
                             Business.Isis.UpdatePickUpDate(ListInvoceHeader);*/
 
-                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), "'"+String.Join("','", ListInvoceHeader.Select(x=>x.serieNumero))+ "'");
                             Business.Isis.UpdateInvoicePickUpDate(ListInvoceHeader);
 
 
@@ -345,7 +345,7 @@ namespace TM.FECentralizada.Isis.Read
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
                             Tools.Logging.Info("Inicio : Actualizar fecha de envio");
                             //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
-                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), String.Join("','", "'" + ListBillHeader.Select(x=>x.serieNumero) + "'"));
                             Business.Isis.UpdateBillPickUpDate(ListBillHeader);
 
                         }
@@ -560,7 +560,7 @@ namespace TM.FECentralizada.Isis.Read
                             Business.Common.UpdateAudit(auditId, Tools.Constants.ENVIADO_GFISCAL, intentos);
                             Tools.Logging.Info("Inicio : Actualizar fecha de envio");
                             //actualizar documento factura -> agregar el nombre archivo alignet,fechaenvio,
-                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT));
+                            Business.Common.UpdateDocumentInvoice(System.IO.Path.GetFileName(resultPath), DateTime.Now.ToString(Tools.Constants.DATETIME_FORMAT_AUDIT), String.Join("','","'"+ debitNoteHeaders.Select(x=>x.serieNumero)+ "'"));
                             Business.Isis.UpdateDebitNotePickUpDate(debitNoteHeaders);
 
                         }

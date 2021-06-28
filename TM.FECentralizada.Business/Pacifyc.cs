@@ -592,10 +592,13 @@ namespace TM.FECentralizada.Business
             return Path.Combine(path, fileName);
         }
 
+<<<<<<< HEAD
+=======
 
         
 
 
+>>>>>>> bcafbf71624336f0f02a71700024f788140b147d
         public static string CreateCreditNoteFile340(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
         {
             DateTime current = DateTime.Now;

@@ -30,7 +30,76 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.exe.config
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.exe
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Business.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Entities.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Tools.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\Newtonsoft.Json.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\IBM.Data.Informix.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\EPPlus.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\Renci.SshNet.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\log4net.dll
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Business.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.dll.config
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Entities.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Tools.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\Newtonsoft.Json.xml
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\EPPlus.xml
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\Renci.SshNet.xml
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.xml
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\bin\Debug\log4net.xml
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.AssemblyReference.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.ProjectInstaller.resources
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.GenerateResource.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.CoreCompileInputs.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.CopyComplete
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.exe
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.pdb
+=======
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.exe.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Pacifyc.Response.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Business.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Entities.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Tools.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\Newtonsoft.Json.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\IBM.Data.Informix.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\EPPlus.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\Renci.SshNet.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\log4net.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Business.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Data.dll.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Entities.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\Newtonsoft.Json.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\EPPlus.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\Renci.SshNet.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\ExcelDataReader.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\bin\Debug\log4net.xml
+>>>>>>> d88ce8dd0a7bdd419516bd0b74d4e3c837e0fcd6
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.AssemblyReference.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.ProjectInstaller.resources
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.GenerateResource.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.csproj.CopyComplete
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Pacifyc.Response\obj\Debug\TM.FECentralizada.Pacifyc.Response.pdb
+>>>>>>> bcafbf71624336f0f02a71700024f788140b147d
+>>>>>>> d88ce8dd0a7bdd419516bd0b74d4e3c837e0fcd6
