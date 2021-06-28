@@ -232,6 +232,7 @@
         #region CmsLectura
         public const string CmsRead = "Cms_Lectura";
         public const string CmsRead_Invoice = "Factura";
+        public const string CmsRead_Bill = "Boleta";
         public const string CmsRead_CreditNote = "NotaCredito";
         public const string CmsRead_DebitNote = "NotaDebito";
         #endregion
@@ -239,6 +240,7 @@
         #region CmsRespuesta
         public const string CmsResponse = "Cms_Respuesta";
         public const string CmsResponse_Invoice = "Factura";
+        public const string CmsResponse_Bill = "Boleta";
         public const string CmsResponse_CreditNote = "NotaCredito";
         public const string CmsResponse_DebitNote = "NotaDebito";
         #endregion

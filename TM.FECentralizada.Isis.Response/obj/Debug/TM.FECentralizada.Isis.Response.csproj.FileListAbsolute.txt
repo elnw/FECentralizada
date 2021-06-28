@@ -29,6 +29,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Res
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.pdb
+<<<<<<< HEAD
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe.config
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.pdb
@@ -60,3 +61,36 @@ D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\T
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CopyComplete
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.pdb
+=======
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Isis.Response.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Business.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Entities.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Tools.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Data.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\Newtonsoft.Json.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\EPPlus.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\Renci.SshNet.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\ExcelDataReader.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\log4net.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\IBM.Data.Informix.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Business.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Entities.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Tools.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Data.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\TM.FECentralizada.Data.dll.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\Newtonsoft.Json.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\EPPlus.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\Renci.SshNet.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\ExcelDataReader.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\ExcelDataReader.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\bin\Debug\log4net.xml
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.AssemblyReference.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.csproj.CopyComplete
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.Isis.Response\obj\Debug\TM.FECentralizada.Isis.Response.pdb
+>>>>>>> bcafbf71624336f0f02a71700024f788140b147d

@@ -4,6 +4,7 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.BackUp\b
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.CoreCompileInputs.cache
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.pdb
+<<<<<<< HEAD
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe.config
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.pdb
@@ -11,3 +12,11 @@ D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECen
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.CoreCompileInputs.cache
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.exe
 D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.pdb
+=======
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe.config
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\bin\Debug\TM.FECentralizada.BackUp.pdb
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.csproj.CoreCompileInputs.cache
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.exe
+E:\INDRA\FUENTES\FE\FeCentralizadaGit\TM.FECentralizada.BackUp\obj\Debug\TM.FECentralizada.BackUp.pdb
+>>>>>>> bcafbf71624336f0f02a71700024f788140b147d

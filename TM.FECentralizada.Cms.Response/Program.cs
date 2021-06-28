@@ -14,12 +14,21 @@ namespace TM.FECentralizada.Cms.Response
         /// </summary>
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new CmsResponse()
-            };
-            ServiceBase.Run(ServicesToRun);
+#if DEBUG
+            CmsResponse cmsResponse = new CmsResponse();
+            cmsResponse.TestProject();
+
+
+
+#else
+             Tools.Logging.Configure();
+             ServiceBase[] ServicesToRun;
+             ServicesToRun = new ServiceBase[]
+             {
+                 new CmsResponse()
+             };
+             ServiceBase.Run(ServicesToRun);
+#endif
         }
     }
 }

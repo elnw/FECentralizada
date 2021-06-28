@@ -224,7 +224,7 @@ namespace TM.FECentralizada.Atis.Read
                                         }
                                         else
                                         {
-                                            //resultPath = Business.Pacifyc.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Atis.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
                                         }
                                         Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
@@ -411,7 +411,7 @@ namespace TM.FECentralizada.Atis.Read
                                         }
                                         else
                                         {
-                                            //resultPath = Business.Pacifyc.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
+                                            //resultPath = Business.Atis.CreateInvoiceFile193(ListInvoceHeader, ListInvoceDetail, System.IO.Path.GetTempPath());
                                         }
                                         Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
 
@@ -768,8 +768,11 @@ namespace TM.FECentralizada.Atis.Read
                                         string resultPath = "";
                                         if (serviceConfig.Norm == 340)
                                         {
-                                           resultPath = Business.Atis.CreateDebitNoteFile340(ListDebitNoteHeader, ListDebitNoteDetail, System.IO.Path.GetTempPath());
+                                            resultPath = Business.Atis.CreateDebitNoteFile340(ListDebitNoteHeader, ListDebitNoteDetail, System.IO.Path.GetTempPath());
 
+                                        }
+                                        else {
+                                           // resultPath = Business.Atis.CreateDebitNoteFile193(ListDebitNoteHeader, ListDebitNoteDetail, System.IO.Path.GetTempPath());
                                         }
                                         
                                         Tools.FileServer.UploadFile(fileServerConfigOut.Host, fileServerConfigOut.Port, fileServerConfigOut.User, fileServerConfigOut.Password, fileServerConfigOut.Directory, System.IO.Path.GetFileName(resultPath), System.IO.File.ReadAllBytes(resultPath));
