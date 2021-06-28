@@ -592,30 +592,6 @@ namespace TM.FECentralizada.Business
             return Path.Combine(path, fileName);
         }
 
-
-        public static void UpdateInvoicePickUpDate(List<InvoiceHeader> invoiceHeaders)
-        {
-
-
-
-
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "TEMP_SERIES");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_FACT");
-
-
-        }
-        public static void UpdateCreditNotePickUpDate(List<CreditNoteHeader> invoiceHeaders)
-        {
-            Data.Pacifyc.UpdatePickupDate(invoiceHeaders.Select(x => x.serieNumero).ToList(), "temp_series_nc");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NCRE");
-        }
-        public static void UpdateDebitNotePickUpDate(List<DebitNoteHeader> debitNoteHeaders)
-        {
-            Data.Pacifyc.UpdatePickupDate(debitNoteHeaders.Select(x => x.serieNumero).ToList(), "temp_series_dn");
-            Data.Pacifyc.InvokeUpdate("PKG_PACIFYC_TRANSACCIONES.SP_ACTUALIZAR_FECH_RECOJO_NDEB");
-        }
-
-
         public static string CreateCreditNoteFile340(List<CreditNoteHeader> creditNoteHeaders, List<CreditNoteDetail> creditNoteDetails, string path)
         {
             DateTime current = DateTime.Now;

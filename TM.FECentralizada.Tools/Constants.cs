@@ -97,6 +97,14 @@
         public const string COUNT_ID = "COUNT_ID";
         #endregion
 
+        #region SapLectura
+        public const string SapRead = "Sap_Lectura";
+        public const string SapRead_Invoice = "Invoice";
+        public const string SapRead_Bill = "Bill";
+        public const string SapRead_CreditNote = "CreditNote";
+        public const string SapRead_DebitNote = "DebitNote";
+        #endregion
+
         #region IsisLectura
         public const string IsisRead = "Isis_Lectura";
         public const string IsisRead_Bill = "Factura";
@@ -188,6 +196,7 @@
         #region IsisRespuesta
         public const string IsisResponse = "Isis_Response";
         public const string IsisResponse_Invoice = "Factura";
+        public const string IsisResponse_Bill = "Boleta";
         public const string IsisResponse_CreditNote = "NotaCredito";
         public const string IsisResponse_DebitNote = "NotaDebito";
 
