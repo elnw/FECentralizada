@@ -62,3 +62,9 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Rea
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CopyComplete
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.AssemblyReference.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.ProjectInstaller.resources
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.GenerateResource.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.csproj.CoreCompileInputs.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.exe
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Isis.Read\obj\Debug\TM.FECentralizada.Isis.Read.pdb

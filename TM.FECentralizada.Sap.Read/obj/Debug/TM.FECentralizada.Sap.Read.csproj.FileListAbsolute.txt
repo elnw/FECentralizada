@@ -32,3 +32,9 @@ E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Read
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.exe
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.pdb
 E:\INDRA\FUENTES\FE\FeCentralizadaGitt\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.csproj.AssemblyReference.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.csproj.AssemblyReference.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.exe.config
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.ProjectInstaller.resources
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.SapRead.resources
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.csproj.GenerateResource.cache
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Sap.Read\obj\Debug\TM.FECentralizada.Sap.Read.csproj.CoreCompileInputs.cache

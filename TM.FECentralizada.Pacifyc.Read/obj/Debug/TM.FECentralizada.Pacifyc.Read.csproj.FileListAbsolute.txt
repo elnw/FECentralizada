@@ -144,10 +144,10 @@ D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\Re
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\ExcelDataReader.pdb
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\ExcelDataReader.xml
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\bin\Debug\log4net.xml
-D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csprojAssemblyReference.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.ProjectInstaller.resources
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.GenerateResource.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.CoreCompileInputs.cache
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.CopyComplete
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.exe
 D:\Proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.pdb
+D:\proyectos\FEC\gitp\FECentralizada\TM.FECentralizada.Pacifyc.Read\obj\Debug\TM.FECentralizada.Pacifyc.Read.csproj.AssemblyReference.cache
